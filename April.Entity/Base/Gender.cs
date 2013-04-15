@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace April.EntityImpl
+namespace April.Entity.Base
 {
-    public class Class1
+    public enum Gender
     {
+        Male,
+        Female
     }
 }

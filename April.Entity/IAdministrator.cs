@@ -5,7 +5,7 @@ using System.Text;
 
 namespace April.Entity
 {
-    public class Class1
+    public interface IAdministrator:IUser
     {
     }
 }
