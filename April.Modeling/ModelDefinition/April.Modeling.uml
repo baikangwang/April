@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="c15009f9-3b34-470d-a1a7-2812739fea85"
   name="April.Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -17,28 +17,466 @@
         name="StandardProfileL3" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <subsystem
+        Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+        name="ClassSelection"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="08deaf7e-730c-47f8-b373-3dc12c284b7e"
+        name="Student Management"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+            LastKnownName="ClassSelection"
+            LastKnownLocation="April.Modeling.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="70dbc5c0-e3d1-4fa0-b791-227177782ebe"
+        name="Administrator"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="45c97d6a-8f02-408a-a889-3600c26a4555"
+            isDerived="false"
+            sourceEndRoleName="Administrator"
+            targetEndRoleName="Student Management"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="08deaf7e-730c-47f8-b373-3dc12c284b7e"
+              LastKnownName="Student Management"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="66ad9767-1202-4a53-a419-c34fbd9d977f"
+                  name="Administrator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="89b0d83b-8920-4a9c-a92d-671c80c11b05"
+                  name="Student Management"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0fef704f-6859-45cf-9dd4-eac93969ef07"
+            isDerived="false"
+            sourceEndRoleName="Administrator"
+            targetEndRoleName="Teacher Management"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a5856aaa-dffc-4e70-990e-c1b7e29d9c38"
+              LastKnownName="Teacher Management"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b0693708-588a-4376-b3d3-8e2223d856f2"
+                  name="Administrator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e0468fc9-2e5f-4e23-8659-d445caf20834"
+                  name="Teacher Management"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="482d5c31-58cd-49e9-9475-f1b043627b23"
+            isDerived="false"
+            sourceEndRoleName="Administrator"
+            targetEndRoleName="Course Management"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9caa0609-62a9-40e3-8acc-0a1279e0ec7b"
+              LastKnownName="Course Management"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6737e3c9-5cff-4c97-b55a-308c0dfae58a"
+                  name="Administrator"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5feceefa-c362-4342-9ccd-5b9cc1e8061e"
+                  name="Course Management"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="b20d9da4-47a7-43c7-b7f8-2f3e0e0dcae1"
+        name="Student"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="c5bb729a-3e41-4b3e-b9b5-c2333e745fcb"
+            isDerived="false"
+            sourceEndRoleName="Student"
+            targetEndRoleName="Management Profile"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ba725bdd-9912-4eaa-9036-62b1e67ca469"
+              LastKnownName="Management Profile"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1d220849-e1c1-478e-a105-197bf02a7a67"
+                  name="Student"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="725d57dc-aea4-4f6c-b8ae-eb0a703d126f"
+                  name="Management Profile"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="88f6a9df-c160-4f3c-a684-dea609cc7be1"
+            isDerived="false"
+            sourceEndRoleName="Student"
+            targetEndRoleName="Query ClassSelection Info"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="238a45a5-7790-4d5a-b244-16b18efdf82e"
+              LastKnownName="Query ClassSelection Info"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8a1cd557-cd5a-447f-a103-9c1a4e8f4651"
+                  name="Student"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ef3b9815-96e3-498a-b96f-6060d689a084"
+                  name="Query ClassSelection Info"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7dbfac66-d5c2-4e52-b434-28c61ce011b0"
+            isDerived="false"
+            sourceEndRoleName="Student"
+            targetEndRoleName="Select Class"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="d8b73d01-fa1f-4818-b849-64f12a4d3229"
+              LastKnownName="Select Class"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="1e7925b7-b834-484d-98f7-12f2723afd4b"
+                  name="Student"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8ba92fd9-8b3b-4d71-a84b-62c41b40fe1a"
+                  name="Select Class"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="aa4117ea-2c11-4902-8005-2c43477cc6d8"
+        name="Teacher"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="5a3dea2d-db8a-4a0f-8ee6-c7c9111c562b"
+            isDerived="false"
+            sourceEndRoleName="Teacher"
+            targetEndRoleName="Management Profile"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="ba725bdd-9912-4eaa-9036-62b1e67ca469"
+              LastKnownName="Management Profile"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4b6da179-0f29-4637-8d1b-12705704e7f9"
+                  name="Teacher"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ffa8f662-8b80-4aac-9b07-248d11b943a3"
+                  name="Management Profile"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ec2869e9-db72-4520-bd73-aa8368b9477e"
+            isDerived="false"
+            sourceEndRoleName="Teacher"
+            targetEndRoleName="Query ClassSelection Info"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="238a45a5-7790-4d5a-b244-16b18efdf82e"
+              LastKnownName="Query ClassSelection Info"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d8898297-9007-4670-b5db-6fd2a15f2b39"
+                  name="Teacher"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5e55cbbf-b739-44a1-8679-cbef6631f309"
+                  name="Query ClassSelection Info"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="a5856aaa-dffc-4e70-990e-c1b7e29d9c38"
+        name="Teacher Management"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+            LastKnownName="ClassSelection"
+            LastKnownLocation="April.Modeling.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9caa0609-62a9-40e3-8acc-0a1279e0ec7b"
+        name="Course Management"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+            LastKnownName="ClassSelection"
+            LastKnownLocation="April.Modeling.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="ba725bdd-9912-4eaa-9036-62b1e67ca469"
+        name="Management Profile"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+            LastKnownName="ClassSelection"
+            LastKnownLocation="April.Modeling.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="fa2640b9-3821-4b40-b5c4-1d5d9067547e"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="238a45a5-7790-4d5a-b244-16b18efdf82e"
+        name="Query ClassSelection Info"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+            LastKnownName="ClassSelection"
+            LastKnownLocation="April.Modeling.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="d8b73d01-fa1f-4818-b849-64f12a4d3229"
+        name="Select Class"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+            LastKnownName="ClassSelection"
+            LastKnownLocation="April.Modeling.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
     name="Integer"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
     name="Boolean"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
     name="String"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
     name="UnlimitedNatural"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
 </modelStoreModel>

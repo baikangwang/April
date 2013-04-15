@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{00000000-0000-0000-0000-000000000000}</ProjectGuid>
+    <ProjectGuid>{27535e6f-9531-4b7e-9e69-7e323db1a4e4}</ProjectGuid>
     <ArchitectureToolsVersion>1.0.0.0</ArchitectureToolsVersion>
     <Name>April.Modeling</Name>
     <RootNamespace>April.Modeling</RootNamespace>
@@ -18,6 +18,13 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
     <Folder Include="ModelDefinition\" />
+    <Content Include="ClassSelection.usecasediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ClassSelection.usecasediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ClassSelection.usecasediagram</DependentUpon>
+    </Content>
     <Content Include="ModelDefinition\April.Modeling.uml">
       <SubType>Content</SubType>
     </Content>
