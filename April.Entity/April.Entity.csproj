@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Base\Gender.cs" />
     <Compile Include="IAdministrator.cs" />
+    <Compile Include="ICourse.cs" />
+    <Compile Include="ISelection.cs" />
     <Compile Include="IStudent.cs" />
     <Compile Include="ITeacher.cs" />
     <Compile Include="IUser.cs" />

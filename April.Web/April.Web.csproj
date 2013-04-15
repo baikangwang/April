@@ -52,10 +52,59 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="about.html" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="blog.html" />
+    <Content Include="contact.html" />
+    <Content Include="css\style.css" />
+    <Content Include="fonts\Muli-Italic.svg" />
+    <Content Include="fonts\Muli-Regular.svg" />
+    <Content Include="images\bg-body.jpg" />
+    <Content Include="images\bg-body.png" />
+    <Content Include="images\bg-border.jpg" />
+    <Content Include="images\bg-contact-input.jpg" />
+    <Content Include="images\bg-contact-textarea.jpg" />
+    <Content Include="images\bg-input.jpg" />
+    <Content Include="images\bg-nav-selected.jpg" />
+    <Content Include="images\bg-nav.jpg" />
+    <Content Include="images\bg-share.jpg" />
+    <Content Include="images\bg-sidebar.jpg" />
+    <Content Include="images\border.jpg" />
+    <Content Include="images\border.png" />
+    <Content Include="images\copywriting.jpg" />
+    <Content Include="images\design.jpg" />
+    <Content Include="images\icons.png" />
+    <Content Include="images\logo-design.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\logo1.jpg" />
+    <Content Include="images\logo10.jpg" />
+    <Content Include="images\logo11.jpg" />
+    <Content Include="images\logo12.jpg" />
+    <Content Include="images\logo2.jpg" />
+    <Content Include="images\logo3.jpg" />
+    <Content Include="images\logo4.jpg" />
+    <Content Include="images\logo5.jpg" />
+    <Content Include="images\logo6.jpg" />
+    <Content Include="images\logo7.jpg" />
+    <Content Include="images\logo8.jpg" />
+    <Content Include="images\logo9.jpg" />
+    <Content Include="images\paper-wheel.jpg" />
+    <Content Include="images\photo-shoot.jpg" />
+    <Content Include="images\print-design.jpg" />
+    <Content Include="images\seo.jpg" />
+    <Content Include="images\shadow.png" />
+    <Content Include="images\submit.jpg" />
+    <Content Include="images\template1.jpg" />
+    <Content Include="images\template2.jpg" />
+    <Content Include="images\template3.jpg" />
+    <Content Include="images\tree.jpg" />
+    <Content Include="images\web-design.jpg" />
+    <Content Include="index.html" />
+    <Content Include="portfolio.html" />
+    <Content Include="services.html" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -141,6 +190,14 @@
       <Project>{A454AEAF-EDE2-4406-829F-2EBD4796395F}</Project>
       <Name>April.Entity</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="fonts\Muli-Italic.eot" />
+    <None Include="fonts\Muli-Italic.ttf" />
+    <None Include="fonts\Muli-Italic.woff" />
+    <None Include="fonts\Muli-Regular.eot" />
+    <None Include="fonts\Muli-Regular.ttf" />
+    <None Include="fonts\Muli-Regular.woff" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
