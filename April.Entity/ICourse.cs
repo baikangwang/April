@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region
+
+using April.Entity.Base;
+
+#endregion
 
 namespace April.Entity
 {
-    public interface ICourse
+    public interface ICourse : IBaseObject
     {
         int Id { get; set; }
-        string Name { get; set; }
         ITeacher Teacher { get; set; }
         int Hours { get; set; }
         int Credit { get; set; }

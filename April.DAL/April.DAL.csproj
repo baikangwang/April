@@ -40,10 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Factory\ReaderFactory.cs" />
+    <Compile Include="UserGateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\April.Core\April.Core.csproj">
+      <Project>{28BD41E7-5676-44A9-8430-099C9E3CE468}</Project>
+      <Name>April.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\April.EntityImpl\April.EntityImpl.csproj">
       <Project>{3403EBAE-545C-4F36-9A01-DB5DA271C2AB}</Project>
       <Name>April.EntityImpl</Name>

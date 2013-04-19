@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region
+
+using System.Security.Principal;
 using April.Entity.Base;
+
+#endregion
 
 namespace April.Entity
 {
-    public interface IUser
+    public interface IUser : IPrincipal, IBaseObject
     {
-        string Name { get; set; }
         string Id { get; set; }
         Gender Gender { get; set; }
         string ContactNo { get; set; }
+        Role Role { get; }
     }
 }

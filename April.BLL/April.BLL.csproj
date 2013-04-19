@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="UserMgr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\April.Core\April.Core.csproj">
+      <Project>{28BD41E7-5676-44A9-8430-099C9E3CE468}</Project>
+      <Name>April.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\April.DAL\April.DAL.csproj">
       <Project>{F312C58C-02AE-420B-B71B-4ADF2D7D9C5F}</Project>
       <Name>April.DAL</Name>

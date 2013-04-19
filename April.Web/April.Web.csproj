@@ -55,7 +55,9 @@
     <Content Include="about.html" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
-    <Content Include="Account\Login.aspx" />
+    <Content Include="ClassSelectionInfo.aspx" />
+    <Content Include="css\login.css" />
+    <Content Include="Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="blog.html" />
     <Content Include="contact.html" />
@@ -118,6 +120,10 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="StudentMgr.aspx" />
+    <Content Include="TeacherMgr.aspx" />
+    <Content Include="CourseMgr.aspx" />
+    <Content Include="Profile.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -141,11 +147,11 @@
     <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
       <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Account\Login.aspx.cs">
+    <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\Login.aspx.designer.cs">
+    <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Register.aspx.cs">
@@ -172,6 +178,34 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="StudentMgr.aspx.cs">
+      <DependentUpon>StudentMgr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentMgr.aspx.designer.cs">
+      <DependentUpon>StudentMgr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherMgr.aspx.cs">
+      <DependentUpon>TeacherMgr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherMgr.aspx.designer.cs">
+      <DependentUpon>TeacherMgr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CourseMgr.aspx.cs">
+      <DependentUpon>CourseMgr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CourseMgr.aspx.designer.cs">
+      <DependentUpon>CourseMgr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

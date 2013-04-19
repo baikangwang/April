@@ -41,11 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator.cs" />
+    <Compile Include="Base\BaseObject.cs" />
+    <Compile Include="Base\Property.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Selection.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Teacher.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="Base\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

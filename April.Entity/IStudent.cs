@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region
+
+using System;
+
+#endregion
 
 namespace April.Entity
 {
-    public interface IStudent:IUser
+    public interface IStudent : IUser
     {
-        DateTime Brithday { get; set; }
+        DateTime Birthday { get; set; }
         string Address { get; set; }
     }
 }

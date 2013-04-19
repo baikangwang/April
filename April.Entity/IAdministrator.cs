@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace April.Entity
+﻿namespace April.Entity
 {
-    public interface IAdministrator:IUser
+    public interface IAdministrator : IUser
     {
     }
 }

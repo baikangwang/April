@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using April.BLL;
+using April.Entity.Base;
+using April.Entity.Exception;
 
 namespace April.Web
 {
@@ -43,5 +46,37 @@ namespace April.Web
 
         }
 
+        void Application_AuthenticateRequest(object sender, EventArgs e)
+        {
+            try
+            {
+                string cookieName = FormsAuthentication.FormsCookieName;
+
+                HttpCookie authCookie = Context.Request.Cookies[cookieName];
+
+                if (authCookie == null) throw new TimeoutAuthException();
+
+                FormsAuthenticationTicket authTicket;
+                try
+                {
+                    authTicket = FormsAuthentication.Decrypt(authCookie.Value);
+                }
+                catch
+                {
+                    authTicket = null;
+                }
+
+                if (authTicket == null) throw new TimeoutAuthException();
+
+                string[] userdata = authTicket.UserData.Split(new char[] { '|' });
+                string id = userdata[0];
+                Role role = (Role)int.Parse(userdata[1]);
+                Context.User = UserMgr.Init(id, role);
+            }
+            catch (TimeoutAuthException ex)
+            {
+                //FormsAuthentication.RedirectToLoginPage("err=\""+ex.Message+"\"");
+            }
+        }
     }
 }

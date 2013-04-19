@@ -11,7 +11,7 @@ namespace April.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //HttpContext.Current.u
         }
     }
 }
