@@ -1,15 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="April.Web._Default" %>
+    CodeBehind="Default.aspx.cs" Inherits="April.Web.Default" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-</asp:Content>
-<asp:Content runat="server" ContentPlaceHolderID="LeftMenuBar" ID="LeftMenuBar">
-    <ul>
-        <li class="selected"><a href="index.html">Home</a> </li>
-        <li><a href="services.html">学生管理</a> </li>
-        <li><a href="portfolio.html">教师管理</a> </li>
-        <li><a href="contact.html">课程管理</a> </li>
-    </ul>
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>

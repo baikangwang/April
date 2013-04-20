@@ -19,13 +19,43 @@ namespace April.BLL
                 try
                 {
                     IUser user = UserGateway.Get(cmd, id, role);
+                    if (user == null)
+                        throw new UserNotFoundException(role);
                     cmd.Commint();
                     return user;
+                }
+                catch (UserNotFoundException)
+                {
+                    throw;
                 }
                 catch
                 {
                     cmd.RollBack();
                     throw new UserNotFoundException(role);
+                }
+            }
+        }
+
+        public static IUser Authenticate(string id, string pwd, Role role)
+        {
+            using (Command cmd = new Command("auth"))
+            {
+                try
+                {
+                    IUser user = UserGateway.Authenticate(cmd, id, pwd, role);
+                    if (user == null)
+                        throw new FailAuthException();
+                    cmd.Commint();
+                    return user;
+                }
+                catch (AuthenticationException)
+                {
+                    throw;
+                }
+                catch
+                {
+                    cmd.RollBack();
+                    throw new FailAuthException();
                 }
             }
         }

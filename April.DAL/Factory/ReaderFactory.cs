@@ -17,15 +17,26 @@ namespace April.DAL.Factory
             if (!reader.Read()) return null;
 
             Assembly entityImpl = Assembly.GetAssembly(typeof (BaseObject));
-            Type type = entityImpl.GetType(entity);
 
-            object obj = entityImpl.CreateInstance(entity);
+            string entityName = entityImpl.FullName.Substring(0, entityImpl.FullName.IndexOf(",")).Trim() + "." + entity;
+            Type type = entityImpl.GetType(entityName);
 
-            foreach (PropertyInfo property in type.GetProperties(BindingFlags.Public))
+            object obj = entityImpl.CreateInstance(entityName);
+
+            foreach (PropertyInfo property in type.GetProperties())
             {
-                int index = reader.GetOrdinal(property.Name);
-                property.SetValue(obj, reader.GetValue(index), null);
+                try
+                {
+                    int index = reader.GetOrdinal(property.Name);
+
+                    property.SetValue(obj, reader.GetValue(index), null);
+                }
+                catch
+                {
+                    continue;
+                }
             }
+            reader.Close();
 
             return obj as IBaseObject;
         }

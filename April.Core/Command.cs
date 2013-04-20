@@ -56,13 +56,13 @@ namespace April.Core
                     else
                         _command.Transaction.Rollback(_commandName);
                 }
-                _command.Transaction.Dispose();
+                //_command.Transaction.Dispose();
             }
 
             if (_command.Connection != null && _command.Connection.State != ConnectionState.Closed)
             {
                 _command.Connection.Close();
-                _command.Connection.Dispose();
+                //_command.Connection.Dispose();
             }
 
             _command.Dispose();

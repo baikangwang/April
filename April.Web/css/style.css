@@ -72,9 +72,6 @@ a img {
 	text-align:right;
 	padding:29px 27px 0 0;
 }
-.sidebar ul li.selected a, .sidebar ul li a:hover {
-	color:#6b6b6b;
-}
 .sidebar ul li a {
 	font-family:Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	font-size:24px;
@@ -85,6 +82,11 @@ a img {
 	line-height:30px;
 	text-shadow:0 1px 0 #dfdfdf;
 }
+
+.sidebar ul li.selected a, .sidebar ul li a:hover {
+	color:#6b6b6b;
+}
+
 .sidebar form {
 	margin:700px 0 0;
 	text-align:center;

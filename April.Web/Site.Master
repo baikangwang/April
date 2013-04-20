@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="April.Web.SiteMaster" %>
 
+<%@ Register src="Controls/MenuBar.ascx" tagname="MenuBar" tagprefix="april" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
@@ -17,15 +19,10 @@
 		<div class="page">
 			<div class="sidebar">
 				<a href="index.html" id="logo"><img src="images/logo.png" alt="logo"></a>
-        <asp:ContentPlaceHolder ID="LeftMenuBar" runat="server">
-        </asp:ContentPlaceHolder>
-				<form action="about.html">
-					<span>Newsletter Signup</span>
-					<input type="text" onClick="this.value='';" onFocus="this.select()" onBlur="this.value=!this.value?'Enter Valid Email Address':this.value;" value="Enter Valid Email Address">
-					<input type="submit" id="submit" value="submit">
-				</form>
+                <april:MenuBar ID="MenuBar1" runat="server" />
 				<div class="connect">
-					<a href="http://freewebsitetemplates.com/go/facebook/" id="facebook">facebook</a> <a href="http://freewebsitetemplates.com/go/twitter/" id="twitter">twitter</a> <a href="http://freewebsitetemplates.com/go/googleplus/" id="googleplus">youtube</a>
+					<a href="http://freewebsitetemplates.com/go/facebook/" id="facebook">facebook
+                    </a> &nbsp;<a href="http://freewebsitetemplates.com/go/twitter/" id="twitter">twitter</a> <a href="http://freewebsitetemplates.com/go/googleplus/" id="googleplus">youtube</a>
 				</div>
 				<p>
 					Copyright 2023

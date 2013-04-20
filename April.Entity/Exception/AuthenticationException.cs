@@ -24,4 +24,17 @@ namespace April.Entity.Exception
             }
         }
     }
+
+    public class FailAuthException : AuthenticationException
+    {
+        public override string Message
+        {
+            get
+            {
+                string msg = "学（工）号或密码不正确。";
+
+                return string.IsNullOrEmpty(base.Message) ? msg : base.Message + "。" + msg;
+            }
+        }
+    }
 }

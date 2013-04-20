@@ -11,7 +11,7 @@ namespace April.Web
 {
 
 
-    public partial class CourseMgr
+    public partial class StdProfile
     {
     }
 }

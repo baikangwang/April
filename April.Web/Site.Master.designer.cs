@@ -22,13 +22,13 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
-        /// LeftMenuBar control.
+        /// MenuBar1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder LeftMenuBar;
+        protected global::April.Web.Controls.MenuBar MenuBar1;
         
         /// <summary>
         /// MainContent control.

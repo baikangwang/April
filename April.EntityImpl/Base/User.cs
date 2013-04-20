@@ -19,10 +19,13 @@ namespace April.EntityImpl.Base
 
         public virtual bool IsInRole(string role)
         {
-            return !string.IsNullOrEmpty(role);
+            return false;
         }
 
-        public virtual IIdentity Identity { get; private set; }
+        public virtual IIdentity Identity
+        {
+            get { return new GenericIdentity(Id);}
+        }
 
         #endregion
     }

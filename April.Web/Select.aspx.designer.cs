@@ -11,7 +11,7 @@ namespace April.Web
 {
 
 
-    public partial class WebForm4
+    public partial class Select
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace April.Web
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class TeacherMgr : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -11,7 +11,7 @@ namespace April.Web
 {
 
 
-    public partial class WebForm2
+    public partial class TeacherMgr
     {
     }
 }

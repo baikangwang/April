@@ -55,7 +55,7 @@
     <Content Include="about.html" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
-    <Content Include="ClassSelectionInfo.aspx" />
+    <Content Include="Controls\MenuBar.ascx" />
     <Content Include="css\login.css" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Register.aspx" />
@@ -113,7 +113,9 @@
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -123,7 +125,12 @@
     <Content Include="StudentMgr.aspx" />
     <Content Include="TeacherMgr.aspx" />
     <Content Include="CourseMgr.aspx" />
-    <Content Include="Profile.aspx" />
+    <Content Include="TchProfile.aspx" />
+    <Content Include="TchQuery.aspx" />
+    <Content Include="StdProfile.aspx" />
+    <Content Include="StdQuery.aspx" />
+    <Content Include="Select.aspx" />
+    <Content Include="Home.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -146,6 +153,13 @@
     </Compile>
     <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
       <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MenuBar.ascx.cs">
+      <DependentUpon>MenuBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\MenuBar.ascx.designer.cs">
+      <DependentUpon>MenuBar.ascx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -200,12 +214,47 @@
     <Compile Include="CourseMgr.aspx.designer.cs">
       <DependentUpon>CourseMgr.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Profile.aspx.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
+    <Compile Include="TchProfile.aspx.cs">
+      <DependentUpon>TchProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Profile.aspx.designer.cs">
-      <DependentUpon>Profile.aspx</DependentUpon>
+    <Compile Include="TchProfile.aspx.designer.cs">
+      <DependentUpon>TchProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TchQuery.aspx.cs">
+      <DependentUpon>TchQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TchQuery.aspx.designer.cs">
+      <DependentUpon>TchQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StdProfile.aspx.cs">
+      <DependentUpon>StdProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StdProfile.aspx.designer.cs">
+      <DependentUpon>StdProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StdQuery.aspx.cs">
+      <DependentUpon>StdQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StdQuery.aspx.designer.cs">
+      <DependentUpon>StdQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Select.aspx.cs">
+      <DependentUpon>Select.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Select.aspx.designer.cs">
+      <DependentUpon>Select.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

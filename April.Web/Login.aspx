@@ -25,7 +25,12 @@
             <asp:ListItem Value="0">管理员</asp:ListItem>
 <asp:ListItem Value="1">教师</asp:ListItem><asp:ListItem Value="2">学生</asp:ListItem>        
         </Items></asp:DropDownList></p>
-        <p><input type="button" class="button" id="btnLogin" runat="server" validationgroup="LoginVal" 
-            onclick="LoginButton_Click" value="登录"/></p>
+        <p>
+            <asp:CheckBox ID="ckbRememder" runat="server" Text="一月内免登录" />
+        </p>
+        <p>
+            <asp:Button ID="btnLogin" runat="server" Text="登录" OnClick="btnLogin_Click" ValidationGroup="LoginVal" /></p>
+            <p><asp:Label ID="lblError" runat="server" CssClass="error"></asp:Label>
+            </p>
     </div>
 </asp:Content>
