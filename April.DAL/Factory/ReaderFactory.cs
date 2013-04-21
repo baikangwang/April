@@ -3,6 +3,8 @@
 using System;
 using System.Data.SqlClient;
 using System.Reflection;
+using April.Core;
+using April.Entity;
 using April.Entity.Base;
 using April.EntityImpl.Base;
 
@@ -14,8 +16,6 @@ namespace April.DAL.Factory
     {
         public static IBaseObject Reader(SqlDataReader reader, string entity)
         {
-            if (!reader.Read()) return null;
-
             Assembly entityImpl = Assembly.GetAssembly(typeof (BaseObject));
 
             string entityName = entityImpl.FullName.Substring(0, entityImpl.FullName.IndexOf(",")).Trim() + "." + entity;
@@ -23,20 +23,42 @@ namespace April.DAL.Factory
 
             object obj = entityImpl.CreateInstance(entityName);
 
-            foreach (PropertyInfo property in type.GetProperties())
+            foreach (PropertyInfo p in type.GetProperties())
             {
                 try
                 {
-                    int index = reader.GetOrdinal(property.Name);
+                    int index;
+                    object value;
+                    if (p.DeclaringType != null && p.DeclaringType.IsInterface && p.DeclaringType == typeof (ITeacher))
+                    {
+                        index = reader.GetOrdinal("Teacher_Id");
+                        using (Command cmd = new Command("init_teacher"))
+                        {
+                            try
+                            {
+                                string id = Convert.ToString(reader.GetValue(index));
+                                value = UserGateway.Get(cmd, id, Role.Teacher) as ITeacher;
+                                cmd.Commint();
+                            }
+                            catch
+                            {
+                                cmd.RollBack();
+                                value = null;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        index = reader.GetOrdinal(p.Name);
+                        value = reader.GetValue(index);
+                    }
 
-                    property.SetValue(obj, reader.GetValue(index), null);
+                    p.SetValue(obj, value, null);
                 }
                 catch
                 {
-                    continue;
                 }
             }
-            reader.Close();
 
             return obj as IBaseObject;
         }

@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿#region
+
+using System;
+
+#endregion
 
 namespace April.Entity.Exception
 {
-    public abstract class AuthenticationException:ApplicationException
+    public abstract class AuthenticationException : ApplicationException
     {
-        protected AuthenticationException():base(){}
-
-        protected AuthenticationException(string message):base(message){}
     }
 
-    public class TimeoutAuthException:AuthenticationException
+    public class TimeoutAuthException : AuthenticationException
     {
         public override string Message
         {
@@ -20,7 +18,7 @@ namespace April.Entity.Exception
             {
                 string msg = "登录超时，请重新登录。";
 
-                return string.IsNullOrEmpty(base.Message) ? msg : base.Message + "。" + msg;
+                return msg;
             }
         }
     }
@@ -33,7 +31,7 @@ namespace April.Entity.Exception
             {
                 string msg = "学（工）号或密码不正确。";
 
-                return string.IsNullOrEmpty(base.Message) ? msg : base.Message + "。" + msg;
+                return msg;
             }
         }
     }

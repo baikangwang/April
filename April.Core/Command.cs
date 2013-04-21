@@ -87,7 +87,7 @@ namespace April.Core
 
         public SqlParameter AddParameter(string name, object value)
         {
-            return _command.Parameters.AddWithValue(name, value);
+            return _command.Parameters.AddWithValue(name, value ?? DBNull.Value);
         }
 
 

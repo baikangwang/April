@@ -13,8 +13,9 @@ namespace April.EntityImpl
     {
         #region IStudent Members
 
-        public virtual DateTime Birthday { get; set; }
+        public virtual DateTime? Birthday { get; set; }
         public virtual string Address { get; set; }
+        public virtual string Grade { get; set; }
 
         public override Role Role
         {

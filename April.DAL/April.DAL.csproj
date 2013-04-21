@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CourseGateway.cs" />
     <Compile Include="Factory\ReaderFactory.cs" />
     <Compile Include="UserGateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

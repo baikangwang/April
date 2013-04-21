@@ -45,6 +45,7 @@
     <Compile Include="Base\IProperty.cs" />
     <Compile Include="Base\Role.cs" />
     <Compile Include="Exception\AuthenticationException.cs" />
+    <Compile Include="Exception\CouseException.cs" />
     <Compile Include="Exception\UserException.cs" />
     <Compile Include="IAdministrator.cs" />
     <Compile Include="ICourse.cs" />

@@ -154,6 +154,9 @@
     <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
       <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Base\MgrPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Controls\MenuBar.ascx.cs">
       <DependentUpon>MenuBar.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,6 +271,10 @@
     <ProjectReference Include="..\April.BLL\April.BLL.csproj">
       <Project>{39A64F08-AC9D-4713-A23E-224618EB628E}</Project>
       <Name>April.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\April.Core\April.Core.csproj">
+      <Project>{28BD41E7-5676-44A9-8430-099C9E3CE468}</Project>
+      <Name>April.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\April.Entity\April.Entity.csproj">
       <Project>{A454AEAF-EDE2-4406-829F-2EBD4796395F}</Project>

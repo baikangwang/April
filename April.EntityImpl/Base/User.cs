@@ -24,7 +24,7 @@ namespace April.EntityImpl.Base
 
         public virtual IIdentity Identity
         {
-            get { return new GenericIdentity(Id);}
+            get { return new GenericIdentity(Id); }
         }
 
         #endregion
