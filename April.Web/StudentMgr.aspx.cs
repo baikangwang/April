@@ -25,13 +25,17 @@ namespace April.Web
                 editForm.Visible = true;
                 if (string.IsNullOrEmpty(Id) || Item as IStudent == null)
                 {
+                    lblPwd.Visible = true;
+                    txtPwd.Visible = true;
+                    ReqPwd.ValidationGroup = "save";
+                    
                     txtId.Text = string.Empty;
                     txtName.Text = string.Empty;
                     txtGrade.Text = string.Empty;
                     txtContactNo.Text = string.Empty;
                     txtAddress.Text = string.Empty;
                     txtPwd.Text = string.Empty;
-                    ddlGender.SelectedValue = Convert.ToString((int) Gender.Male);
+                    ckbGender.Checked = true; // Gender.Male
                     calBirthday.SelectedDate = DateTime.MinValue;
 
                     btnReset.Visible = false;
@@ -40,6 +44,7 @@ namespace April.Web
                 {
                     lblPwd.Visible = false;
                     txtPwd.Visible = false;
+                    ReqPwd.ValidationGroup = string.Empty;
 
                     IStudent student = Item as IStudent;
                     txtId.Text = student.Id;
@@ -48,7 +53,7 @@ namespace April.Web
                     txtAddress.Text = student.Address;
                     txtContactNo.Text = student.ContactNo;
                     calBirthday.SelectedDate = student.Birthday == null ? DateTime.MinValue : student.Birthday.Value;
-                    ddlGender.SelectedValue = Convert.ToString(((int) student.Gender));
+                    ckbGender.Checked = student.Gender == Gender.Male;
 
                     btnReset.Visible = true;
                     btnReset.NavigateUrl = string.Format("~/StudentMgr.aspx?Id={0}&Mode=Edit", Id);
@@ -98,7 +103,7 @@ namespace April.Web
             values.Add(Student.Id.Name, txtId.Text);
             values.Add(Student.Name.Name, txtName.Text);
             values.Add(Student.Grade.Name, txtGrade.Text);
-            values.Add(Student.Gender.Name, (Gender) int.Parse(ddlGender.SelectedValue));
+            values.Add(Student.Gender.Name, ckbGender.Checked?Gender.Male:Gender.Female);
             values.Add(Student.ContactNo.Name, txtContactNo.Text);
             values.Add(Student.Birthday.Name, calBirthday.SelectedDate==DateTime.MinValue?(object) null:calBirthday.SelectedDate);
             values.Add(Student.Address.Name, txtAddress.Text);

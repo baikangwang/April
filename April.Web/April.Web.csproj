@@ -33,7 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.7.0123\lib\40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\AjaxControlToolkit.7.0123\lib\40\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SanitizerProviders">
+      <HintPath>..\packages\AjaxControlToolkit.7.0123\lib\40\SanitizerProviders\SanitizerProviders.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -57,6 +66,11 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Controls\MenuBar.ascx" />
     <Content Include="css\login.css" />
+    <Content Include="css\validation.css" />
+    <Content Include="images\icons\business_contact.png" />
+    <Content Include="images\icons\closed_topic.png" />
+    <Content Include="images\icons\female.gif" />
+    <Content Include="images\icons\male.gif" />
     <Content Include="Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="blog.html" />
@@ -288,6 +302,7 @@
     <None Include="fonts\Muli-Regular.eot" />
     <None Include="fonts\Muli-Regular.ttf" />
     <None Include="fonts\Muli-Regular.woff" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

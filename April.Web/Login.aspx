@@ -11,7 +11,7 @@
     
     <div class="login">
             <p>
-            <asp:Label runat="server" ID="Label1" CssClass="label" AssociatedControlID="txtId" Text="学（工）号:"></asp:Label>
+         <asp:Image ID="imgId" runat="server" ImageUrl="images/icons/business_contact.png" AlternateText="学（工）号" />  
         <input type="text" class="text" id="txtId" runat="server" />
         <asp:RequiredFieldValidator ID="reqId" runat="server" ControlToValidate="txtId" CssClass="failureNotification"
             ErrorMessage="学（工）号不能为空" ToolTip="请输入学（工）号" ValidationGroup="LoginVal">*</asp:RequiredFieldValidator></p>

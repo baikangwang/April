@@ -3,6 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1">
+    </ajaxToolkit:ToolkitScriptManager>
     <div>
         <div><asp:HyperLink ID="btnAdd" runat="server" NavigateUrl="~/StudentMgr.aspx?Mode=Edit">添加</asp:HyperLink></div>
         <div><asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" Text="刷新" /></div>   
@@ -74,11 +76,18 @@
         <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
         <asp:Label ID="lblName" runat="server" Text="姓名" AssociatedControlID="txtName"></asp:Label>
         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-        <asp:Label ID="lblGender" runat="server" Text="性别" AssociatedControlID="ddlGender"></asp:Label>
-        <asp:DropDownList ID="ddlGender" runat="server">
-            <asp:ListItem Value="0">男</asp:ListItem>
-            <asp:ListItem Value="1">女</asp:ListItem>
-        </asp:DropDownList>
+                <asp:CheckBox ID="ckbGender" Checked="true" runat="server"/>
+                <ajaxToolkit:ToggleButtonExtender ID="ckbToggle" runat="server"
+                    TargetControlID="ckbGender"
+                    ImageWidth="40"
+                    ImageHeight="40"
+                    CheckedImageUrl="images/icons/male.gif"
+                    UncheckedImageUrl="images/icons/female.gif"
+                    CheckedImageAlternateText="男"
+                    UncheckedImageAlternateText="女" />
+        <br/>
+        <br/>
+        <br/>
         <asp:Label ID="lblGrade" runat="server" Text="年级" AssociatedControlID="txtGrade"></asp:Label>
         <asp:TextBox ID="txtGrade" runat="server"></asp:TextBox>
         <asp:Label ID="lblBirthday" runat="server" Text="出生年月" AssociatedControlID="calBirthday"></asp:Label>
@@ -90,9 +99,31 @@
         <asp:Label ID="lblPwd" runat="server" Text="密码" AssociatedControlID="txtPwd"></asp:Label>
         <asp:TextBox ID="txtPwd" runat="server"></asp:TextBox>
         <div id="editCommand" runat="server">
-            <asp:Button ID="btnSave" runat="server" Text="保存" OnClick="btnSave_Click" />
+            <asp:Button ID="btnSave" runat="server" ValidationGroup="save" Text="保存" OnClick="btnSave_Click" />
             <asp:HyperLink ID="btnReset" runat="server">重置</asp:HyperLink>
             <asp:HyperLink ID="btnCancel" runat="server" NavigateUrl="~/StudentMgr.aspx">取消</asp:HyperLink>
         </div>
+        
+        <asp:RequiredFieldValidator runat="server" ID="ReqId"
+            ControlToValidate="txtId"
+            Display="None"
+            ErrorMessage="<b>必填项</b><br />请填写学号" ValidationGroup="save" />
+        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqIdEx"
+            TargetControlID="ReqId"
+            HighlightCssClass="validatorCalloutHighlight" />
+        <asp:RequiredFieldValidator runat="server" ID="ReqName"
+            ControlToValidate="txtName"
+            Display="None"
+            ErrorMessage="<b>必填项</b><br />请填写姓名" ValidationGroup="save" />
+        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqNameEx"
+            TargetControlID="ReqName"
+            HighlightCssClass="validatorCalloutHighlight" />
+        <asp:RequiredFieldValidator runat="server" ID="ReqPwd"
+            ControlToValidate="txtPwd"
+            Display="None"
+            ErrorMessage="<b>必填项</b><br />请设置初始密码"  ValidationGroup="save"/>
+        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqPwdEx"
+            TargetControlID="ReqPwd"
+            HighlightCssClass="validatorCalloutHighlight" />
     </div>
 </asp:Content>
