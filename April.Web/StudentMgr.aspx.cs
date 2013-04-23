@@ -36,7 +36,7 @@ namespace April.Web
                     txtAddress.Text = string.Empty;
                     txtPwd.Text = string.Empty;
                     ckbGender.Checked = true; // Gender.Male
-                    calBirthday.SelectedDate = DateTime.MinValue;
+                    txtBirthday.Text = string.Empty;
 
                     btnReset.Visible = false;
                 }
@@ -52,7 +52,7 @@ namespace April.Web
                     txtGrade.Text = student.Grade;
                     txtAddress.Text = student.Address;
                     txtContactNo.Text = student.ContactNo;
-                    calBirthday.SelectedDate = student.Birthday == null ? DateTime.MinValue : student.Birthday.Value;
+                    txtBirthday.Text = student.Birthday == null ? string.Empty : student.Birthday.Value.ToString("yyyy-MM-dd");
                     ckbGender.Checked = student.Gender == Gender.Male;
 
                     btnReset.Visible = true;
@@ -105,7 +105,7 @@ namespace April.Web
             values.Add(Student.Grade.Name, txtGrade.Text);
             values.Add(Student.Gender.Name, ckbGender.Checked?Gender.Male:Gender.Female);
             values.Add(Student.ContactNo.Name, txtContactNo.Text);
-            values.Add(Student.Birthday.Name, calBirthday.SelectedDate==DateTime.MinValue?(object) null:calBirthday.SelectedDate);
+            values.Add(Student.Birthday.Name, string.IsNullOrEmpty(txtBirthday.Text)?(object)null:Convert.ToDateTime(txtBirthday.Text));
             values.Add(Student.Address.Name, txtAddress.Text);
             
             if (string.IsNullOrEmpty(Id))

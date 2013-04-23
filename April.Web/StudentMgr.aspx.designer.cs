@@ -274,6 +274,15 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// ckbGender control.
         /// </summary>
         /// <remarks>
@@ -319,13 +328,22 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.Label lblBirthday;
         
         /// <summary>
-        /// calBirthday control.
+        /// txtBirthday control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar calBirthday;
+        protected global::System.Web.UI.WebControls.TextBox txtBirthday;
+        
+        /// <summary>
+        /// ImgBntCalc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImgBntCalc;
         
         /// <summary>
         /// lblContactNo control.
@@ -470,5 +488,23 @@ namespace April.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ValidatorCalloutExtender ReqPwdEx;
+        
+        /// <summary>
+        /// txtBirthdayEx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender txtBirthdayEx;
+        
+        /// <summary>
+        /// txtBirthdayCalEx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender txtBirthdayCalEx;
     }
 }

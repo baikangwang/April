@@ -76,6 +76,8 @@
         <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
         <asp:Label ID="lblName" runat="server" Text="姓名" AssociatedControlID="txtName"></asp:Label>
         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+        <asp:UpdatePanel runat="server" ID="UpdatePanel1">
+            <ContentTemplate>
                 <asp:CheckBox ID="ckbGender" Checked="true" runat="server"/>
                 <ajaxToolkit:ToggleButtonExtender ID="ckbToggle" runat="server"
                     TargetControlID="ckbGender"
@@ -85,13 +87,13 @@
                     UncheckedImageUrl="images/icons/female.gif"
                     CheckedImageAlternateText="男"
                     UncheckedImageAlternateText="女" />
-        <br/>
-        <br/>
-        <br/>
+            </ContentTemplate>
+        </asp:UpdatePanel>
         <asp:Label ID="lblGrade" runat="server" Text="年级" AssociatedControlID="txtGrade"></asp:Label>
         <asp:TextBox ID="txtGrade" runat="server"></asp:TextBox>
         <asp:Label ID="lblBirthday" runat="server" Text="出生年月" AssociatedControlID="calBirthday"></asp:Label>
-        <asp:Calendar ID="calBirthday" runat="server"></asp:Calendar>
+        <asp:TextBox ID="txtBirthday" runat="server" Width="130px" MaxLength="1" style="text-align:justify" />
+        <asp:ImageButton ID="ImgBntCalc" runat="server" ImageUrl="~/images/Calendar_scheduleHS.png" CausesValidation="False" />
         <asp:Label ID="lblContactNo" runat="server" Text="电话" AssociatedControlID="txtContactNo"></asp:Label>
         <asp:TextBox ID="txtContactNo" runat="server"></asp:TextBox>
         <asp:Label ID="lblAddress" runat="server" Text="地址" AssociatedControlID="txtAddress"></asp:Label>
@@ -125,5 +127,17 @@
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqPwdEx"
             TargetControlID="ReqPwd"
             HighlightCssClass="validatorCalloutHighlight" />
+
+        <ajaxToolkit:MaskedEditExtender ID="txtBirthdayEx" runat="server"
+            TargetControlID="txtBirthday"  
+            Mask="9999-99-99"
+            MessageValidatorTip="true"
+            OnFocusCssClass="MaskedEditFocus"
+            OnInvalidCssClass="MaskedEditError"
+            MaskType="Date"
+            DisplayMoney="Left"
+            AcceptNegative="Left"
+            ErrorTooltipEnabled="True" />
+         <ajaxToolkit:CalendarExtender ID="txtBirthdayCalEx" runat="server" TargetControlID="txtBirthday" PopupButtonID="ImgBntCalc" />
     </div>
 </asp:Content>
