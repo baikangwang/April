@@ -10,6 +10,7 @@ namespace April.EntityImpl.Base
     {
         #region IBaseObject Members
 
+        public string Id { get; set; }
         public virtual string Name { get; set; }
 
         #endregion

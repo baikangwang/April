@@ -199,8 +199,9 @@ a img {
 	-moz-box-shadow: 0 0 5px 3px #d3d3d3;
 	-webkit-box-shadow: 0 0 5px 3px#d3d3d3;
 	box-shadow: 0 0 5px 3px #d3d3d3;
-	overflow:hidden;
 }
+	/*overflow:hidden;*/
+
 .body div h2 {
 	color: #919191;
 	font-family:Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;

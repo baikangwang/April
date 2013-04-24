@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1">
-    </ajaxToolkit:ToolkitScriptManager>
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
     <div>
         <div><asp:HyperLink ID="btnAdd" runat="server" NavigateUrl="~/TeacherMgr.aspx?Mode=Edit">添加</asp:HyperLink></div>
         <div><asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" Text="刷新" /></div>   
@@ -15,7 +14,7 @@
         <Columns>
             <asp:HyperLinkField DataNavigateUrlFields="Id" 
                 DataNavigateUrlFormatString="~/TeacherMgr.aspx?Id={0}" DataTextField="Id" 
-                HeaderText="学号" />
+                HeaderText="工号" />
             <asp:BoundField DataField="Name" HeaderText="姓名" />
             <asp:TemplateField HeaderText="性别">
                 <ItemTemplate>
@@ -54,13 +53,13 @@
             <asp:HyperLink ID="btnEdit" runat="server">修改</asp:HyperLink>
             <asp:HyperLink ID="btnClose" runat="server" NavigateUrl="~/TeacherMgr.aspx">关闭</asp:HyperLink>
         </div>
-        <asp:Label ID="Label1" runat="server" Text="学号" AssociatedControlID="lblvId"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="工号" AssociatedControlID="lblvId"></asp:Label>
         <asp:Label ID="lblvId" runat="server"></asp:Label>
         <asp:Label ID="Label2" runat="server" Text="姓名" AssociatedControlID="lblvName"></asp:Label>
         <asp:Label ID="lblvName" runat="server"></asp:Label>
         <asp:Label ID="Label3" runat="server" Text="性别" AssociatedControlID="lblvGender"></asp:Label>
         <asp:Label ID="lblvGender" runat="server"></asp:Label>
-        <asp:Label ID="Label4" runat="server" Text="职称" AssociatedControlID="lblvGrade"></asp:Label>
+        <asp:Label ID="Label4" runat="server" Text="职称" AssociatedControlID="lblvTitle"></asp:Label>
         <asp:Label ID="lblvTitle" runat="server"></asp:Label>
         <asp:Label ID="Label6" runat="server" Text="电话" AssociatedControlID="lblvContactNo"></asp:Label>
         <asp:Label ID="lblvContactNo" runat="server"></asp:Label>
@@ -68,7 +67,7 @@
         <asp:Label ID="lblvPwd" runat="server"></asp:Label>
     </div>
     <div id="editForm" runat="server">
-        <asp:Label ID="lblId" runat="server" Text="学号" AssociatedControlID="txtId"></asp:Label>
+        <asp:Label ID="lblId" runat="server" Text="工号" AssociatedControlID="txtId"></asp:Label>
         <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
         <asp:Label ID="lblName" runat="server" Text="姓名" AssociatedControlID="txtName"></asp:Label>
         <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
@@ -100,7 +99,7 @@
         <asp:RequiredFieldValidator runat="server" ID="ReqId"
             ControlToValidate="txtId"
             Display="None"
-            ErrorMessage="<b>必填项</b><br />请填写学号" ValidationGroup="save" />
+            ErrorMessage="<b>必填项</b><br />请填写工号" ValidationGroup="save" />
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqIdEx"
             TargetControlID="ReqId"
             HighlightCssClass="validatorCalloutHighlight" />

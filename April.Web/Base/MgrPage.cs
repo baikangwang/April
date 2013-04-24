@@ -11,19 +11,7 @@ namespace April.Web.Base
 {
     public abstract class MgrPage:Page
     {
-        protected abstract bool IsEdit { get; }
-    }
-
-    public abstract class UserMgrPage : MgrPage
-    {
-        protected virtual string Id
-        {
-            get { return this.Request.QueryString["Id"]; }
-        }
-
-        protected abstract Role Role { get; }
-
-        protected override bool IsEdit
+        protected virtual bool IsEdit
         {
             get
             {
@@ -32,7 +20,21 @@ namespace April.Web.Base
             }
         }
 
-        protected virtual IUser Item
+        protected virtual string Id
+        {
+            get { return this.Request.QueryString["Id"]; }
+        }
+
+        protected abstract IBaseObject Item { get; }
+
+        protected abstract string Entity { get; }
+    }
+
+    public abstract class UserMgrPage : MgrPage
+    {
+        protected abstract Role Role { get; }
+
+        protected override IBaseObject Item
         {
             get
             {
@@ -47,6 +49,11 @@ namespace April.Web.Base
                     return null;
                 }
             }
+        }
+
+        protected override string Entity
+        {
+            get { return Role.ToEntity(); }
         }
     }
 }

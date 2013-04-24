@@ -11,7 +11,6 @@ namespace April.EntityImpl
     {
         #region ICourse Members
 
-        public virtual int Id { get; set; }
         public virtual ITeacher Teacher { get; set; }
         public virtual int Hours { get; set; }
         public virtual int Credit { get; set; }

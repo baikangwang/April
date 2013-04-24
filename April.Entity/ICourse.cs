@@ -8,7 +8,6 @@ namespace April.Entity
 {
     public interface ICourse : IBaseObject
     {
-        int Id { get; set; }
         ITeacher Teacher { get; set; }
         int Hours { get; set; }
         int Credit { get; set; }

@@ -64,9 +64,14 @@
     <Content Include="about.html" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="App_Data\April.mdf" />
+    <Content Include="App_Data\April_log.ldf">
+      <DependentUpon>April.mdf</DependentUpon>
+    </Content>
     <Content Include="Controls\MenuBar.ascx" />
+    <Content Include="css\ajax.css" />
     <Content Include="css\login.css" />
-    <Content Include="css\validation.css" />
+    <Content Include="images\Calendar_scheduleHS.png" />
     <Content Include="images\icons\business_contact.png" />
     <Content Include="images\icons\closed_topic.png" />
     <Content Include="images\icons\female.gif" />
@@ -274,9 +279,7 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />

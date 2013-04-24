@@ -1,12 +1,13 @@
 ﻿#region
 
 using April.Entity;
+using April.EntityImpl.Base;
 
 #endregion
 
 namespace April.EntityImpl
 {
-    public class Selection : ISelection
+    public class Selection :BaseObject, ISelection
     {
         #region ISelection Members
 

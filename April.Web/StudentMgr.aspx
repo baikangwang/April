@@ -3,8 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1">
-    </ajaxToolkit:ToolkitScriptManager>
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
     <div>
         <div><asp:HyperLink ID="btnAdd" runat="server" NavigateUrl="~/StudentMgr.aspx?Mode=Edit">添加</asp:HyperLink></div>
         <div><asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" Text="刷新" /></div>   
@@ -91,7 +90,7 @@
         </asp:UpdatePanel>
         <asp:Label ID="lblGrade" runat="server" Text="年级" AssociatedControlID="txtGrade"></asp:Label>
         <asp:TextBox ID="txtGrade" runat="server"></asp:TextBox>
-        <asp:Label ID="lblBirthday" runat="server" Text="出生年月" AssociatedControlID="calBirthday"></asp:Label>
+        <asp:Label ID="lblBirthday" runat="server" Text="出生年月" AssociatedControlID="txtBirthday"></asp:Label>
         <asp:TextBox ID="txtBirthday" runat="server" Width="130px" MaxLength="1" style="text-align:justify" />
         <asp:ImageButton ID="ImgBntCalc" runat="server" ImageUrl="~/images/Calendar_scheduleHS.png" CausesValidation="False" />
         <asp:Label ID="lblContactNo" runat="server" Text="电话" AssociatedControlID="txtContactNo"></asp:Label>

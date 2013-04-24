@@ -12,7 +12,6 @@ namespace April.EntityImpl.Base
     {
         #region IUser Members
 
-        public virtual string Id { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual string ContactNo { get; set; }
         public virtual Role Role { get; private set; }
