@@ -91,11 +91,17 @@ namespace April.Web
         {
             IDictionary<string, object> values = new Dictionary<string, object>();
 
-            values.Add(Teacher.Id.Name, txtId.Text);
-            values.Add(Teacher.Name.Name, txtName.Text);
-            values.Add(Teacher.Title.Name, txtTitle.Text);
-            values.Add(Teacher.Gender.Name, ckbGender.Checked ? Gender.Male : Gender.Female);
-            values.Add(Teacher.ContactNo.Name, txtContactNo.Text);
+            string id = txtId.Text.Trim();
+            string name = txtName.Text.Trim();
+            Gender gender = ckbGender.Checked ? Gender.Male : Gender.Female;
+            string contactNo = txtContactNo.Text.Trim();
+            string title = txtTitle.Text.Trim();
+
+            values.Add(Teacher.Id.Name, id);
+            values.Add(Teacher.Name.Name, name);
+            values.Add(Teacher.Title.Name, string.IsNullOrEmpty(title) ? null : title);
+            values.Add(Teacher.Gender.Name, gender);
+            values.Add(Teacher.ContactNo.Name, string.IsNullOrEmpty(contactNo)?null:contactNo);
 
             if (string.IsNullOrEmpty(Id))
                 values.Add(Teacher.Password.Name, txtPwd.Text);
@@ -111,8 +117,6 @@ namespace April.Web
                 }
                 else
                 {
-                    string id = txtId.Text;
-
                     IUser existing;
                     try
                     {

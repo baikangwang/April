@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CourseGateway.cs" />
     <Compile Include="Factory\ReaderFactory.cs" />
+    <Compile Include="SelectionGateway.cs" />
     <Compile Include="UserGateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

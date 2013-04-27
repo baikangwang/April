@@ -34,20 +34,29 @@ namespace April.Web.Base
     {
         protected abstract Role Role { get; }
 
+        private IBaseObject _item = null;
+        
         protected override IBaseObject Item
         {
             get
             {
                 if (string.IsNullOrEmpty(Id))
-                    return null;
+                {
+                    _item = null;
+                    return _item;
+                }
+
                 try
                 {
-                    return UserMgr.Get(Id, Role);
+                    if(_item==null)
+                    _item= UserMgr.Get(Id, Role);
                 }
                 catch
                 {
-                    return null;
+                    return _item=null;
                 }
+
+                return _item;
             }
         }
 

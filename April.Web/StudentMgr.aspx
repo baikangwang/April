@@ -47,7 +47,7 @@
         </EmptyDataTemplate>
     </asp:GridView>
     </div>
-    <div><asp:Label ID="lblMessage" runat="server" Text=""></asp:Label></div>
+    <div id="err"><asp:Label ID="lblMessage" runat="server" Text=""></asp:Label></div>
     <div id="viewForm" runat="server">
         <div id="viewCommand">
             <asp:HyperLink ID="btnEdit" runat="server">修改</asp:HyperLink>
@@ -106,37 +106,42 @@
         </div>
         
         <asp:RequiredFieldValidator runat="server" ID="ReqId"
-            ControlToValidate="txtId"
-            Display="None"
-            ErrorMessage="<b>必填项</b><br />请填写学号" ValidationGroup="save" />
+                                    ControlToValidate="txtId"
+                                    Display="None"
+                                    ErrorMessage="<b>必填项</b><br />请填写学号" ValidationGroup="save" />
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqIdEx"
-            TargetControlID="ReqId"
-            HighlightCssClass="validatorCalloutHighlight" />
+                                              TargetControlID="ReqId"
+                                              HighlightCssClass="validatorCalloutHighlight" />
         <asp:RequiredFieldValidator runat="server" ID="ReqName"
-            ControlToValidate="txtName"
-            Display="None"
-            ErrorMessage="<b>必填项</b><br />请填写姓名" ValidationGroup="save" />
+                                    ControlToValidate="txtName"
+                                    Display="None"
+                                    ErrorMessage="<b>必填项</b><br />请填写姓名" 
+                                    ValidationGroup="save" />
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqNameEx"
-            TargetControlID="ReqName"
-            HighlightCssClass="validatorCalloutHighlight" />
+                                              TargetControlID="ReqName"
+                                              HighlightCssClass="validatorCalloutHighlight" />
         <asp:RequiredFieldValidator runat="server" ID="ReqPwd"
-            ControlToValidate="txtPwd"
-            Display="None"
-            ErrorMessage="<b>必填项</b><br />请设置初始密码"  ValidationGroup="save"/>
+                                    ControlToValidate="txtPwd"
+                                    Display="None"
+                                    ErrorMessage="<b>必填项</b><br />请设置初始密码"  
+                                    ValidationGroup="save"/>
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqPwdEx"
-            TargetControlID="ReqPwd"
-            HighlightCssClass="validatorCalloutHighlight" />
+                                              TargetControlID="ReqPwd"
+                                              HighlightCssClass="validatorCalloutHighlight" />
 
         <ajaxToolkit:MaskedEditExtender ID="txtBirthdayEx" runat="server"
-            TargetControlID="txtBirthday"  
-            Mask="9999-99-99"
-            MessageValidatorTip="true"
-            OnFocusCssClass="MaskedEditFocus"
-            OnInvalidCssClass="MaskedEditError"
-            MaskType="Date"
-            DisplayMoney="Left"
-            AcceptNegative="Left"
-            ErrorTooltipEnabled="True" />
-         <ajaxToolkit:CalendarExtender ID="txtBirthdayCalEx" runat="server" TargetControlID="txtBirthday" PopupButtonID="ImgBntCalc" />
+                                        TargetControlID="txtBirthday"  
+                                        Mask="9999年99月99日"
+                                        MessageValidatorTip="true"
+                                        OnFocusCssClass="MaskedEditFocus"
+                                        OnInvalidCssClass="MaskedEditError"
+                                        MaskType="Date"
+                                        DisplayMoney="Left"
+                                        AcceptNegative="Left"
+                                        ErrorTooltipEnabled="True" />
+        <ajaxToolkit:CalendarExtender ID="txtBirthdayCalEx" runat="server" 
+                                      TargetControlID="txtBirthday"
+                                      Format="yyyy年MM月dd日"
+                                      PopupButtonID="ImgBntCalc" />
     </div>
 </asp:Content>

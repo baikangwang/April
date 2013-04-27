@@ -47,7 +47,7 @@
         </EmptyDataTemplate>
     </asp:GridView>
     </div>
-    <div><asp:Label ID="lblMessage" runat="server" Text=""></asp:Label></div>
+    <div id="err"><asp:Label ID="lblMessage" runat="server" Text=""></asp:Label></div>
     <div id="viewForm" runat="server">
         <div id="viewCommand">
             <asp:HyperLink ID="btnEdit" runat="server">修改</asp:HyperLink>
@@ -75,13 +75,13 @@
             <ContentTemplate>
                 <asp:CheckBox ID="ckbGender" Checked="true" runat="server"/>
                 <ajaxToolkit:ToggleButtonExtender ID="ckbToggle" runat="server"
-                    TargetControlID="ckbGender"
-                    ImageWidth="40"
-                    ImageHeight="40"
-                    CheckedImageUrl="images/icons/male.gif"
-                    UncheckedImageUrl="images/icons/female.gif"
-                    CheckedImageAlternateText="男"
-                    UncheckedImageAlternateText="女" />
+                                                  TargetControlID="ckbGender"
+                                                  ImageWidth="40"
+                                                  ImageHeight="40"
+                                                  CheckedImageUrl="images/icons/male.gif"
+                                                  UncheckedImageUrl="images/icons/female.gif"
+                                                  CheckedImageAlternateText="男"
+                                                  UncheckedImageAlternateText="女" />
             </ContentTemplate>
         </asp:UpdatePanel>
         <asp:Label ID="lblTitle" runat="server" Text="职称" AssociatedControlID="txtTitle"></asp:Label>
@@ -97,25 +97,28 @@
         </div>
         
         <asp:RequiredFieldValidator runat="server" ID="ReqId"
-            ControlToValidate="txtId"
-            Display="None"
-            ErrorMessage="<b>必填项</b><br />请填写工号" ValidationGroup="save" />
+                                    ControlToValidate="txtId"
+                                    Display="None"
+                                    ErrorMessage="<b>必填项</b><br />请填写工号" 
+                                    ValidationGroup="save" />
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqIdEx"
-            TargetControlID="ReqId"
-            HighlightCssClass="validatorCalloutHighlight" />
+                                              TargetControlID="ReqId"
+                                              HighlightCssClass="validatorCalloutHighlight" />
         <asp:RequiredFieldValidator runat="server" ID="ReqName"
-            ControlToValidate="txtName"
-            Display="None"
-            ErrorMessage="<b>必填项</b><br />请填写姓名" ValidationGroup="save" />
+                                    ControlToValidate="txtName"
+                                    Display="None"
+                                    ErrorMessage="<b>必填项</b><br />请填写姓名" 
+                                    ValidationGroup="save" />
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqNameEx"
-            TargetControlID="ReqName"
-            HighlightCssClass="validatorCalloutHighlight" />
+                                              TargetControlID="ReqName"
+                                              HighlightCssClass="validatorCalloutHighlight" />
         <asp:RequiredFieldValidator runat="server" ID="ReqPwd"
-            ControlToValidate="txtPwd"
-            Display="None"
-            ErrorMessage="<b>必填项</b><br />请设置初始密码"  ValidationGroup="save"/>
+                                    ControlToValidate="txtPwd"
+                                    Display="None"
+                                    ErrorMessage="<b>必填项</b><br />请设置初始密码"
+                                    ValidationGroup="save"/>
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqPwdEx"
-            TargetControlID="ReqPwd"
-            HighlightCssClass="validatorCalloutHighlight" />
+                                              TargetControlID="ReqPwd"
+                                              HighlightCssClass="validatorCalloutHighlight" />
     </div>
 </asp:Content>

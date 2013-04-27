@@ -34,6 +34,27 @@ namespace April.DAL
             return null;
         }
 
+        public static ICourse GetByName(Command cmd,string name)
+        {
+            string table = Course.Table;
+            string columns = string.Join(",", Course.Properties.Select(p => p.Name).ToArray());
+            string sql = string.Format(@"select {0} from {1} where lower(Name)=lower(@Name)", columns, table);
+            cmd.CommandText = sql;
+            cmd.AddParameter("@Name", name);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                ICourse course = ReaderFactory.Reader(reader, Course.Entity) as ICourse;
+                reader.Close();
+                return course;
+            }
+            reader.Close();
+            return null;
+        }
+
+        //public static ICourse GetByTeacher(Command)
+
         public static IList<ICourse> List(Command cmd)
         {
             string table = Course.Table;

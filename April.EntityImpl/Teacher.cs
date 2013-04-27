@@ -19,6 +19,11 @@ namespace April.EntityImpl
             get { return Role.Teacher; }
         }
 
+        public override string ToString()
+        {
+            return this.Name;
+        }
+
         #endregion
     }
 }

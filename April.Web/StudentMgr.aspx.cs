@@ -49,7 +49,7 @@ namespace April.Web
                     txtGrade.Text = student.Grade;
                     txtAddress.Text = student.Address;
                     txtContactNo.Text = student.ContactNo;
-                    txtBirthday.Text = student.Birthday == null ? string.Empty : student.Birthday.Value.ToString("yyyy-MM-dd");
+                    txtBirthday.Text = student.Birthday == null ? string.Empty : student.Birthday.Value.ToString("yyyy年MM月dd日");
                     ckbGender.Checked = student.Gender == Gender.Male;
 
                     btnReset.Visible = true;
@@ -97,16 +97,28 @@ namespace April.Web
         {
             IDictionary<string, object> values = new Dictionary<string, object>();
 
-            values.Add(Student.Id.Name, txtId.Text);
-            values.Add(Student.Name.Name, txtName.Text);
-            values.Add(Student.Grade.Name, txtGrade.Text);
-            values.Add(Student.Gender.Name, ckbGender.Checked?Gender.Male:Gender.Female);
-            values.Add(Student.ContactNo.Name, txtContactNo.Text);
-            values.Add(Student.Birthday.Name, string.IsNullOrEmpty(txtBirthday.Text)?(object)null:Convert.ToDateTime(txtBirthday.Text));
-            values.Add(Student.Address.Name, txtAddress.Text);
+            string id = txtId.Text.Trim();
+            string name = txtName.Text.Trim();
+            string grade = txtGrade.Text.Trim();
+            Gender gender = ckbGender.Checked ? Gender.Male : Gender.Female;
+            string contactNo = txtContactNo.Text.Trim();
+            string birthday = txtBirthday.Text.Trim();
+            string address = txtAddress.Text.Trim();
+
+
+            values.Add(Student.Id.Name, id);
+            values.Add(Student.Name.Name, name);
+            values.Add(Student.Grade.Name, string.IsNullOrEmpty(grade) ? null : grade);
+            values.Add(Student.Gender.Name, gender);
+            values.Add(Student.ContactNo.Name, string.IsNullOrEmpty(contactNo) ? null : contactNo);
+            values.Add(Student.Birthday.Name,
+                       string.IsNullOrEmpty(birthday)
+                           ? (object) null
+                           : Convert.ToDateTime(birthday.Replace("年", "-").Replace("月", "-").Replace("日", "")));
+            values.Add(Student.Address.Name, string.IsNullOrEmpty(address) ? null : address);
             
             if (string.IsNullOrEmpty(Id))
-                values.Add(Student.Password.Name, txtPwd.Text);
+                values.Add(Student.Password.Name, txtPwd.Text.Trim());
             else
                 values.Add("oId",Id);
 
@@ -119,8 +131,6 @@ namespace April.Web
                 }
                 else
                 {
-                    string id = txtId.Text;
-                    
                     IUser existing;
                     try
                     {

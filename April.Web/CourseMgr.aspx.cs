@@ -17,61 +17,57 @@ namespace April.Web
     {
         protected void Page_Init(object sender, EventArgs e)
         {
-            gvTeachers.DataBind();
+            gvCourses.DataBind();
 
             if (IsEdit)
             {
+                cmbTeacher.DataBind();
+                
                 viewForm.Visible = false;
                 editForm.Visible = true;
-                if (string.IsNullOrEmpty(Id) || Item as ITeacher == null)
+                if (string.IsNullOrEmpty(Id) || Item as ICourse == null)
                 {
-                    lblPwd.Visible = true;
-                    txtPwd.Visible = true;
-                    ReqPwd.ValidationGroup = "save";
-
-                    txtId.Text = string.Empty;
                     txtName.Text = string.Empty;
-                    txtTitle.Text = string.Empty;
-                    txtContactNo.Text = string.Empty;
-                    txtPwd.Text = string.Empty;
-                    ckbGender.Checked = true;
+                    txtCredit.Text = string.Empty;
+                    txtHours.Text = string.Empty;
+                    txtPeriod.Text = string.Empty;
+                    txtLocation.Text = string.Empty;
+                    txtMax.Text = string.Empty;
+                    cmbTeacher.SelectedIndex = 0;
 
                     btnReset.Visible = false;
                 }
                 else
                 {
-                    lblPwd.Visible = false;
-                    txtPwd.Visible = false;
-                    ReqPwd.ValidationGroup = string.Empty;
-
-                    ITeacher teacher = Item as ITeacher;
-                    txtId.Text = teacher.Id;
-                    txtName.Text = teacher.Name;
-                    txtTitle.Text = teacher.Title;
-                    txtContactNo.Text = teacher.ContactNo;
-                    ckbGender.Checked = teacher.Gender == Gender.Male;
+                    ICourse course = Item as ICourse;
+                    txtName.Text = course.Name;
+                    txtCredit.Text = Convert.ToString(course.Credit);
+                    txtHours.Text = Convert.ToString(course.Hours);
+                    txtPeriod.Text = Convert.ToString(course.Period);
+                    txtLocation.Text = course.Location;
+                    txtMax.Text = Convert.ToString(course.MaxCapacity);
+                    cmbTeacher.SelectedValue = course.Teacher.Id;
 
                     btnReset.Visible = true;
-                    btnReset.NavigateUrl = string.Format("~/TeacherMgr.aspx?Id={0}&Mode=Edit", Id);
+                    btnReset.NavigateUrl = string.Format("~/CourseMgr.aspx?Id={0}&Mode=Edit", Id);
                 }
             }
             else
             {
                 editForm.Visible = false;
                 viewForm.Visible = !string.IsNullOrEmpty(Id);
-                if (!string.IsNullOrEmpty(Id) && Item as ITeacher != null)
+                if (!string.IsNullOrEmpty(Id) && Item as ICourse != null)
                 {
-                    lblPwd.Visible = false;
-                    txtPwd.Visible = false;
-
-                    ITeacher teacher = Item as ITeacher;
-                    lblvId.Text = string.IsNullOrEmpty(teacher.Id) ? "无" : teacher.Id;
-                    lblvName.Text = string.IsNullOrEmpty(teacher.Name) ? "无" : teacher.Name;
-                    lblvTitle.Text = string.IsNullOrEmpty(teacher.Title) ? "无" : teacher.Title;
-                    lblvContactNo.Text = string.IsNullOrEmpty(teacher.ContactNo) ? "无" : teacher.ContactNo;
-                    lblvGender.Text = string.IsNullOrEmpty(teacher.Gender.ToLabel()) ? "无" : teacher.Gender.ToLabel();
+                    ICourse course = Item as ICourse;
+                    lblvName.Text = string.IsNullOrEmpty(course.Name) ? "无" : course.Name;
+                    lblvTeacher.Text = course.Teacher==null || string.IsNullOrEmpty(course.Teacher.Name) ? "无" : course.Teacher.Name;
+                    lblvCredit.Text = course.Credit == null ? "无" : Convert.ToString(course.Credit);
+                    lblvHours.Text = course.Hours == null ? "无" : Convert.ToString(course.Hours);
+                    lblvPeriod.Text = course.Period == null ? "无" : Convert.ToString(course.Period);
+                    lblvMax.Text = course.MaxCapacity == null ? "无" : Convert.ToString(course.MaxCapacity);
+                    lblvLocation.Text = string.IsNullOrEmpty(course.Location) ? "无" : course.Location;
                 }
-                btnEdit.NavigateUrl = string.Format("~/TeacherMgr.aspx?Id={0}&Mode=Edit", Id);
+                btnEdit.NavigateUrl = string.Format("~/CourseMgr.aspx?Id={0}&Mode=Edit", Id);
             }
         }
 
@@ -80,23 +76,33 @@ namespace April.Web
 
         }
 
-        protected void gvTeachers_DataBinding(object sender, EventArgs e)
+        protected void gvCourses_DataBinding(object sender, EventArgs e)
         {
-            gvTeachers.DataSource = BLL.CourseMgr.List();
+            gvCourses.DataSource = BLL.CourseMgr.List();
         }
         
         protected void btnSave_Click(object sender, EventArgs e)
         {
             IDictionary<string, object> values = new Dictionary<string, object>();
 
-            values.Add(Course.Id.Name, txtId.Text);
-            values.Add(Course.Name.Name, txtName.Text);
-            values.Add(Course.Title.Name, txtTitle.Text);
-            values.Add(Course.Gender.Name, ckbGender.Checked ? Gender.Male : Gender.Female);
-            values.Add(Course.ContactNo.Name, txtContactNo.Text);
+            string name = txtName.Text.Trim();
+            string credit = txtCredit.Text.Trim();
+            string hours = txtHours.Text.Trim();
+            string period = txtPeriod.Text.Trim();
+            string teacher = cmbTeacher.SelectedValue;
+            string location = txtLocation.Text.Trim();
+            string max = txtMax.Text.Trim();
+
+            values.Add(Course.Name.Name, string.IsNullOrEmpty(name) ? null : name);
+            values.Add(Course.Credit.Name, string.IsNullOrEmpty(credit) ? (object)null : Convert.ToInt32(credit));
+            values.Add(Course.Hours.Name, string.IsNullOrEmpty(hours) ? (object)null : Convert.ToInt32(hours));
+            values.Add(Course.Period.Name, string.IsNullOrEmpty(period) ? (object)null : Convert.ToInt32(period));
+            values.Add(Course.Teacher.Name, string.IsNullOrEmpty(teacher) ? (object)null : teacher);
+            values.Add(Course.Location.Name, string.IsNullOrEmpty(location) ? null : location);
+            values.Add(Course.MaxCapacity.Name, string.IsNullOrEmpty(max) ? (object)null : Convert.ToInt32(max));
 
             if (string.IsNullOrEmpty(Id))
-                values.Add(Course.Password.Name, txtPwd.Text);
+                values.Add(Course.Id.Name, Guid.NewGuid());
             else
                 values.Add("oId", Id);
 
@@ -109,24 +115,23 @@ namespace April.Web
                 }
                 else
                 {
-                    string id = txtId.Text;
-
                     ICourse existing;
                     try
                     {
-                        existing = BLL.CourseMgr.Get(id);
+                        existing = BLL.CourseMgr.IsExisting(name);
                     }
                     catch
                     {
                         existing = null;
                     }
+
                     if (existing != null)
-                        throw new CourseNotFoundException();
+                        throw new CourseExistingException(name);
                     BLL.CourseMgr.Insert(values);
                     lblMessage.Text = "添加" + Entity + "成功！";
                 }
 
-                gvTeachers.DataBind();
+                gvCourses.DataBind();
             }
             catch (Exception ex)
             {
@@ -134,7 +139,7 @@ namespace April.Web
             }
         }
 
-        protected void gvTeachers_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void gvCourses_RowCommand(object sender, GridViewCommandEventArgs e)
         {
             if (e.CommandName == "Delete")
             {
@@ -151,29 +156,44 @@ namespace April.Web
             }
         }
 
-        protected void gvTeachers_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void gvCourses_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            gvTeachers.DataBind();
+            gvCourses.DataBind();
         }
 
         protected void Refresh_Click(object sender, EventArgs e)
         {
-            gvTeachers.DataBind();
+            gvCourses.DataBind();
         }
+
+        private IBaseObject _item = null;
 
         protected override IBaseObject Item
         {
             get
             {
-                if (!string.IsNullOrEmpty(Id))
-                    return April.BLL.CourseMgr.Get(Id);
-                return null;
+                if (!string.IsNullOrEmpty(Id) && _item == null)
+                    _item = BLL.CourseMgr.Get(Id);
+                return _item;
             }
         }
 
         protected override string Entity
         {
             get { return "课程"; }
+        }
+
+        protected void cmbTeacher_DataBinding(object sender, EventArgs e)
+        {
+            IList<IUser> teachers = UserMgr.List(Role.Teacher);
+            cmbTeacher.DataSource = teachers;
+            cmbTeacher.DataTextField = "Name";
+            cmbTeacher.DataValueField = "Id";
+        }
+
+        protected void cmbTeacher_DataBound(object sender, EventArgs e)
+        {
+            cmbTeacher.Items.Insert(0,new ListItem("--选择教师--",string.Empty));
         }
     }
 }

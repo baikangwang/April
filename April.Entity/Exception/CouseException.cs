@@ -45,4 +45,21 @@ namespace April.Entity.Exception
             get { return "删除课程失败。"; }
         }
     }
+
+    public class CourseExistingException : ApplicationException
+    {
+        public string Name { get; private set; }
+        public CourseExistingException(string name)
+        {
+            Name = name;
+        }
+
+        public override string Message
+        {
+            get
+            {
+                return string.Format("课程《{0}》已存在。",Name);
+            }
+        }
+    }
 }

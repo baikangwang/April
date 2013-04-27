@@ -38,6 +38,31 @@ namespace April.BLL
             }
         }
 
+        public static ICourse IsExisting(string name)
+        {
+            using (Command cmd = new Command("Get"))
+            {
+                try
+                {
+                    ICourse course = CourseGateway.GetByName(cmd, name);
+                    if (course == null)
+                        throw new CourseNotFoundException();
+                    cmd.Commint();
+                    return course;
+                }
+                catch (CourseNotFoundException)
+                {
+                    cmd.RollBack();
+                    throw;
+                }
+                catch
+                {
+                    cmd.RollBack();
+                    throw new CourseNotFoundException();
+                }
+            }
+        }
+
         public static IList<ICourse> List()
         {
             using (Command cmd=new Command("list_Course"))
