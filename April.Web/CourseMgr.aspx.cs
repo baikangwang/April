@@ -55,7 +55,7 @@ namespace April.Web
             else
             {
                 editForm.Visible = false;
-                viewForm.Visible = !string.IsNullOrEmpty(Id);
+                viewForm.Visible = !string.IsNullOrEmpty(Id) && Item as ICourse != null;
                 if (!string.IsNullOrEmpty(Id) && Item as ICourse != null)
                 {
                     ICourse course = Item as ICourse;
@@ -111,24 +111,15 @@ namespace April.Web
                 if (!string.IsNullOrEmpty(Id))
                 {
                     BLL.CourseMgr.Update(values);
-                    lblMessage.Text = "修改" + Entity + "成功！";
+                    lblMessage.Text = "修改" + EntityLabel + "成功！";
                 }
                 else
                 {
-                    ICourse existing;
-                    try
-                    {
-                        existing = BLL.CourseMgr.IsExisting(name);
-                    }
-                    catch
-                    {
-                        existing = null;
-                    }
+                    if (BLL.CourseMgr.IsExisting(name))
+                        throw new ExistingBaseObjException(Course.Label, name);
 
-                    if (existing != null)
-                        throw new CourseExistingException(name);
                     BLL.CourseMgr.Insert(values);
-                    lblMessage.Text = "添加" + Entity + "成功！";
+                    lblMessage.Text = "添加" + EntityLabel + "成功！";
                 }
 
                 gvCourses.DataBind();
@@ -147,7 +138,7 @@ namespace April.Web
                 try
                 {
                     BLL.CourseMgr.Delete(id);
-                    lblMessage.Text = "删除" + Entity + "成功！";
+                    lblMessage.Text = "删除" + EntityLabel + "成功！";
                 }
                 catch (Exception ex)
                 {
@@ -173,14 +164,23 @@ namespace April.Web
             get
             {
                 if (!string.IsNullOrEmpty(Id) && _item == null)
-                    _item = BLL.CourseMgr.Get(Id);
+                {
+                    try
+                    {
+                        _item = BLL.CourseMgr.Get(Id);
+                    }
+                    catch
+                    {
+                        _item = null;
+                    }
+                }
                 return _item;
             }
         }
 
-        protected override string Entity
+        protected override string EntityLabel
         {
-            get { return "课程"; }
+            get { return Course.Label; }
         }
 
         protected void cmbTeacher_DataBinding(object sender, EventArgs e)
@@ -194,6 +194,18 @@ namespace April.Web
         protected void cmbTeacher_DataBound(object sender, EventArgs e)
         {
             cmbTeacher.Items.Insert(0,new ListItem("--选择教师--",string.Empty));
+        }
+
+        protected void lblTeacher_DataBinding(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            if(lbl==null) return;
+            GridViewRow row = lbl.NamingContainer as GridViewRow;
+            if(row==null)return;
+            ICourse course = row.DataItem as ICourse;
+            if (course == null) return;
+            lbl.Text = course.Teacher == null || string.IsNullOrEmpty(course.Teacher.Name) ? "无" : course.Teacher.Name;
+
         }
     }
 }

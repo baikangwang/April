@@ -25,12 +25,6 @@ namespace April.Core
                                CommandTimeout = 90
                            };
             _commandName = name;
-
-            _command.Connection.Open();
-
-            _command.Transaction = string.IsNullOrEmpty(_commandName)
-                                       ? _command.Connection.BeginTransaction()
-                                       : _command.Connection.BeginTransaction(_commandName);
         }
 
         public string CommandText
@@ -72,16 +66,26 @@ namespace April.Core
 
         public SqlDataReader ExecuteReader()
         {
+            _command.Connection.Open();
+            
             return _command.ExecuteReader();
         }
 
         public int ExecuteNonQuery()
         {
+            _command.Connection.Open();
+
+            _command.Transaction = string.IsNullOrEmpty(_commandName)
+                                       ? _command.Connection.BeginTransaction()
+                                       : _command.Connection.BeginTransaction(_commandName);
+            
             return _command.ExecuteNonQuery();
         }
 
         public object ExecuteScalar()
         {
+            _command.Connection.Open();
+
             return _command.ExecuteScalar();
         }
 

@@ -15,10 +15,11 @@ namespace April.DAL
 {
     public class CourseGateway
     {
+
         public static ICourse Get(Command cmd, string id)
         {
             string table = Course.Table;
-            string columns = string.Join(",", Course.Properties.Select(p => p.Name).ToArray());
+            string columns = string.Join(",", Course.Properties.Select(p => p.Name == "Teacher" ? p.Name + "_Id" : p.Name).ToArray());
             string sql = string.Format(@"select {0} from {1} where lower(Id)=lower(@Id)", columns, table);
             cmd.CommandText = sql;
             cmd.AddParameter("@Id", id);
@@ -37,7 +38,7 @@ namespace April.DAL
         public static ICourse GetByName(Command cmd,string name)
         {
             string table = Course.Table;
-            string columns = string.Join(",", Course.Properties.Select(p => p.Name).ToArray());
+            string columns = string.Join(",", Course.Properties.Select(p => p.Name == "Teacher" ? p.Name + "_Id" : p.Name).ToArray());
             string sql = string.Format(@"select {0} from {1} where lower(Name)=lower(@Name)", columns, table);
             cmd.CommandText = sql;
             cmd.AddParameter("@Name", name);
@@ -53,14 +54,33 @@ namespace April.DAL
             return null;
         }
 
-        //public static ICourse GetByTeacher(Command)
-
         public static IList<ICourse> List(Command cmd)
         {
             string table = Course.Table;
-            string columns = string.Join(",", Course.Properties.Select(p => p.Name).ToArray());
+            string columns = string.Join(",", Course.Properties.Select(p => p.Name == "Teacher" ? p.Name + "_Id" : p.Name).ToArray());
             string sql = string.Format(@"select {0} from {1}", columns, table);
             cmd.CommandText = sql;
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            IList<ICourse> courses = new List<ICourse>();
+
+            while (reader.Read())
+            {
+                ICourse course = ReaderFactory.Reader(reader, Course.Entity) as ICourse;
+                if (course != null)
+                    courses.Add(course);
+            }
+            reader.Close();
+            return courses;
+        }
+
+        public static IList<ICourse> ListByTeacher(Command cmd, string teacherId)
+        {
+            string table = Course.Table;
+            string columns = string.Join(",", Course.Properties.Select(p => p.Name == "Teacher" ? p.Name + "_Id" : p.Name).ToArray());
+            string sql = string.Format(@"select {0} from {1} where lower(Teacher_Id)=@TeacherId", columns, table);
+            cmd.CommandText = sql;
+            cmd.AddParameter("@TeacherId", teacherId);
             SqlDataReader reader = cmd.ExecuteReader();
 
             IList<ICourse> courses = new List<ICourse>();
@@ -84,7 +104,10 @@ namespace April.DAL
             cmd.CommandText = sql;
             foreach (string field in values.Keys)
             {
-                cmd.AddParameter("@" + field, values[field]);
+                if (field == "Teacher")
+                    cmd.AddParameter("@" + field + "_Id", values[field]);
+                else
+                    cmd.AddParameter("@" + field, values[field]);
             }
             int result = cmd.ExecuteNonQuery();
             return result > 0;
@@ -101,7 +124,10 @@ namespace April.DAL
             cmd.CommandText = sql;
             foreach (string field in values.Keys)
             {
-                cmd.AddParameter("@" + field, values[field]);
+                if (field == "Teacher")
+                    cmd.AddParameter("@" + field + "_Id", values[field]);
+                else
+                    cmd.AddParameter("@" + field, values[field]);
             }
             int result = cmd.ExecuteNonQuery();
             return result > 0;

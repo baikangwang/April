@@ -17,6 +17,7 @@ namespace April.Core.Definition
         public static IProperty Password = new Property("Password", "密码", typeof (string), 4);
         public static string Table = "Administrator";
         public static string Entity = "Administrator";
-        public static IList<IProperty> Properties = new List<IProperty> {Id, Name, Gender, ContactNo, Password};
+        public static string Label = "管理员";
+        public static IList<IProperty> Properties = new List<IProperty> { Id, Name, Gender, ContactNo, Password };
     }
 }

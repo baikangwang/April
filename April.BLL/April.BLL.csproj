@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CourseMgr.cs" />
+    <Compile Include="SelectionMgr.cs" />
     <Compile Include="UserMgr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

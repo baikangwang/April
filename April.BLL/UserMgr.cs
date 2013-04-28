@@ -1,5 +1,6 @@
 ﻿#region
 
+using System;
 using System.Collections.Generic;
 using April.Core;
 using April.DAL;
@@ -20,20 +21,11 @@ namespace April.BLL
                 try
                 {
                     IUser user = UserGateway.Get(cmd, id, role);
-                    if (user == null)
-                        throw new UserNotFoundException(role);
-                    cmd.Commint();
                     return user;
-                }
-                catch (UserNotFoundException)
-                {
-                    cmd.RollBack();
-                    throw;
                 }
                 catch
                 {
-                    cmd.RollBack();
-                    throw new UserNotFoundException(role);
+                    return null;
                 }
             }
         }
@@ -46,19 +38,16 @@ namespace April.BLL
                 {
                     IUser user = UserGateway.Get(cmd, id, role);
                     if (user == null)
-                        throw new UserNotFoundException(role);
-                    cmd.Commint();
+                        throw new NotFoundBaseObjException(role.ToLabel(),id);
                     return user;
                 }
-                catch (UserNotFoundException)
+                catch (NotFoundBaseObjException)
                 {
-                    cmd.RollBack();
                     throw;
                 }
                 catch
                 {
-                    cmd.RollBack();
-                    throw new UserNotFoundException(role);
+                    throw new NotFoundBaseObjException(role.ToLabel(), id);
                 }
             }
         }
@@ -70,12 +59,10 @@ namespace April.BLL
                 try
                 {
                     IList<IUser> list = UserGateway.List(cmd, role);
-                    cmd.Commint();
                     return list;
                 }
                 catch
                 {
-                    cmd.RollBack();
                     return new List<IUser>();
                 }
             }
@@ -118,16 +105,16 @@ namespace April.BLL
                         return true;
                     }
                     cmd.RollBack();
-                    throw new UserInsertedException(role);
+                    throw new InsertBaseObjException(role.ToLabel(), Convert.ToString(values["Id"]));
                 }
-                catch (UserInsertedException)
+                catch (InsertBaseObjException)
                 {
                     throw;
                 }
                 catch
                 {
                     cmd.RollBack();
-                    throw new UserInsertedException(role);
+                    throw new InsertBaseObjException(role.ToLabel(), Convert.ToString(values["Id"]));
                 }
             }
         }
@@ -144,16 +131,16 @@ namespace April.BLL
                         return true;
                     }
                     cmd.RollBack();
-                    throw new UserUpdatedException(role);
+                    throw new UpdateBaseObjException(role.ToLabel(), Convert.ToString(values["Id"]));
                 }
-                catch (UserUpdatedException)
+                catch (UpdateBaseObjException)
                 {
                     throw;
                 }
                 catch
                 {
                     cmd.RollBack();
-                    throw new UserUpdatedException(role);
+                    throw new UpdateBaseObjException(role.ToLabel(), Convert.ToString(values["Id"]));
                 }
             }
         }
@@ -166,11 +153,11 @@ namespace April.BLL
                 {
                     bool result = UserGateway.Delete(cmd, role, id);
                     if (!result)
-                        throw new UserDeleteException(role);
+                        throw new DeleteBaseObjException(role.ToLabel(), id);
                     cmd.Commint();
                     return true;
                 }
-                catch (UserDeleteException)
+                catch (DeleteBaseObjException)
                 {
                     cmd.RollBack();
                     throw;
@@ -178,7 +165,23 @@ namespace April.BLL
                 catch
                 {
                     cmd.RollBack();
-                    throw new UserDeleteException(role);
+                    throw new DeleteBaseObjException(role.ToLabel(), id);
+                }
+            }
+        }
+
+        public static bool IsExisting(Role role, string id)
+        {
+            using (Command cmd = new Command("Get"))
+            {
+                try
+                {
+                    IUser user = UserGateway.Get(cmd, id, role);
+                    return user != null;
+                }
+                catch
+                {
+                    return false;
                 }
             }
         }

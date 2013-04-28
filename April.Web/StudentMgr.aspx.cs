@@ -59,7 +59,7 @@ namespace April.Web
             else
             {
                 editForm.Visible = false;
-                viewForm.Visible = !string.IsNullOrEmpty(Id);
+                viewForm.Visible = !string.IsNullOrEmpty(Id) && Item as IStudent != null;
                 if (!string.IsNullOrEmpty(Id) && Item as IStudent != null)
                 {
                     lblPwd.Visible = false;
@@ -127,23 +127,15 @@ namespace April.Web
                 if (!string.IsNullOrEmpty(Id))
                 {
                     UserMgr.Update(Role, values);
-                    lblMessage.Text = "修改"+Role.ToLabel()+"成功！";
+                    lblMessage.Text = "修改"+EntityLabel+"成功！";
                 }
                 else
                 {
-                    IUser existing;
-                    try
-                    {
-                        existing = UserMgr.Get(id, Role);
-                    }
-                    catch
-                    {
-                        existing = null;
-                    }
-                    if(existing!=null)
-                        throw new UserExistingException(Role,id);
+                    if(UserMgr.IsExisting(Role,Id))
+                        throw new ExistingBaseObjException(EntityLabel,id);
+
                     UserMgr.Insert(Role, values);
-                    lblMessage.Text = "添加" + Role.ToLabel() + "成功！";
+                    lblMessage.Text = "添加" + EntityLabel + "成功！";
                 }
 
                 gvStudents.DataBind();
@@ -162,7 +154,7 @@ namespace April.Web
                 try
                 {
                     UserMgr.Delete(Role, id);
-                    lblMessage.Text = "删除" + Role.ToLabel() + "成功！";
+                    lblMessage.Text = "删除" + EntityLabel + "成功！";
                 }
                 catch (Exception ex)
                 {

@@ -93,12 +93,17 @@ namespace April.Web
             try
             {
                 UserMgr.Update(Role, values);
-                lblMessage.Text = "修改" + Role.ToLabel() + "成功！";
+                lblMessage.Text = "修改" + EntityLabel + "成功！";
             }
             catch (Exception ex)
             {
                 lblMessage.Text = ex.Message;
             }
+        }
+
+        protected override string Id
+        {
+            get { return LoginUser == null ? string.Empty : LoginUser.Id; }
         }
     }
 }

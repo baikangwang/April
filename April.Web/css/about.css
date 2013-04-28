@@ -1,0 +1,29 @@
+﻿
+.body .about {
+	padding:0 0 85px 0;
+}
+.body .about img {
+	margin: 27px 0 37px;
+}
+.body .about h4 {
+	background: url("../images/border.jpg") repeat-x scroll right center transparent;
+	width:665px;
+	overflow:hidden;
+	margin:0 21px;
+}
+.body .about h4 span {
+	background-color: #FFFFFF;
+	color: #7D7D7D;
+	display: inline;
+    font-family: 'MyYaHei';/*'Conv_Muli-Regular';*/
+	font-size: 18px;
+	font-weight: normal;
+	line-height:24px;
+	margin:22px 0;
+	padding:0 56px 0 0;
+}
+.body .about p {
+	margin:25px 0 24px;
+	font-size:13px;
+}
+

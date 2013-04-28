@@ -20,6 +20,7 @@ namespace April.Core.Definition
         public static IProperty MaxCapacity = new Property("MaxCapacity", "最大人数", typeof (int), 7);
         public static string Table = "Course";
         public static string Entity = "Course";
+        public static string Label = "课程";
 
         public static IList<IProperty> Properties = new List<IProperty>
                                                         {

@@ -1,0 +1,55 @@
+﻿.body .services ul li {
+	overflow:hidden;
+    list-style: none;
+}
+.body .services ul li h3 {
+	background: url("../images/border.jpg") repeat-x scroll right center transparent;
+	width:665px;
+	overflow:hidden;
+	margin:0 21px;
+}
+.body .services ul li h3 span {
+	background-color: #FFFFFF;
+	color: #7D7D7D;
+	display: inline;
+    font-family: 'MyYaHei';/*'Conv_Muli-Regular';*/
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 24px;
+	margin: 22px 0;
+	padding: 0 11px 0 0;
+}
+.body .services ul li div {
+	margin:35px 0 0 29px;
+	width:251px;
+	min-height:290px;
+	height:auto;
+	float:left;
+}
+.body .services ul li p {
+	float: left;
+	padding: 0 25px 0 40px;
+	width: 400px;
+	margin: 20px 0;
+    font-family: 'MyYaHei';/*'Conv_Muli-Regular';*/
+	font-size:13px;
+}
+.body .services li p img
+{
+    margin: 0px;
+    width: 32px;
+    height: 32px;
+    padding: 0px;
+    vertical-align:text-bottom;
+}
+
+
+.body .services li p .button 
+{
+    /*border:0;*/
+	width:127px;
+	height:40px;
+	cursor:pointer;
+	color:#000;
+    font-weight: bold;
+}

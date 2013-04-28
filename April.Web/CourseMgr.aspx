@@ -16,11 +16,17 @@
                 HeaderText="课程名" />
             <asp:TemplateField HeaderText="教师名">
                 <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("Teacher") %>'/>
+                    <asp:Label ID="Label1" runat="server" OnDataBinding="lblTeacher_DataBinding"/>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="Credit" HeaderText="学分" />
             <asp:BoundField DataField="Location" HeaderText="开课学院" />
+            <asp:TemplateField ShowHeader="False">
+                <ItemTemplate>
+                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
+                        CommandArgument=<%#Eval("Id")%> CommandName="Delete" Text="删除" />
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:HyperLinkField Text="编辑" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/CourseMgr.aspx?Id={0}&Mode=Edit" />
         </Columns>
         <EmptyDataTemplate>

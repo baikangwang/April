@@ -43,11 +43,11 @@
   <ItemGroup>
     <Compile Include="Definition\Administrator.cs" />
     <Compile Include="Definition\Course.cs" />
+    <Compile Include="Definition\Selection.cs" />
     <Compile Include="Definition\Student.cs" />
     <Compile Include="Definition\Teacher.cs" />
     <Compile Include="Command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValueHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\April.EntityImpl\April.EntityImpl.csproj">

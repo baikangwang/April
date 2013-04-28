@@ -69,8 +69,14 @@
       <DependentUpon>April.mdf</DependentUpon>
     </Content>
     <Content Include="Controls\MenuBar.ascx" />
+    <Content Include="css\about.css" />
     <Content Include="css\ajax.css" />
+    <Content Include="css\blog.css" />
+    <Content Include="css\contact.css" />
     <Content Include="css\login.css" />
+    <Content Include="css\portfolio.css" />
+    <Content Include="css\services.css" />
+    <Content Include="css\style.css" />
     <Content Include="images\Calendar_scheduleHS.png" />
     <Content Include="images\icons\business_contact.png" />
     <Content Include="images\icons\closed_topic.png" />
@@ -80,9 +86,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="blog.html" />
     <Content Include="contact.html" />
-    <Content Include="css\style.css" />
-    <Content Include="fonts\Muli-Italic.svg" />
-    <Content Include="fonts\Muli-Regular.svg" />
+    <Content Include="css\april.css" />
     <Content Include="images\bg-body.jpg" />
     <Content Include="images\bg-body.png" />
     <Content Include="images\bg-border.jpg" />
@@ -126,7 +130,6 @@
     <Content Include="index.html" />
     <Content Include="portfolio.html" />
     <Content Include="services.html" />
-    <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
@@ -173,7 +176,10 @@
     <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
       <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Base\MgrPage.cs">
+    <Compile Include="Base\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\UserMgrPage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Base\ProfilePage.cs">
@@ -282,7 +288,10 @@
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="fonts\msyh.eot" />
+    <None Include="fonts\msyh.ttf" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
@@ -302,12 +311,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="fonts\Muli-Italic.eot" />
-    <None Include="fonts\Muli-Italic.ttf" />
-    <None Include="fonts\Muli-Italic.woff" />
-    <None Include="fonts\Muli-Regular.eot" />
-    <None Include="fonts\Muli-Regular.ttf" />
-    <None Include="fonts\Muli-Regular.woff" />
     <Content Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

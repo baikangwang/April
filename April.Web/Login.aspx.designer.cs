@@ -40,13 +40,13 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqId;
         
         /// <summary>
-        /// Label2 control.
+        /// imgPwd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Image imgPwd;
         
         /// <summary>
         /// txtPwd control.
@@ -67,13 +67,13 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPwd;
         
         /// <summary>
-        /// Label3 control.
+        /// imgRole control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.WebControls.Image imgRole;
         
         /// <summary>
         /// dllRole control.

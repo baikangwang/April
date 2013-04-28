@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using April.Core;
+using April.Core.Definition;
 using April.DAL;
 using April.Entity;
 using April.Entity.Exception;
@@ -17,48 +18,23 @@ namespace April.BLL
         {
             using (Command cmd = new Command("Get"))
             {
-                try
-                {
-                    ICourse course = CourseGateway.Get(cmd, id);
-                    if (course == null)
-                        throw new CourseNotFoundException();
-                    cmd.Commint();
-                    return course;
-                }
-                catch (CourseNotFoundException)
-                {
-                    cmd.RollBack();
-                    throw;
-                }
-                catch
-                {
-                    cmd.RollBack();
-                    throw new CourseNotFoundException();
-                }
+                ICourse course = CourseGateway.Get(cmd, id);
+                return course;
             }
         }
 
-        public static ICourse IsExisting(string name)
+        public static bool IsExisting(string name)
         {
             using (Command cmd = new Command("Get"))
             {
                 try
                 {
                     ICourse course = CourseGateway.GetByName(cmd, name);
-                    if (course == null)
-                        throw new CourseNotFoundException();
-                    cmd.Commint();
-                    return course;
-                }
-                catch (CourseNotFoundException)
-                {
-                    cmd.RollBack();
-                    throw;
+                    return course != null;
                 }
                 catch
                 {
-                    cmd.RollBack();
-                    throw new CourseNotFoundException();
+                    return false;
                 }
             }
         }
@@ -69,14 +45,27 @@ namespace April.BLL
             {
                 try
                 {
-                    IList<ICourse> list= CourseGateway.List(cmd);
-                    cmd.Commint();
-                    return list;
+                    return CourseGateway.List(cmd);
                 }
                 catch
                 {
-                    cmd.RollBack();
                     return new List<ICourse>();
+                }
+            }
+        }
+
+        public static IList<ICourse> ListByTeacher(string teacherId)
+        {
+            using(Command cmd=new Command("listByTeacher_Course"))
+            {
+                try
+                {
+                    return CourseGateway.ListByTeacher(cmd, teacherId);
+
+                }
+                catch
+                {
+                   return new List<ICourse>();
                 }
             }
         }
@@ -94,16 +83,16 @@ namespace April.BLL
                     }
                     
                     cmd.RollBack();
-                    throw new CourseInsertedException();
+                    throw new InsertBaseObjException(Course.Label, Convert.ToString(values["Name"]));
                 }
-                catch (CourseInsertedException)
+                catch (InsertBaseObjException)
                 {
                     throw;
                 }
                 catch
                 {
                     cmd.RollBack();
-                    throw new CourseInsertedException();
+                    throw new InsertBaseObjException(Course.Label, Convert.ToString(values["Name"]));
                 }
             }
         }
@@ -121,16 +110,16 @@ namespace April.BLL
                     }
 
                     cmd.RollBack();
-                    throw new CourseUpdatedException();
+                    throw new UpdateBaseObjException(Course.Label, Convert.ToString(values["Name"]));
                 }
-                catch (CourseUpdatedException)
+                catch (UpdateBaseObjException)
                 {
                     throw;
                 }
                 catch
                 {
                     cmd.RollBack();
-                    throw new CourseUpdatedException();
+                    throw new UpdateBaseObjException(Course.Label, Convert.ToString(values["Name"]));
                 }
             }
         }
@@ -143,11 +132,11 @@ namespace April.BLL
                 {
                     bool result = CourseGateway.Delete(cmd, id);
                     if (!result)
-                        throw new CourseDeleteException();
+                        throw new DeleteBaseObjException(Course.Label, id);
                     cmd.Commint();
                     return true;
                 }
-                catch (CourseDeleteException)
+                catch (DeleteBaseObjException)
                 {
                     cmd.RollBack();
                     throw;
@@ -155,7 +144,7 @@ namespace April.BLL
                 catch
                 {
                     cmd.RollBack();
-                    throw new CourseDeleteException();
+                    throw new DeleteBaseObjException(Course.Label, id);
                 }
             }
         }

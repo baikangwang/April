@@ -9,7 +9,7 @@
         OnDataBinding="gvCourses_DataBinding">
         <Columns>
             <asp:HyperLinkField DataNavigateUrlFields="Id" 
-                DataNavigateUrlFormatString="~/CourseMgr.aspx?Id={0}" DataTextField="Name" 
+                DataNavigateUrlFormatString="~/Select.aspx?Id={0}" DataTextField="Name" 
                 HeaderText="课程名" />
             <asp:TemplateField HeaderText="教师名">
                 <ItemTemplate>
@@ -18,7 +18,7 @@
             </asp:TemplateField>
             <asp:BoundField DataField="Credit" HeaderText="学分" />
             <asp:BoundField DataField="Location" HeaderText="开课学院" />
-            <asp:HyperLinkField Text="选择" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/CourseMgr.aspx?Id={0}&Option=Select" />
+            <asp:HyperLinkField Text="选择" DataNavigateUrlFields="Id" DataNavigateUrlFormatString="~/Select.aspx?Id={0}" />
         </Columns>
         <EmptyDataTemplate>
             <table>
@@ -54,8 +54,8 @@
         <asp:Label ID="Label5" runat="server" Text="开课学院" AssociatedControlID="lblvLocation"/>
         <asp:Label ID="lblvLocation" runat="server"/>
         <div id="editCommand" runat="server">
-            <asp:Button ID="btnSave" runat="server" Text="保存" OnClick="btnSave_Click" />
-            <asp:HyperLink ID="btnCancel" runat="server" NavigateUrl="~/CourseMgr.aspx">取消</asp:HyperLink>
+            <asp:Button ID="btnSave" runat="server" Text="选择" OnClick="btnSave_Click" />
+            <asp:Button ID="btnCancel" runat="server" Text="取消" OnClick="btnCancel_Click" />
         </div>
     </div>
 </asp:Content>
