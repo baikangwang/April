@@ -1,8 +1,8 @@
 ﻿
 <%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MenuBar.ascx.cs" Inherits="April.Web.Controls.MenuBar" %>
     <ul runat="server" id="Menu">
-        <li runat="server" id="itemLogout" ><asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">[<asp:Label ID="lblUser" runat="server" Text=""></asp:Label>登出]</asp:LinkButton></li>
-        <li runat="server" id="itemLogin"><asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click">登录</asp:LinkButton></li>
+        <li runat="server" id="itemLogout" ><asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="btnlogout"/></li>
+        <li runat="server" id="itemLogin"><asp:LinkButton ID="btnLogin" runat="server" OnClick="btnLogin_Click" CssClass="btnlogin"/></li>
         <li runat="server" id="itemHome"><asp:LinkButton ID="btnHome" runat="server" OnClick="link_Click">首页</asp:LinkButton></li>
         <!--Administrator-->
         <li runat="server" id="itemStudentMgr"><asp:LinkButton ID="btnStudentMgr" runat="server" OnClick="link_Click">学生管理</asp:LinkButton></li>

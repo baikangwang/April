@@ -1,0 +1,92 @@
+﻿.body .form {
+    font-family: 'MyYaHei';
+}
+.body .form .topborder {
+	background: url("../images/border.jpg") repeat-x scroll right center transparent;
+	width:665px;
+	overflow:hidden;
+	margin:0 21px;
+}
+
+.body .form .fields {
+	margin:0 21px;
+}
+
+.body .form .fields td {
+    height: 30px;
+    line-height: 30px;
+    padding-bottom: 30px;
+}
+
+
+.body .form .fields .identity 
+{
+    width: 32px;
+    height: 32px;
+    display: block;
+    border: none;
+	background: url("../images/icons/identity.png") no-repeat center transparent;
+}
+
+.body .form .fields .gender 
+{
+    width: 32px;
+    height: 32px;
+    display: block;
+    border: none;
+    display: inline-block;
+    vertical-align:text-bottom;
+}
+
+.body .form .label {
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 20px;
+}
+.body .form .viewcommand {
+    float: right;
+}
+
+.body .form .viewcommand .close {
+    margin: 10px 0px;
+}
+
+.body .form .viewcommand .edit{
+    text-align: right;
+    width: 32px;
+    height: 32px;
+    display: block;
+	background: url("../images/icons/edit.png") no-repeat center transparent;
+}
+
+.body .form .editcommand {
+    text-align: right;
+}
+
+.body .form .editcommand .save{
+    width: 32px;
+    height: 32px;
+    display: block;
+    border: none;
+	/*background: url("../images/icons/save.png") no-repeat center transparent;*/
+    display: inline-block;
+}
+
+.body .form .editcommand .reset{
+    width: 32px;
+    height: 32px;
+    display: block;
+	background: url("../images/icons/refresh.png") no-repeat center transparent;
+    display: inline-block;
+    padding: 5px;
+}
+
+.body .form .editcommand .cancel{
+    width: 32px;
+    height: 32px;
+    display: block;
+	background: url("../images/icons/delete.png") no-repeat center transparent;
+    display: inline-block;
+    padding: 5px;
+}
+

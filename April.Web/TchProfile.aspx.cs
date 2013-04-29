@@ -56,7 +56,10 @@ namespace April.Web
                     lblvName.Text = string.IsNullOrEmpty(teacher.Name) ? "无" : teacher.Name;
                     lblvTitle.Text = string.IsNullOrEmpty(teacher.Title) ? "无" : teacher.Title;
                     lblvContactNo.Text = string.IsNullOrEmpty(teacher.ContactNo) ? "无" : teacher.ContactNo;
-                    lblvGender.Text = string.IsNullOrEmpty(teacher.Gender.ToLabel()) ? "无" : teacher.Gender.ToLabel();
+                    lblvGender.Style.Add("background",
+                                         teacher.Gender == Gender.Male
+                                             ? "url('../images/icons/male.png\') no-repeat center transparent"
+                                             : "url('../images/icons/female.png') no-repeat center transparent");
                 }
                 btnEdit.NavigateUrl = string.Format("~/TchProfile.aspx?Id={0}&Mode=Edit", Id);
             }
