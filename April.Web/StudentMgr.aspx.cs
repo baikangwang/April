@@ -62,8 +62,8 @@ namespace April.Web
                 viewForm.Visible = !string.IsNullOrEmpty(Id) && Item as IStudent != null;
                 if (!string.IsNullOrEmpty(Id) && Item as IStudent != null)
                 {
-                    lblPwd.Visible = false;
-                    txtPwd.Visible = false;
+                    lblvPwd.Visible = false;
+                    Label8.Visible = false;
 
                     IStudent student = Item as IStudent;
                     lblvId.Text = string.IsNullOrEmpty(student.Id) ? "无" : student.Id;
@@ -71,8 +71,11 @@ namespace April.Web
                     lblvGrade.Text = string.IsNullOrEmpty(student.Grade) ? "无" : student.Grade;
                     lblvAddress.Text = string.IsNullOrEmpty(student.Address) ? "无" : student.Address;
                     lblvContactNo.Text = string.IsNullOrEmpty(student.ContactNo) ? "无" : student.ContactNo;
-                    lblvGender.Text = string.IsNullOrEmpty(student.Gender.ToLabel()) ? "无" : student.Gender.ToLabel();
-                    lblvBirthday.Text = student.Birthday == null ? "无" : student.Birthday.Value.ToShortDateString();
+                    lblvGender.Style.Add("background",
+                                         student.Gender == Gender.Male
+                                             ? "url('../images/icons/male.png\') no-repeat center transparent"
+                                             : "url('../images/icons/female.png') no-repeat center transparent");
+                    lblvBirthday.Text = student.Birthday == null ? "无" : student.Birthday.Value.ToString("yyyy年MM月dd日");
                 }
                 btnEdit.NavigateUrl = string.Format("~/StudentMgr.aspx?Id={0}&Mode=Edit", Id);
             }
@@ -111,11 +114,15 @@ namespace April.Web
             values.Add(Student.Grade.Name, string.IsNullOrEmpty(grade) ? null : grade);
             values.Add(Student.Gender.Name, gender);
             values.Add(Student.ContactNo.Name, string.IsNullOrEmpty(contactNo) ? null : contactNo);
-            values.Add(Student.Birthday.Name,
-                       string.IsNullOrEmpty(birthday)
-                           ? (object) null
-                           : Convert.ToDateTime(birthday.Replace("年", "-").Replace("月", "-").Replace("日", "")));
-            values.Add(Student.Address.Name, string.IsNullOrEmpty(address) ? null : address);
+            
+            if (string.IsNullOrEmpty(birthday))
+                values.Add(Student.Birthday.Name, null);
+            else
+            {
+                string[] date = birthday.Replace("年", "-").Replace("月", "-").Replace("日", "-").Split(
+                    new string[] { "-" }, StringSplitOptions.RemoveEmptyEntries);
+                values.Add(Student.Birthday.Name, new DateTime(int.Parse(date[0]), int.Parse(date[1]), int.Parse(date[2])));
+            }
             
             if (string.IsNullOrEmpty(Id))
                 values.Add(Student.Password.Name, txtPwd.Text.Trim());
@@ -170,6 +177,27 @@ namespace April.Web
 
         protected void Refresh_Click(object sender, EventArgs e)
         {
+            gvStudents.DataBind();
+        }
+
+        protected void Gender_DataBinding(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            if (lbl == null) return;
+            GridViewRow row = lbl.NamingContainer as GridViewRow;
+            if (row == null) return;
+            IUser user = row.DataItem as IUser;
+            if (user == null) return;
+            lbl.Style.Add("background",
+                                 user.Gender == Gender.Male
+                                     ? "url('../images/icons/male.png\') no-repeat center transparent"
+                                     : "url('../images/icons/female.png') no-repeat center transparent");
+            lbl.Text = " ";
+        }
+
+        protected void gvStudents_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvStudents.PageIndex = e.NewPageIndex;
             gvStudents.DataBind();
         }
     }

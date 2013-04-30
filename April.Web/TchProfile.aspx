@@ -4,7 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
-    <div id="err"><p><asp:Label ID="lblMessage" runat="server" Text=""/></p></div>
     <div id="viewForm" runat="server" class="form" >
         <div class="topborder">&nbsp;</div>
         <div id="viewCommand" class="viewcommand">
@@ -12,34 +11,35 @@
         </div>
         <table class="fields">
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label1" runat="server" CssClass="identity" AssociatedControlID="lblvId"/>
                 </td>
-                <td style="display: inline-block">
-                    <asp:Label ID="lblvId" runat="server"/><asp:Label ID="lblvGender" CssClass="gender" runat="server" Text=" "/>
+                <td class="field">
+                    <asp:Label ID="lblvId" runat="server"/>
+                    <asp:Label ID="lblvGender" CssClass="gender" runat="server" Text=" "/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label2" CssClass="label" runat="server" Text="姓名" AssociatedControlID="lblvName"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvName" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label4" CssClass="label" runat="server" Text="职称" AssociatedControlID="lblvTitle"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvTitle" runat="server"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label6" CssClass="label" runat="server" Text="电话" AssociatedControlID="lblvContactNo"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvContactNo" runat="server"></asp:Label>
                 </td>
             </tr>
@@ -47,12 +47,18 @@
     </div>
     <div id="editForm" runat="server" class="form">
         <div class="topborder">&nbsp;</div>
+        <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
+        <div id="editCommand" runat="server" class="editcommand">
+            <asp:Button ID="btnSave" runat="server" ValidationGroup="save" CssClass="save" ToolTip="保存" OnClick="btnSave_Click" />
+            <asp:HyperLink ID="btnReset" runat="server" CssClass="reset" ToolTip="重置"/>
+            <asp:HyperLink ID="btnCancel" runat="server" NavigateUrl="~/TchProfile.aspx" CssClass="cancel" ToolTip="取消"/>
+        </div>
         <table class="fields">
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblId" runat="server" CssClass="identity" ToolTip="学号" AssociatedControlID="txtId"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:TextBox ID="txtId" runat="server" Enabled="False"/>
                     <asp:CheckBox ID="ckbGender" Checked="true" CssClass="gender" runat="server"/>
                     <ajaxToolkit:ToggleButtonExtender ID="ckbToggle" runat="server"
@@ -66,43 +72,38 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblName" CssClass="label" runat="server" Text="姓名" AssociatedControlID="txtName"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:TextBox ID="txtName" runat="server"/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblTitle" CssClass="label" runat="server" Text="职称" AssociatedControlID="txtTitle"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:TextBox ID="txtTitle" runat="server"/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblContactNo" CssClass="label" runat="server" Text="电话" AssociatedControlID="txtContactNo"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:TextBox ID="txtContactNo" runat="server"/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblPwd" CssClass="label" runat="server" Text="密码" AssociatedControlID="txtPwd"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:TextBox ID="txtPwd" runat="server"/>
                 </td>
             </tr>
         </table>
-        <div id="editCommand" runat="server" class="editcommand">
-            <asp:Button ID="btnSave" runat="server" ValidationGroup="save" CssClass="save" ToolTip="保存" OnClick="btnSave_Click" />
-            <asp:HyperLink ID="btnReset" runat="server" CssClass="reset" ToolTip="重置"/>
-            <asp:HyperLink ID="btnCancel" runat="server" NavigateUrl="~/TchProfile.aspx" CssClass="cancel" ToolTip="取消"/>
-        </div>
         <asp:RequiredFieldValidator runat="server" ID="ReqId"
                                     ControlToValidate="txtId"
                                     Display="None"

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -65,7 +66,7 @@ namespace April.Web
                                          student.Gender == Gender.Male
                                              ? "url('../images/icons/male.png\') no-repeat center transparent"
                                              : "url('../images/icons/female.png') no-repeat center transparent");
-                    lblvBirthday.Text = student.Birthday == null ? "无" : student.Birthday.Value.ToShortDateString();
+                    lblvBirthday.Text = student.Birthday == null ? "无" : student.Birthday.Value.ToString("yyyy年MM月dd日");
                 }
                 btnEdit.NavigateUrl = string.Format("~/StdProfile.aspx?Id={0}&Mode=Edit", Id);
             }
@@ -94,10 +95,16 @@ namespace April.Web
             values.Add(Student.Grade.Name, string.IsNullOrEmpty(grade) ? null : grade);
             values.Add(Student.Gender.Name, gender);
             values.Add(Student.ContactNo.Name, string.IsNullOrEmpty(contactNo) ? null : contactNo);
-            values.Add(Student.Birthday.Name,
-                       string.IsNullOrEmpty(birthday)
-                           ? (object) null
-                           : Convert.ToDateTime(birthday.Replace("年", "-").Replace("月", "-").Replace("日", "")));
+            
+            if(string.IsNullOrEmpty(birthday))
+                values.Add(Student.Birthday.Name,null);
+            else
+            {
+                string[] date = birthday.Replace("年", "-").Replace("月", "-").Replace("日", "-").Split(
+                    new string[] {"-"}, StringSplitOptions.RemoveEmptyEntries);
+                values.Add(Student.Birthday.Name, new DateTime(int.Parse(date[0]),int.Parse(date[1]),int.Parse(date[2])));
+            }
+
             values.Add(Student.Address.Name, string.IsNullOrEmpty(address) ? null : address);
 
             values.Add("oId", Id);

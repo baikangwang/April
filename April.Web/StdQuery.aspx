@@ -13,7 +13,7 @@
                 onrowdeleting="gvCourses_RowDeleting">
             <Columns>
                 <asp:HyperLinkField DataNavigateUrlFields="Id" 
-                    DataNavigateUrlFormatString="~/CourseMgr.aspx?Id={0}" DataTextField="Name" 
+                    DataNavigateUrlFormatString="~/StdQuery.aspx?Id={0}" DataTextField="Name" 
                     HeaderText="课程名" />
                 <asp:TemplateField HeaderText="教师名">
                     <ItemTemplate>
@@ -25,12 +25,12 @@
                 <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
                         <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
-                            CommandArgument=<%#Eval("Id")%> CommandName="Delete" Text="删除" />
+                            CommandArgument=<%#Eval("Id")%> CommandName="Delete" ToolTip="删除" CssClass="delete" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
             <EmptyDataTemplate>
-                <table>
+                <table class="empty">
                     <thead>
                         <tr>
                             <th>课程名</th>

@@ -69,19 +69,14 @@
       <DependentUpon>April.mdf</DependentUpon>
     </Content>
     <Content Include="Controls\MenuBar.ascx" />
-    <Content Include="css\about.css" />
-    <Content Include="css\ajax.css" />
-    <Content Include="css\blog.css" />
-    <Content Include="css\contact.css" />
-    <Content Include="css\login.css" />
-    <Content Include="css\portfolio.css" />
     <Content Include="css\form.css" />
     <Content Include="css\list.css" />
     <Content Include="css\services.css" />
-    <Content Include="css\style.css" />
     <Content Include="images\Calendar_scheduleHS.png" />
+    <Content Include="images\icons\select.png" />
     <Content Include="images\icons\delete.png" />
     <Content Include="images\icons\female.png" />
+    <Content Include="images\icons\add.png" />
     <Content Include="images\icons\identity.png" />
     <Content Include="images\icons\edit.png" />
     <Content Include="images\icons\login.png" />

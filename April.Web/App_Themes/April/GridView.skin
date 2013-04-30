@@ -15,7 +15,7 @@ Default skin template. The following skins are provided as examples only.
 --%>
         <asp:GridView runat="server" 
             AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" 
-            GridLines="None" CssClass="records">
+            GridLines="None" CssClass="records" AllowPaging="True" PageSize="8">
             <AlternatingRowStyle BackColor="#c6c6c6" ForeColor="#284775" HorizontalAlign="Center"/>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -28,3 +28,4 @@ Default skin template. The following skins are provided as examples only.
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
+        <ajaxToolkit:ValidatorCalloutExtender runat="Server" HighlightCssClass="validatorCalloutHighlight" />

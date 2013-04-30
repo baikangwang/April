@@ -1,4 +1,6 @@
-﻿.body .list {
+﻿.body .list 
+{
+	margin:23px 0 0 21px;
     font-family: 'MyYaHei';
 }
 .body .list .topborder {
@@ -20,33 +22,52 @@
 }
 
 .body .list .listcommand .add {
-    left:0px;
-    top:0px;
+    float: left;
+    left: 0px;
     width: 32px;
     height: 32px;
     display: block;
     border:none;
+    cursor: pointer;
 	background: url("../images/icons/add.png") no-repeat center transparent;
 }
 
 .body .list .listcommand .refresh{
-    float:right;
-    right:0px;
-    top:0px;
+    float: right;
+    right: 0px;
     width: 32px;
     height: 32px;
     display: block;
     border:none;
+    cursor: pointer;
 	background: url("../images/icons/refresh.png") no-repeat center transparent;
 }
 
 .body .list .records
 {
-	width:100%;
 	width:665px;
-	overflow:hidden;
+	margin:0 0 0 21px;
+	/*overflow:hidden;*/
 }
 
+.body .list .records .empty
+{
+	width:665px;
+    border-collapse: collapse;
+}
+
+.body .list .records .empty thead {
+    background-color: #5D7B9D;
+    color: #fff;
+    font-weight: bold;
+}
+
+.body .list .records .empty tbody 
+{
+    background-color: #F7F6F3;
+    color: #333333;
+    text-align: center;
+}
 .body .list .records .gender
 {
 	width:32px;
@@ -57,4 +78,22 @@
 	display:inline-block;
 }
 
+.body .list .records .edit, .delete, .select {
+    width: 32px;
+    height: 32px;
+    display: block;
+    border:none;
+    cursor: pointer;
+}
 
+.body .list .records .edit {
+	background: url("../images/icons/edit.png") no-repeat center transparent;
+}
+
+.body .list .records .delete {
+	background: url("../images/icons/delete.png") no-repeat center transparent;
+}
+
+.body .list .records .select {
+	background: url("../images/icons/select.png") no-repeat center transparent;
+}

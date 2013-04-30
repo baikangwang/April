@@ -21,7 +21,7 @@
                 <asp:BoundField DataField="Location" HeaderText="开课学院" />
             </Columns>
             <EmptyDataTemplate>
-                <table>
+                <table class="empty">
                     <thead>
                         <tr>
                             <th>课程名</th>
@@ -38,7 +38,7 @@
         </asp:GridView>
     </div>
     <div id="ListStudent" runat="server" class="list">
-    <div class="topborder"></div>
+        <div class="topborder">&nbsp;</div>
         <div class="listcommand"><asp:Button ID="btnRefreshStd" runat="server" CssClass="refresh" OnClick="RefreshStd_Click" ToolTip="刷新" /></div>   
         <asp:GridView ID="gvStudent" runat="server" OnDataBinding="Student_DataBinding">
             <Columns>
@@ -52,7 +52,7 @@
                 <asp:BoundField DataField="Grade" HeaderText="年级" />
             </Columns>
             <EmptyDataTemplate>
-                <table>
+                <table class="empty">
                     <thead>
                         <tr>
                             <th>学号</th>

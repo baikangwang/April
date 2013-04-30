@@ -4,7 +4,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
-    <div id="err"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
     <div id="viewForm" runat="server" class="form">
         <div class="topborder">&nbsp;</div>
         <div id="viewCommand" class="viewcommand">
@@ -12,113 +11,114 @@
         </div>
         <table class="fields">
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label1" runat="server" CssClass="identity" AssociatedControlID="lblvId"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvId" runat="server"/><asp:Label ID="lblvGender" CssClass="gender" runat="server" Text=" "/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label2" CssClass="label" runat="server" Text="姓名" AssociatedControlID="lblvName"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvName" runat="server"/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label4" CssClass="label" runat="server" Text="年级" AssociatedControlID="lblvGrade"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvGrade" runat="server"/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label5" CssClass="label" runat="server" Text="出生年月" AssociatedControlID="lblvBirthday"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvBirthday" runat="server"/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label6" CssClass="label" runat="server" Text="电话" AssociatedControlID="lblvContactNo"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvContactNo" runat="server"/>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="field">
                     <asp:Label ID="Label7" CssClass="label" runat="server" Text="地址" AssociatedControlID="lblvAddress"/>
                 </td>
-                <td>
+                <td class="field">
                     <asp:Label ID="lblvAddress" runat="server"/>
                 </td>
             </tr>
         </table>
     </div>
     <div id="editForm" runat="server" class="form">
-    <div class="topborder">&nbsp;</div>
-        <table class="fields">
-            <tr>
-                <td>
-                    <asp:Label ID="lblId" CssClass="identity" runat="server" ToolTip="学号" Text=" " AssociatedControlID="txtId"/>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtId" runat="server"/><asp:CheckBox ID="ckbGender" Checked="true" CssClass="gender" runat="server"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="lblName" CssClass="label" runat="server" Text="姓名" AssociatedControlID="txtName"/>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="lblGrade" CssClass="label" runat="server" Text="年级" AssociatedControlID="txtGrade"/>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtGrade" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="lblBirthday" CssClass="label" runat="server" Text="出生年月" AssociatedControlID="txtBirthday"/>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtBirthday" runat="server" Width="130px" MaxLength="1" style="text-align:justify" /><asp:ImageButton ID="ImgBntCalc" runat="server" ImageUrl="~/images/Calendar_scheduleHS.png" CausesValidation="False" />
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="lblContactNo" CssClass="label" runat="server" Text="电话" AssociatedControlID="txtContactNo"/>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtContactNo" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <asp:Label ID="lblAddress" CssClass="label" runat="server" Text="地址" AssociatedControlID="txtAddress"/>
-                </td>
-                <td>
-                    <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-        </table>
+        <div class="topborder">&nbsp;</div>
+        <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
         <div id="editCommand" runat="server" class="editcommand">
             <asp:Button ID="btnSave" runat="server" ValidationGroup="save" ToolTip="保存" OnClick="btnSave_Click" CssClass="save" />
             <asp:HyperLink ID="btnReset" runat="server" ToolTip="重置" CssClass="reset"/>
             <asp:HyperLink ID="btnCancel" runat="server" NavigateUrl="~/StdProfile.aspx" ToolTip="取消" CssClass="cancel"/>
         </div>
+        <table class="fields">
+            <tr>
+                <td class="field">
+                    <asp:Label ID="lblId" CssClass="identity" runat="server" ToolTip="学号" Text=" " AssociatedControlID="txtId"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtId" runat="server"/><asp:CheckBox ID="ckbGender" Checked="true" CssClass="gender" runat="server"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="field">
+                    <asp:Label ID="lblName" CssClass="label" runat="server" Text="姓名" AssociatedControlID="txtName"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="field">
+                    <asp:Label ID="lblGrade" CssClass="label" runat="server" Text="年级" AssociatedControlID="txtGrade"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtGrade" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="field">
+                    <asp:Label ID="lblBirthday" CssClass="label" runat="server" Text="出生年月" AssociatedControlID="txtBirthday"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtBirthday" runat="server" Width="130px" MaxLength="1" style="text-align:justify" /><asp:ImageButton ID="ImgBntCalc" runat="server" ImageUrl="~/images/Calendar_scheduleHS.png" CausesValidation="False" />
+
+                </td>
+            </tr>
+            <tr>
+                <td class="field">
+                    <asp:Label ID="lblContactNo" CssClass="label" runat="server" Text="电话" AssociatedControlID="txtContactNo"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtContactNo" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="field">
+                    <asp:Label ID="lblAddress" CssClass="label" runat="server" Text="地址" AssociatedControlID="txtAddress"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtAddress" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+        </table>
         <ajaxToolkit:ToggleButtonExtender ID="ckbToggle" runat="server"
             TargetControlID="ckbGender"
             ImageWidth="40"
@@ -142,16 +142,6 @@
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqNameEx"
                                                 TargetControlID="ReqName"
                                                 HighlightCssClass="validatorCalloutHighlight" />
-        <ajaxToolkit:MaskedEditExtender ID="txtBirthdayEx" runat="server"
-                                        TargetControlID="txtBirthday"  
-                                        Mask="9999年99月99日"
-                                        MessageValidatorTip="true"
-                                        OnFocusCssClass="MaskedEditFocus"
-                                        OnInvalidCssClass="MaskedEditError"
-                                        MaskType="Date"
-                                        DisplayMoney="Left"
-                                        AcceptNegative="Left"
-                                        ErrorTooltipEnabled="True" />
         <ajaxToolkit:CalendarExtender ID="txtBirthdayCalEx" runat="server" 
                                         TargetControlID="txtBirthday"
                                         Format="yyyy年MM月dd日"

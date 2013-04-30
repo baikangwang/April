@@ -55,18 +55,21 @@ namespace April.Web
             else
             {
                 editForm.Visible = false;
-                viewForm.Visible = !string.IsNullOrEmpty(Id) && Item as IStudent != null;
+                viewForm.Visible = !string.IsNullOrEmpty(Id) && Item as ITeacher != null;
                 if (!string.IsNullOrEmpty(Id) && Item as ITeacher != null)
                 {
-                    lblPwd.Visible = false;
-                    txtPwd.Visible = false;
+                    lblvPwd.Visible = false;
+                    Label8.Visible = false;
 
                     ITeacher teacher = Item as ITeacher;
                     lblvId.Text = string.IsNullOrEmpty(teacher.Id) ? "无" : teacher.Id;
                     lblvName.Text = string.IsNullOrEmpty(teacher.Name) ? "无" : teacher.Name;
                     lblvTitle.Text = string.IsNullOrEmpty(teacher.Title) ? "无" : teacher.Title;
                     lblvContactNo.Text = string.IsNullOrEmpty(teacher.ContactNo) ? "无" : teacher.ContactNo;
-                    lblvGender.Text = string.IsNullOrEmpty(teacher.Gender.ToLabel()) ? "无" : teacher.Gender.ToLabel();
+                    lblvGender.Style.Add("background",
+                                         teacher.Gender == Gender.Male
+                                             ? "url('../images/icons/male.png\') no-repeat center transparent"
+                                             : "url('../images/icons/female.png') no-repeat center transparent");
                 }
                 btnEdit.NavigateUrl = string.Format("~/TeacherMgr.aspx?Id={0}&Mode=Edit", Id);
             }
@@ -156,6 +159,21 @@ namespace April.Web
         protected void Refresh_Click(object sender, EventArgs e)
         {
             gvTeachers.DataBind();
+        }
+
+        protected void Gender_DataBinding(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            if (lbl == null) return;
+            GridViewRow row = lbl.NamingContainer as GridViewRow;
+            if (row == null) return;
+            IUser user = row.DataItem as IUser;
+            if (user == null) return;
+            lbl.Style.Add("background",
+                                 user.Gender == Gender.Male
+                                     ? "url('../images/icons/male.png\') no-repeat center transparent"
+                                     : "url('../images/icons/female.png') no-repeat center transparent");
+            lbl.Text = " ";
         }
     }
 }

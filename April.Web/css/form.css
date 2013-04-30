@@ -1,4 +1,6 @@
-﻿.body .form {
+﻿.body .form 
+{
+	margin:23px 0 0 21px;
     font-family: 'MyYaHei';
 }
 .body .form .topborder {
@@ -7,18 +9,24 @@
 	overflow:hidden;
 	margin:0 21px;
 }
-
+.body .form .message 
+{
+	margin: 5px 21px;
+    background-color: lemonchiffon;
+}
 .body .form .fields {
-	margin:0 21px;
+    margin: 0 21px;
 }
 
-.body .form .fields td {
-    height: 30px;
-    line-height: 30px;
+.body .form .fields .field {
     padding-bottom: 30px;
     padding:0px 5px 30px 5px;
 }
 
+.body .form .fields .field .double
+{
+    width: 20px;
+}
 
 .body .form .fields .identity 
 {
@@ -44,34 +52,34 @@
     font-weight: bold;
     font-size: 20px;
 }
-.body .form .viewcommand {
+.body .form .viewcommand, .editcommand {
     float: right;
+	margin:0 21px;
 }
 
-.body .form .viewcommand .close {
-    margin: 10px 0px;
-}
-
-.body .form .viewcommand .edit{
-    text-align: right;
+.body .form .viewcommand .close , .edit {
     width: 32px;
     height: 32px;
-    display: block;
-	background: url("../images/icons/edit.png") no-repeat center transparent;
+    display:inline-block;
 }
 
-.body .form .editcommand {
-    text-align: right;
+.body .form .viewcommand .close 
+{
+	background: url("../images/icons/delete.png") no-repeat center transparent;
+}
+.body .form .viewcommand .edit
+{
+	background: url("../images/icons/edit.png") no-repeat center transparent;
 }
 
 .body .form .editcommand .save , .reset, .cancel{
     width: 32px;
     height: 32px;
-    display: block;
     border: none;
 	padding:5px;
 	margin:0px;
     display: inline-block;
+    cursor: pointer;
 }
 
 .body .form .editcommand .save
@@ -83,28 +91,25 @@
 }
 
 .body .form .editcommand .reset{
-    /*
-    width: 32px;
-    height: 32px;
-    display: block;
-    display: inline-block;
-    padding: 5px;
-    margin:0px;
-    border: none;
-    */
 	background: url("../images/icons/refresh.png") no-repeat center transparent;
 }
 
 .body .form .editcommand .cancel{
-    /*
-    width: 32px;
-    height: 32px;
-    display: block;
-    display: inline-block;
-    padding: 5px;
-    margin:0px;
-    border: none;
-    */
 	background: url("../images/icons/delete.png") no-repeat center transparent;
+}
+
+.validatorCalloutHighlight
+{
+    background-color: lemonchiffon;
+}
+
+.MaskedEditFocus
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+.MaskedEditError
+{
+    background-color: #ffcccc;
 }
 
