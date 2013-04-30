@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using April.Web.Base;
+using April.Entity;
+using April.Entity.Base;
 
 namespace April.Web
 {
@@ -15,10 +17,10 @@ namespace April.Web
             gvCourse.DataBind();
 
             if (string.IsNullOrEmpty(Id))
-                gvStudent.Visible = false;
+                ListStudent.Visible = false;
             else
             {
-                gvStudent.Visible = true;
+                ListStudent.Visible = true;
                 gvStudent.DataBind();
             }
         }
@@ -46,6 +48,22 @@ namespace April.Web
         protected void Student_DataBinding(object sender, EventArgs e)
         {
             gvStudent.DataSource = BLL.SelectionMgr.ListByCourse(Id);
+        }
+
+        protected void Gender_DataBinding(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            if (lbl == null) return;
+            GridViewRow row = lbl.NamingContainer as GridViewRow;
+            if (row == null) return;
+            IUser user = row.DataItem as IUser;
+            if (user == null) return;
+            Gender gender = user.Gender;
+            lbl.Style.Add("background",
+                                 user.Gender == Gender.Male
+                                     ? "url('../images/icons/male.png\') no-repeat center transparent"
+                                     : "url('../images/icons/female.png') no-repeat center transparent");
+            lbl.Text = " ";
         }
     }
 }

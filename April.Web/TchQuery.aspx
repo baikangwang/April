@@ -1,11 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TchQuery.aspx.cs" Inherits="April.Web.TchQuery" %>
+﻿<%@ Page Title="" Language="C#" Theme="April" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TchQuery.aspx.cs" Inherits="April.Web.TchQuery" %>
 <%@ Import Namespace="April.Entity.Base" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link href="css/list.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="ListCourse">
-        <div><asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" Text="刷新" /></div>   
-        <asp:GridView ID="gvCourse" runat="server" OnDataBinding="Course_DataBinding" AutoGenerateColumns="False">
+    <div id="ListCourse" class="list">
+        <div class="topborder">&nbsp;</div>
+        <div class="listcommand"><asp:Button ID="btnRefresh" CssClass="refresh" runat="server" OnClick="Refresh_Click" ToolTip="刷新" /></div>   
+        <asp:GridView ID="gvCourse" runat="server" OnDataBinding="Course_DataBinding">
             <Columns>
                 <asp:HyperLinkField DataNavigateUrlFields="Id" 
                     DataNavigateUrlFormatString="~/TchQuery.aspx?Id={0}" DataTextField="Name" 
@@ -35,15 +37,16 @@
             </EmptyDataTemplate>
         </asp:GridView>
     </div>
-    <div id="ListStudent" runat="server">
-        <div><asp:Button ID="btnRefreshStd" runat="server" OnClick="RefreshStd_Click" Text="刷新" /></div>   
-        <asp:GridView ID="gvStudent" runat="server" OnDataBinding="Student_DataBinding" AutoGenerateColumns="False">
+    <div id="ListStudent" runat="server" class="list">
+    <div class="topborder"></div>
+        <div class="listcommand"><asp:Button ID="btnRefreshStd" runat="server" CssClass="refresh" OnClick="RefreshStd_Click" ToolTip="刷新" /></div>   
+        <asp:GridView ID="gvStudent" runat="server" OnDataBinding="Student_DataBinding">
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="学号" />
                 <asp:BoundField DataField="Name" HeaderText="姓名" />
                 <asp:TemplateField HeaderText="性别">
                     <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# ((Gender)Eval("Gender"))==Gender.Female?"女":"男" %>'></asp:Label>
+                        <asp:Label ID="Label1" runat="server" CssClass="gender" OnDataBinding="Gender_DataBinding"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Grade" HeaderText="年级" />

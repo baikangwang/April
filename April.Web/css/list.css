@@ -1,0 +1,60 @@
+﻿.body .list {
+    font-family: 'MyYaHei';
+}
+.body .list .topborder {
+	background: url("../images/border.jpg") repeat-x scroll right center transparent;
+	width:665px;
+	overflow:hidden;
+	margin:0 21px;
+}
+
+.body .list .label {
+    color: #6b6b6b;
+    font-weight: bold;
+    font-size: 20px;
+}
+.body .list .listcommand {
+	width:665px;
+	overflow:hidden;
+	margin:0 21px;
+}
+
+.body .list .listcommand .add {
+    left:0px;
+    top:0px;
+    width: 32px;
+    height: 32px;
+    display: block;
+    border:none;
+	background: url("../images/icons/add.png") no-repeat center transparent;
+}
+
+.body .list .listcommand .refresh{
+    float:right;
+    right:0px;
+    top:0px;
+    width: 32px;
+    height: 32px;
+    display: block;
+    border:none;
+	background: url("../images/icons/refresh.png") no-repeat center transparent;
+}
+
+.body .list .records
+{
+	width:100%;
+	width:665px;
+	overflow:hidden;
+}
+
+.body .list .records .gender
+{
+	width:32px;
+	width:32px;
+	border:none;
+	padding:0px;
+	margin:0px;
+	display:inline-block;
+}
+
+

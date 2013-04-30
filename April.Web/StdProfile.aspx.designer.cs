@@ -49,15 +49,6 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.HyperLink btnEdit;
         
         /// <summary>
-        /// btnClose control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink btnClose;
-        
-        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,15 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.Label lblvId;
         
         /// <summary>
+        /// lblvGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblvGender;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -92,24 +92,6 @@ namespace April.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblvName;
-        
-        /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-        
-        /// <summary>
-        /// lblvGender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblvGender;
         
         /// <summary>
         /// Label4 control.
@@ -184,24 +166,6 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.Label lblvAddress;
         
         /// <summary>
-        /// Label8 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label8;
-        
-        /// <summary>
-        /// lblvPwd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblvPwd;
-        
-        /// <summary>
         /// editForm control.
         /// </summary>
         /// <remarks>
@@ -229,6 +193,15 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.TextBox txtId;
         
         /// <summary>
+        /// ckbGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox ckbGender;
+        
+        /// <summary>
         /// lblName control.
         /// </summary>
         /// <remarks>
@@ -245,33 +218,6 @@ namespace April.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtName;
-        
-        /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// ckbGender control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox ckbGender;
-        
-        /// <summary>
-        /// ckbToggle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ToggleButtonExtender ckbToggle;
         
         /// <summary>
         /// lblGrade control.
@@ -355,24 +301,6 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.TextBox txtAddress;
         
         /// <summary>
-        /// lblPwd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPwd;
-        
-        /// <summary>
-        /// txtPwd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPwd;
-        
-        /// <summary>
         /// editCommand control.
         /// </summary>
         /// <remarks>
@@ -409,6 +337,15 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.HyperLink btnCancel;
         
         /// <summary>
+        /// ckbToggle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ToggleButtonExtender ckbToggle;
+        
+        /// <summary>
         /// ReqId control.
         /// </summary>
         /// <remarks>
@@ -443,24 +380,6 @@ namespace April.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.ValidatorCalloutExtender ReqNameEx;
-        
-        /// <summary>
-        /// ReqPwd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator ReqPwd;
-        
-        /// <summary>
-        /// ReqPwdEx control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.ValidatorCalloutExtender ReqPwdEx;
         
         /// <summary>
         /// txtBirthdayEx control.

@@ -16,6 +16,7 @@
     height: 30px;
     line-height: 30px;
     padding-bottom: 30px;
+    padding:0px 5px 30px 5px;
 }
 
 
@@ -63,30 +64,47 @@
     text-align: right;
 }
 
-.body .form .editcommand .save{
+.body .form .editcommand .save , .reset, .cancel{
     width: 32px;
     height: 32px;
     display: block;
     border: none;
-	/*background: url("../images/icons/save.png") no-repeat center transparent;*/
+	padding:5px;
+	margin:0px;
     display: inline-block;
+}
+
+.body .form .editcommand .save
+{
+    cursor:pointer;
+    margin:2px;
+    line-height:32px;
+    background: url("../images/icons/save.png") no-repeat center transparent;
 }
 
 .body .form .editcommand .reset{
+    /*
     width: 32px;
     height: 32px;
     display: block;
-	background: url("../images/icons/refresh.png") no-repeat center transparent;
     display: inline-block;
     padding: 5px;
+    margin:0px;
+    border: none;
+    */
+	background: url("../images/icons/refresh.png") no-repeat center transparent;
 }
 
 .body .form .editcommand .cancel{
+    /*
     width: 32px;
     height: 32px;
     display: block;
-	background: url("../images/icons/delete.png") no-repeat center transparent;
     display: inline-block;
     padding: 5px;
+    margin:0px;
+    border: none;
+    */
+	background: url("../images/icons/delete.png") no-repeat center transparent;
 }
 

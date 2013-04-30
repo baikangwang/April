@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TchProfile.aspx.cs" Inherits="April.Web.TchProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link href="css/profile.css" rel="stylesheet" type="text/css" />
+    <link href="css/form.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
@@ -8,7 +8,7 @@
     <div id="viewForm" runat="server" class="form" >
         <div class="topborder">&nbsp;</div>
         <div id="viewCommand" class="viewcommand">
-            <asp:HyperLink ID="btnEdit" runat="server" CssClass="edit"/>
+            <asp:HyperLink ID="btnEdit" runat="server" ToolTip="修改" CssClass="edit"/>
         </div>
         <table class="fields">
             <tr>
@@ -16,7 +16,7 @@
                     <asp:Label ID="Label1" runat="server" CssClass="identity" AssociatedControlID="lblvId"/>
                 </td>
                 <td style="display: inline-block">
-                    <asp:Label ID="lblvId" runat="server"/><asp:Label ID="lblvGender" CssClass="gender" runat="server" AssociatedControlID="lblvId"/>
+                    <asp:Label ID="lblvId" runat="server"/><asp:Label ID="lblvGender" CssClass="gender" runat="server" Text=" "/>
                 </td>
             </tr>
             <tr>
@@ -50,7 +50,7 @@
         <table class="fields">
             <tr>
                 <td>
-                    <asp:Label ID="lblId" runat="server" CssClass="identity" AssociatedControlID="txtId"/>
+                    <asp:Label ID="lblId" runat="server" CssClass="identity" ToolTip="学号" AssociatedControlID="txtId"/>
                 </td>
                 <td>
                     <asp:TextBox ID="txtId" runat="server" Enabled="False"/>
@@ -99,7 +99,7 @@
             </tr>
         </table>
         <div id="editCommand" runat="server" class="editcommand">
-            <asp:ImageButton ID="btnSave" runat="server" ValidationGroup="save" ImageUrl="images/icons/save.png" CssClass="save" ToolTip="保存" OnClick="btnSave_Click" />
+            <asp:Button ID="btnSave" runat="server" ValidationGroup="save" CssClass="save" ToolTip="保存" OnClick="btnSave_Click" />
             <asp:HyperLink ID="btnReset" runat="server" CssClass="reset" ToolTip="重置"/>
             <asp:HyperLink ID="btnCancel" runat="server" NavigateUrl="~/TchProfile.aspx" CssClass="cancel" ToolTip="取消"/>
         </div>

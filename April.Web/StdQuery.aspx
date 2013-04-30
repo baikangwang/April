@@ -1,10 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StdQuery.aspx.cs" Inherits="April.Web.StdQuery" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Theme="April" CodeBehind="StdQuery.aspx.cs" Inherits="April.Web.StdQuery" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link href="css/list.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="err"><asp:Label ID="lblMessage" runat="server" Text=""></asp:Label></div>
-    <div id="ListCourse">
-        <div><asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" Text="刷新" /></div>   
+    <div id="ListCourse" class="list">
+    <div class="topborder">&nbsp;</div>
+        <div class="listcommand"><asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" ToolTip="刷新" CssClass="refresh"/></div>   
         <asp:GridView ID="gvCourses" runat="server" AutoGenerateColumns="False" 
             OnDataBinding="gvCourses_DataBinding" 
                 onrowcommand="gvCourses_RowCommand" 

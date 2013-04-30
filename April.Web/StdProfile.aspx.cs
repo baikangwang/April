@@ -28,9 +28,9 @@ namespace April.Web
             {
                 viewForm.Visible = false;
                 editForm.Visible = true;
-                lblPwd.Visible = false;
-                txtPwd.Visible = false;
-                ReqPwd.ValidationGroup = string.Empty;
+                //lblPwd.Visible = false;
+                //txtPwd.Visible = false;
+                //ReqPwd.ValidationGroup = string.Empty;
 
                 IStudent student = Item as IStudent;
                 txtId.Text = student.Id;
@@ -52,8 +52,8 @@ namespace April.Web
                 viewForm.Visible = !string.IsNullOrEmpty(Id);
                 if (!string.IsNullOrEmpty(Id) && Item as IStudent != null)
                 {
-                    lblPwd.Visible = false;
-                    txtPwd.Visible = false;
+                    //lblPwd.Visible = false;
+                    //txtPwd.Visible = false;
 
                     IStudent student = Item as IStudent;
                     lblvId.Text = string.IsNullOrEmpty(student.Id) ? "无" : student.Id;
@@ -61,7 +61,10 @@ namespace April.Web
                     lblvGrade.Text = string.IsNullOrEmpty(student.Grade) ? "无" : student.Grade;
                     lblvAddress.Text = string.IsNullOrEmpty(student.Address) ? "无" : student.Address;
                     lblvContactNo.Text = string.IsNullOrEmpty(student.ContactNo) ? "无" : student.ContactNo;
-                    lblvGender.Text = string.IsNullOrEmpty(student.Gender.ToLabel()) ? "无" : student.Gender.ToLabel();
+                    lblvGender.Style.Add("background",
+                                         student.Gender == Gender.Male
+                                             ? "url('../images/icons/male.png\') no-repeat center transparent"
+                                             : "url('../images/icons/female.png') no-repeat center transparent");
                     lblvBirthday.Text = student.Birthday == null ? "无" : student.Birthday.Value.ToShortDateString();
                 }
                 btnEdit.NavigateUrl = string.Format("~/StdProfile.aspx?Id={0}&Mode=Edit", Id);
