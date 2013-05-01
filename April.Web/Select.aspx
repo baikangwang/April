@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Theme="April" CodeBehind="Select.aspx.cs" Inherits="April.Web.Select" %>
+﻿<%@ Page Title="学生选课" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Select.aspx.cs" Inherits="April.Web.Select" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="css/list.css" rel="stylesheet" type="text/css" />
     <link href="css/form.css" rel="stylesheet" type="text/css" />
@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
     <div id="ListCourse" class="list">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span>选择课程</span></div>
         <div class="listcommand"><asp:Button ID="btnRefresh" CssClass="refresh" runat="server" OnClick="Refresh_Click" ToolTip="刷新" /></div>   
         <asp:GridView ID="gvCourses" runat="server" AutoGenerateColumns="False" 
             OnDataBinding="gvCourses_DataBinding">
@@ -46,10 +46,10 @@
         </asp:GridView>
     </div>
     <div id="viewForm" runat="server" class="form">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span>选择课程确认</span></div>
         <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
         <div id="editCommand" runat="server" class="editcommand">
-            <asp:Button ID="btnSave" runat="server" CssClass="save" ToolTip="选择" OnClick="btnSave_Click" />
+            <asp:Button ID="btnSave" runat="server" CssClass="select" ToolTip="选择" OnClick="btnSave_Click" />
             <asp:Button ID="btnCancel" runat="server" CssClass="cancel" ToolTip="取消" OnClick="btnCancel_Click" />
         </div>
         <table class="fields">

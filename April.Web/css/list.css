@@ -2,12 +2,28 @@
 {
 	margin:23px 0 0 21px;
     font-family: 'MyYaHei';
+    padding-bottom: 23px;
 }
-.body .list .topborder {
+.body .list .title {
 	background: url("../images/border.jpg") repeat-x scroll right center transparent;
 	width:665px;
 	overflow:hidden;
 	margin:0 21px;
+    padding: 20px 0px 10px 0px;
+}
+
+.body .list .title span {
+	background-color: #FFFFFF;
+	color: #e3e3e3;
+	display: inline;
+    font-family: 'MyYaHei';/*'Conv_Muli-Regular';*/
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 24px;
+	margin: 22px 0;
+	padding: 0 11px 0 0;
+    letter-spacing: 10px;
+    font-weight: bold;
 }
 
 .body .list .label {
@@ -96,4 +112,14 @@
 
 .body .list .records .select {
 	background: url("../images/icons/select.png") no-repeat center transparent;
+}
+
+.MaskedEditFocus
+{
+    background-color: #ffffcc;
+    color: #000000;
+}
+.MaskedEditError
+{
+    background-color: #ffcccc;
 }

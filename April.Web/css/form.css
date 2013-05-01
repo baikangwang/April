@@ -3,12 +3,28 @@
 	margin:23px 0 0 21px;
     font-family: 'MyYaHei';
 }
-.body .form .topborder {
+.body .form .title {
 	background: url("../images/border.jpg") repeat-x scroll right center transparent;
 	width:665px;
 	overflow:hidden;
-	margin:0 21px;
+    margin: 0px 21px;
+    padding: 20px 0px;
 }
+
+.body .form .title span {
+	background-color: #FFFFFF;
+	color: #e3e3e3;
+	display: inline;
+    font-family: 'MyYaHei';/*'Conv_Muli-Regular';*/
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 24px;
+	margin: 22px 0;
+	padding: 0 11px 0 0;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+
 .body .form .message 
 {
 	margin: 5px 21px;
@@ -72,7 +88,7 @@
 	background: url("../images/icons/edit.png") no-repeat center transparent;
 }
 
-.body .form .editcommand .save , .reset, .cancel{
+.body .form .editcommand .save , .reset, .cancel, .select{
     width: 32px;
     height: 32px;
     border: none;
@@ -82,12 +98,21 @@
     cursor: pointer;
 }
 
-.body .form .editcommand .save
+.body .form .editcommand .save , .select
 {
     cursor:pointer;
     margin:2px;
     line-height:32px;
+}
+
+.body .form .editcommand .save
+{
     background: url("../images/icons/save.png") no-repeat center transparent;
+}
+
+.body .form .editcommand .select
+{
+	background: url("../images/icons/select.png") no-repeat center transparent;
 }
 
 .body .form .editcommand .reset{

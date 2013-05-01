@@ -6,5 +6,6 @@ namespace April.Entity
     {
         IStudent Student { get; set; }
         ICourse Course { get; set; }
+        int? Score { get; set; }
     }
 }

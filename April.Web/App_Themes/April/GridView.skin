@@ -29,3 +29,5 @@ Default skin template. The following skins are provided as examples only.
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" HighlightCssClass="validatorCalloutHighlight" />
+        <ajaxToolkit:ToolkitScriptManager runat="server" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
+

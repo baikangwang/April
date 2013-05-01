@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StdProfile.aspx.cs" Inherits="April.Web.StdProfile" %>
+﻿<%@ Page Title="学生个人信息" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StdProfile.aspx.cs" Inherits="April.Web.StdProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="css/form.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
     <div id="viewForm" runat="server" class="form">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span>查看个人信息</span></div>
         <div id="viewCommand" class="viewcommand">
             <asp:HyperLink ID="btnEdit" runat="server" ToolTip="修改" CssClass="edit"/>
         </div>
@@ -61,7 +61,7 @@
         </table>
     </div>
     <div id="editForm" runat="server" class="form">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span>修改个人信息</span></div>
         <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
         <div id="editCommand" runat="server" class="editcommand">
             <asp:Button ID="btnSave" runat="server" ValidationGroup="save" ToolTip="保存" OnClick="btnSave_Click" CssClass="save" />

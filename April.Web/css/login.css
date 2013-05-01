@@ -1,32 +1,44 @@
-﻿.body .services ul li {
+﻿.body .login 
+{
+	width:665px;
+    margin:30px 20px;
+}
+
+.body .login ul 
+{
+    margin: 20px 21px;
+}
+
+.body .login ul li {
+    margin-top: 30px;
 	overflow:hidden;
     list-style: none;
 }
-.body .services ul li h3 {
+.body .login ul li h2 {
 	background: url("../images/border.jpg") repeat-x scroll right center transparent;
-	width:665px;
+	margin: 0 0 0 30px;
 	overflow:hidden;
-	margin:0 21px;
 }
-.body .services ul li h3 span {
+.body .login ul li h2 span {
 	background-color: #FFFFFF;
 	color: #7D7D7D;
 	display: inline;
     font-family: 'MyYaHei';/*'Conv_Muli-Regular';*/
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: normal;
 	line-height: 24px;
 	margin: 22px 0;
 	padding: 0 11px 0 0;
+    letter-spacing: 10px;
 }
-.body .services ul li div {
+.body .login ul li div {
 	margin:35px 0 0 29px;
 	width:251px;
 	min-height:290px;
 	height:auto;
 	float:left;
 }
-.body .services ul li p {
+.body .login ul li p {
 	float: left;
 	padding: 0 25px 0 40px;
 	width: 400px;
@@ -34,7 +46,7 @@
     font-family: 'MyYaHei';/*'Conv_Muli-Regular';*/
 	font-size:13px;
 }
-.body .services li p img
+.body .login li p img
 {
     margin: 0px;
     width: 32px;
@@ -44,12 +56,27 @@
 }
 
 
-.body .services li p .button 
+.body .login li .btnlogin 
 {
-    /*border:0;*/
-	width:127px;
-	height:40px;
+    float: right;
+    border: none;
+	width:32px;
+	height:32px;
 	cursor:pointer;
-	color:#000;
-    font-weight: bold;
+    background: url("../images/icons/login.png") no-repeat;
+    
 }
+
+.body .login .message 
+{
+    width: 665px;
+    margin: 20px 0px 0px 40px;
+    padding: 0px;
+    background-color: lemonchiffon;
+}
+
+.validatorCalloutHighlight
+{
+    background-color: lemonchiffon;
+}
+

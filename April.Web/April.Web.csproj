@@ -71,7 +71,7 @@
     <Content Include="Controls\MenuBar.ascx" />
     <Content Include="css\form.css" />
     <Content Include="css\list.css" />
-    <Content Include="css\services.css" />
+    <Content Include="css\login.css" />
     <Content Include="images\Calendar_scheduleHS.png" />
     <Content Include="images\icons\select.png" />
     <Content Include="images\icons\delete.png" />
@@ -158,6 +158,7 @@
     <Content Include="StdQuery.aspx" />
     <Content Include="Select.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="ScoreMgr.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -291,6 +292,13 @@
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ScoreMgr.aspx.cs">
+      <DependentUpon>ScoreMgr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScoreMgr.aspx.designer.cs">
+      <DependentUpon>ScoreMgr.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

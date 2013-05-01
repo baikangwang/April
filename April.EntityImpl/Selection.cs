@@ -13,6 +13,8 @@ namespace April.EntityImpl
 
         public virtual IStudent Student { get; set; }
         public virtual ICourse Course { get; set; }
+        public virtual int? Score { get; set; }
+
 
         #endregion
     }

@@ -47,7 +47,7 @@ namespace April.Web
 
         protected void Student_DataBinding(object sender, EventArgs e)
         {
-            gvStudent.DataSource = BLL.SelectionMgr.ListByCourse(Id);
+            gvStudent.DataSource = BLL.SelectionMgr.ListStudentsByCourse(Id);
         }
 
         protected void Gender_DataBinding(object sender, EventArgs e)
@@ -58,7 +58,6 @@ namespace April.Web
             if (row == null) return;
             IUser user = row.DataItem as IUser;
             if (user == null) return;
-            Gender gender = user.Gender;
             lbl.Style.Add("background",
                                  user.Gender == Gender.Male
                                      ? "url('../images/icons/male.png\') no-repeat center transparent"

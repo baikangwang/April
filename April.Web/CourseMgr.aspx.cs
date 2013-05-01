@@ -27,6 +27,8 @@ namespace April.Web
                 editForm.Visible = true;
                 if (string.IsNullOrEmpty(Id) || Item as ICourse == null)
                 {
+                    lblSubject.InnerText = "添加课程信息";
+                    
                     txtName.Text = string.Empty;
                     txtCredit.Text = string.Empty;
                     txtHours.Text = string.Empty;
@@ -40,6 +42,9 @@ namespace April.Web
                 else
                 {
                     ICourse course = Item as ICourse;
+
+                    lblSubject.InnerText = "修改课程信息";
+                    
                     txtName.Text = course.Name;
                     txtCredit.Text = Convert.ToString(course.Credit);
                     txtHours.Text = Convert.ToString(course.Hours);

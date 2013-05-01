@@ -62,7 +62,7 @@ namespace April.DAL
             return (count == null || count is DBNull) ? 0 : Convert.ToInt32(count);
         }
 
-        public static IList<IStudent> ListByCourse(Command cmd,string courseId)
+        public static IList<IStudent> ListStudentsByCourse(Command cmd,string courseId)
         {
             string table = Selection.Table;
             string columns = string.Join(",", Selection.Properties.Select(p => p.Name != "Id" ? p.Name + "_Id" : p.Name).ToArray());
@@ -83,7 +83,28 @@ namespace April.DAL
             return students;
         }
 
-        public static IList<ICourse> ListByStudent(Command cmd,string studentId)
+        public static IList<ISelection> ListByCourse(Command cmd,string courseId)
+        {
+            string table = Selection.Table;
+            string columns = string.Join(",", Selection.Properties.Select(p => p.Name != "Id" ? p.Name + "_Id" : p.Name).ToArray());
+            string sql = string.Format(@"select {0} from {1} where lower(Course_Id)=lower(@Course_Id)", columns, table);
+            cmd.CommandText = sql;
+            cmd.AddParameter("@Course_Id", courseId);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            IList<ISelection> selections = new List<ISelection>();
+            while (reader.Read())
+            {
+                ISelection selction = ReaderFactory.Reader(reader, Selection.Entity) as ISelection;
+                if (selction != null)
+                    selections.Add(selction);
+            }
+
+            reader.Close();
+            return selections;
+        }
+
+        public static IList<ICourse> ListCoursesByStudent(Command cmd,string studentId)
         {
             string table = Selection.Table;
             string columns = string.Join(",", Selection.Properties.Select(p => p.Name != "Id" ? p.Name + "_Id" : p.Name).ToArray());
@@ -115,6 +136,27 @@ namespace April.DAL
             {
                 if(field!="Id")
                     cmd.AddParameter("@" + field+"_Id", values[field]);
+                else
+                    cmd.AddParameter("@" + field, values[field]);
+            }
+            int result = cmd.ExecuteNonQuery();
+            return result > 0;
+        }
+
+        public static bool Update(Command cmd,IDictionary<string,object> values )
+        {
+            string table = Selection.Table;
+            string cals = string.Join(",",
+                                      (from p in values.Keys
+                                       where p != "oId"
+                                       let n = (p != "Id" ? p + "_Id" : p)
+                                       select n + "=" + "@" + n).ToArray());
+            string sql = string.Format(@"update {1} set {0} where Id=@oId", cals, table);
+            cmd.CommandText = sql;
+            foreach (string field in values.Keys)
+            {
+                if (field != "Id")
+                    cmd.AddParameter("@" + field + "_Id", values[field]);
                 else
                     cmd.AddParameter("@" + field, values[field]);
             }

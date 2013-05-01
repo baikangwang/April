@@ -1,11 +1,10 @@
-﻿<%@ Page Title="" Language="C#" Theme="April" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TchQuery.aspx.cs" Inherits="April.Web.TchQuery" %>
-<%@ Import Namespace="April.Entity.Base" %>
+﻿<%@ Page Title="学生选课查询" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TchQuery.aspx.cs" Inherits="April.Web.TchQuery" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="css/list.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="ListCourse" class="list">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span>课程表</span></div>
         <div class="listcommand"><asp:Button ID="btnRefresh" CssClass="refresh" runat="server" OnClick="Refresh_Click" ToolTip="刷新" /></div>   
         <asp:GridView ID="gvCourse" runat="server" OnDataBinding="Course_DataBinding">
             <Columns>
@@ -38,7 +37,7 @@
         </asp:GridView>
     </div>
     <div id="ListStudent" runat="server" class="list">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span>选课学生</span></div>
         <div class="listcommand"><asp:Button ID="btnRefreshStd" runat="server" CssClass="refresh" OnClick="RefreshStd_Click" ToolTip="刷新" /></div>   
         <asp:GridView ID="gvStudent" runat="server" OnDataBinding="Student_DataBinding">
             <Columns>

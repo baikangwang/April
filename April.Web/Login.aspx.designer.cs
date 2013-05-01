@@ -13,6 +13,24 @@ namespace April.Web {
     public partial class Login {
         
         /// <summary>
+        /// ToolkitScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ToolkitScriptManager ToolkitScriptManager1;
+        
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
+        
+        /// <summary>
         /// imgId control.
         /// </summary>
         /// <remarks>
@@ -31,15 +49,6 @@ namespace April.Web {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtId;
         
         /// <summary>
-        /// reqId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqId;
-        
-        /// <summary>
         /// imgPwd control.
         /// </summary>
         /// <remarks>
@@ -56,15 +65,6 @@ namespace April.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtPwd;
-        
-        /// <summary>
-        /// reqPwd control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPwd;
         
         /// <summary>
         /// imgRole control.
@@ -103,12 +103,39 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.Button btnLogin;
         
         /// <summary>
-        /// lblError control.
+        /// reqId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblError;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqId;
+        
+        /// <summary>
+        /// ReqIdEx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender ReqIdEx;
+        
+        /// <summary>
+        /// reqPwd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPwd;
+        
+        /// <summary>
+        /// ReqPwdEx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ValidatorCalloutExtender ReqPwdEx;
     }
 }

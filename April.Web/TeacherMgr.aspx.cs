@@ -22,6 +22,8 @@ namespace April.Web
                 editForm.Visible = true;
                 if (string.IsNullOrEmpty(Id) || Item as ITeacher == null)
                 {
+                    lblSubject.InnerText = "添加教师程信息";
+                    
                     lblPwd.Visible = true;
                     txtPwd.Visible = true;
                     ReqPwd.ValidationGroup = "save";
@@ -39,6 +41,9 @@ namespace April.Web
                 {
                     lblPwd.Visible = false;
                     txtPwd.Visible = false;
+
+                    lblSubject.InnerText = "修改教师程信息";
+
                     ReqPwd.ValidationGroup = string.Empty;
 
                     ITeacher teacher = Item as ITeacher;

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" Theme="April" CodeBehind="TeacherMgr.aspx.cs" Inherits="April.Web.TeacherMgr" %>
+﻿<%@ Page Title="教师管理" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="TeacherMgr.aspx.cs" Inherits="April.Web.TeacherMgr" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="css/form.css" rel="stylesheet" type="text/css" />
     <link href="css/list.css" rel="stylesheet" type="text/css" />
@@ -6,7 +6,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
     <div class="list">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span>教师管理</span></div>
         <div class="listcommand">
             <asp:HyperLink ID="btnAdd" runat="server" NavigateUrl="~/TeacherMgr.aspx?Mode=Edit" CssClass="add" ToolTip="添加"/>
             <asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" ToolTip="刷新" CssClass="refresh" />
@@ -57,7 +57,7 @@
         </asp:GridView>
     </div>
     <div id="viewForm" runat="server" class="form">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span>查看教师信息</span></div>
         <div id="viewCommand" class="viewcommand">
             <asp:HyperLink ID="btnEdit" runat="server" CssClass="edit" ToolTip="修改"/>
             <asp:HyperLink ID="btnClose" runat="server" CssClass="close" ToolTip="关闭" NavigateUrl="~/TeacherMgr.aspx"/>
@@ -107,7 +107,7 @@
         </table>
     </div>
     <div id="editForm" runat="server" class="form">
-        <div class="topborder">&nbsp;</div>
+        <div class="title"><span runat="server" id="lblSubject"></span></div>
         <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
         <div id="editCommand" runat="server" class="editcommand">
             <asp:Button ID="btnSave" runat="server" ValidationGroup="save" ToolTip="保存" OnClick="btnSave_Click" CssClass="save" />
