@@ -130,6 +130,24 @@ namespace April.Web.Controls {
         protected global::System.Web.UI.WebControls.LinkButton btnCourseMgr;
         
         /// <summary>
+        /// itemScoreMgr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl itemScoreMgr;
+        
+        /// <summary>
+        /// btnScoreMgr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnScoreMgr;
+        
+        /// <summary>
         /// itemTchProfile control.
         /// </summary>
         /// <remarks>
@@ -218,5 +236,23 @@ namespace April.Web.Controls {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnSelect;
+        
+        /// <summary>
+        /// itemScoreQuery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl itemScoreQuery;
+        
+        /// <summary>
+        /// btnScoreQuery control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnScoreQuery;
     }
 }

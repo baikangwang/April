@@ -8,6 +8,7 @@
         <li runat="server" id="itemStudentMgr"><asp:LinkButton ID="btnStudentMgr" runat="server" OnClick="link_Click">学生管理</asp:LinkButton></li>
         <li runat="server" id="itemTeacherMgr"><asp:LinkButton ID="btnTeacherMgr" runat="server" OnClick="link_Click">教师管理</asp:LinkButton></li>
         <li runat="server" id="itemCourseMgr"><asp:LinkButton ID="btnCourseMgr" runat="server" OnClick="link_Click">课程管理</asp:LinkButton></li>
+        <li runat="server" id="itemScoreMgr"><asp:LinkButton ID="btnScoreMgr" runat="server" OnClick="link_Click">成绩管理</asp:LinkButton></li>
         <!--Teacher-->
         <li runat="server" id="itemTchProfile"><asp:LinkButton ID="btnTchProfile" runat="server" OnClick="link_Click">个人信息</asp:LinkButton></li>
         <li runat="server" id="itemTchQuery"><asp:LinkButton ID="btnTchQuery" runat="server" OnClick="link_Click">查询</asp:LinkButton></li>
@@ -15,5 +16,5 @@
         <li runat="server" id="itemStdProfile"><asp:LinkButton ID="btnStdProfile" runat="server" OnClick="link_Click">个人信息</asp:LinkButton></li>
         <li runat="server" id="itemStdQuery"><asp:LinkButton ID="btnStdQuery" runat="server" OnClick="link_Click">查询</asp:LinkButton></li>
         <li runat="server" id="itemSelect"><asp:LinkButton ID="btnSelect" runat="server" OnClick="link_Click">选课</asp:LinkButton></li>
-
+        <li runat="server" id="itemScoreQuery"><asp:LinkButton ID="btnScoreQuery" runat="server" OnClick="link_Click">成绩</asp:LinkButton></li>
     </ul>

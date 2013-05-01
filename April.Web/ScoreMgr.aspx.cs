@@ -12,14 +12,17 @@ namespace April.Web
     {
         protected void Page_Init(object sender, EventArgs e)
         {
-            gvCourse.DataBind();
-
-            if (string.IsNullOrEmpty(Id))
-                ListStudent.Visible = false;
-            else
+            if(!IsPostBack)
             {
-                ListStudent.Visible = true;
-                gvStudent.DataBind();
+                gvCourse.DataBind();
+
+                if (string.IsNullOrEmpty(Id))
+                    ListStudent.Visible = false;
+                else
+                {
+                    ListStudent.Visible = true;
+                    gvStudent.DataBind();
+                }
             }
         }
         
@@ -40,7 +43,7 @@ namespace April.Web
 
         protected void Course_DataBinding(object sender, EventArgs e)
         {
-            gvCourse.DataSource = BLL.CourseMgr.ListByTeacher(LoginUser.Id);
+            gvCourse.DataSource = BLL.CourseMgr.List();
         }
 
         protected void Student_DataBinding(object sender, EventArgs e)
@@ -109,17 +112,27 @@ namespace April.Web
 
         protected void gvStudent_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            LinkButton btnUpdate = sender as LinkButton;
-            if(btnUpdate==null)return;
-            string id = btnUpdate.CommandArgument;
+            string id = Convert.ToString(e.Keys[e.RowIndex]);
             int? score = e.NewValues["Score"] == null ? (int?) null : Convert.ToInt32(e.NewValues["Score"]);
             bool updated = SelectionMgr.Update(new Dictionary<string, object>() {{"oId", id}, {"Score", score}});
             lblMessage.Text = updated ? "修改分数成功！" : "修改分数失败！";
+            gvStudent.EditIndex = -1;
+            gvStudent.DataBind();
         }
 
         protected void gvStudent_RowUpdated(object sender, GridViewUpdatedEventArgs e)
         {
-            e.KeepInEditMode = false;
+        }
+
+        protected void gvStudent_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            gvStudent.EditIndex = e.NewEditIndex;
+            gvStudent.DataBind();
+        }
+
+        protected void gvStudent_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            gvStudent.EditIndex = -1;
             gvStudent.DataBind();
         }
     }

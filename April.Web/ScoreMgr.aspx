@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ScoreMgr.aspx.cs" Inherits="April.Web.ScoreMgr" %>
+﻿<%@ Page Title="成绩管理" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ScoreMgr.aspx.cs" Inherits="April.Web.ScoreMgr" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link href="css/list.css" rel="stylesheet" type="text/css" />
 </asp:Content>
@@ -10,7 +10,7 @@
         <asp:GridView ID="gvCourse" runat="server" OnDataBinding="Course_DataBinding">
             <Columns>
                 <asp:HyperLinkField DataNavigateUrlFields="Id" 
-                    DataNavigateUrlFormatString="~/TchQuery.aspx?Id={0}" DataTextField="Name" 
+                    DataNavigateUrlFormatString="~/ScoreMgr.aspx?Id={0}" DataTextField="Name" 
                     HeaderText="课程名" />
                 <asp:TemplateField HeaderText="教师名">
                     <ItemTemplate>
@@ -42,7 +42,9 @@
         <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
         <div class="listcommand"><asp:Button ID="btnRefreshStd" runat="server" CssClass="refresh" OnClick="RefreshStd_Click" ToolTip="刷新" /></div>   
         <asp:GridView ID="gvStudent" runat="server" OnDataBinding="Student_DataBinding" 
-            onrowupdated="gvStudent_RowUpdated" onrowupdating="gvStudent_RowUpdating">
+            onrowupdated="gvStudent_RowUpdated" onrowupdating="gvStudent_RowUpdating" 
+            onrowediting="gvStudent_RowEditing" DataKeyNames="Id" 
+            onrowcancelingedit="gvStudent_RowCancelingEdit">
             <Columns>
                 <asp:TemplateField HeaderText="学号">
                     <ItemTemplate>
@@ -78,7 +80,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="分数">
                     <ItemTemplate>
-                        <asp:Label ID="Label5" runat="server" Text='<%# Bind("Score") %>' OnDataBinding="Score_DataBinding"></asp:Label>
+                        <asp:Label ID="Label5" runat="server" OnDataBinding="Score_DataBinding"></asp:Label>
                     </ItemTemplate>
                     <EditItemTemplate>
                         <asp:TextBox ID="txtScore" runat="server" Text='<%# Bind("Score") %>'/>
@@ -96,9 +98,9 @@
                                         CommandName="Edit" CssClass="edit" ToolTip="修改分数"/>
                     </ItemTemplate>
                     <EditItemTemplate>
-                        <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" 
-                                        CommandName="Update" CommandArgument='<%# Bind("Id") %>' CssClass="save" ToolTip="保存"/>
-                        &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" 
+                        <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="True" 
+                                        CommandName="Update" CssClass="save" ToolTip="保存"/>
+                        &nbsp;<asp:LinkButton ID="LinkButton3" runat="server" CausesValidation="False" 
                                               CommandName="Cancel" CssClass="cancel" ToolTip="取消"/>
                     </EditItemTemplate>
                 </asp:TemplateField>
@@ -111,10 +113,11 @@
                             <th>姓名</th>
                             <th>性别</th>
                             <th>年级</th>
+                            <th>分数</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td colspan="4">没有学生记录</td></tr>
+                        <tr><td colspan="5">没有成绩记录</td></tr>
                     </tbody>                
                 </table>
             </EmptyDataTemplate>

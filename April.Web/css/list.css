@@ -26,6 +26,12 @@
     font-weight: bold;
 }
 
+.body .list .message 
+{
+	margin: 5px 21px;
+    background-color: lemonchiffon;
+}
+
 .body .list .label {
     color: #6b6b6b;
     font-weight: bold;
@@ -37,25 +43,24 @@
 	margin:0 21px;
 }
 
-.body .list .listcommand .add {
-    float: left;
-    left: 0px;
+.body .list .listcommand .add, .refresh 
+{
     width: 32px;
     height: 32px;
     display: block;
     border:none;
     cursor: pointer;
+}
+
+.body .list .listcommand .add {
+    float: left;
+    left: 0px;
 	background: url("../images/icons/add.png") no-repeat center transparent;
 }
 
 .body .list .listcommand .refresh{
     float: right;
     right: 0px;
-    width: 32px;
-    height: 32px;
-    display: block;
-    border:none;
-    cursor: pointer;
 	background: url("../images/icons/refresh.png") no-repeat center transparent;
 }
 
@@ -94,10 +99,10 @@
 	display:inline-block;
 }
 
-.body .list .records .edit, .delete, .select {
+.body .list .records .edit, .delete, .select, .save, .cancel {
     width: 32px;
     height: 32px;
-    display: block;
+    display:inline-block;
     border:none;
     cursor: pointer;
 }
@@ -112,6 +117,18 @@
 
 .body .list .records .select {
 	background: url("../images/icons/select.png") no-repeat center transparent;
+}
+
+.body .list .records .save 
+{
+    float: left;
+    background: url("../images/icons/save.png") no-repeat center transparent;
+}
+
+.body .list .records .cancel 
+{
+    float: left;
+	background: url("../images/icons/delete.png") no-repeat center transparent;
 }
 
 .MaskedEditFocus

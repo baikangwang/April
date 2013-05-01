@@ -165,6 +165,21 @@ namespace April.BLL
             }
         }
 
+        public static IList<ISelection> ListByStudent(string studentId)
+        {
+            using (Command cmd = new Command("list_" + Selection.Entity))
+            {
+                try
+                {
+                    return SelectionGateway.ListByStudent(cmd, studentId);
+                }
+                catch
+                {
+                    return new List<ISelection>();
+                }
+            }
+        }
+
         public static bool Update(string courseId, string studentId, int score)
         {
             ISelection target = Get(courseId, studentId);

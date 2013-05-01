@@ -30,7 +30,9 @@ namespace April.Web.Controls
                           {"TchQuery",itemTchQuery},
                           {"StdProfile",itemStdProfile},
                           {"StdQuery",itemStdQuery},
-                          {"Select",itemSelect}
+                          {"Select",itemSelect},
+                          {"ScoreMgr",itemScoreMgr},
+                          {"ScoreQuery",itemScoreQuery}
                       };
         }
 
@@ -85,6 +87,7 @@ namespace April.Web.Controls
                         itemStudentMgr.Visible = true;
                         itemTeacherMgr.Visible = true;
                         itemCourseMgr.Visible = true;
+                        itemScoreMgr.Visible = true;
                         break;
                         case Role.Teacher:
                         itemTchProfile.Visible = true;
@@ -94,6 +97,7 @@ namespace April.Web.Controls
                         itemStdProfile.Visible = true;
                         itemStdQuery.Visible = true;
                         itemSelect.Visible = true;
+                        itemScoreQuery.Visible = true;
                         break;
                     default:
                         break;
@@ -138,10 +142,15 @@ namespace April.Web.Controls
                 case "btnSelect":
                     Response.Redirect("~/Select.aspx");
                     break;
+                case "btnScoreMgr":
+                    Response.Redirect("~/ScoreMgr.aspx");
+                    break;
+                case "btnScoreQuery":
+                    Response.Redirect("~/ScoreQuery.aspx");
+                    break;
                 default:
                     Response.Redirect("~/Home.aspx");
                     break;
-
             }
         }
 

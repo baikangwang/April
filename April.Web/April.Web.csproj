@@ -134,6 +134,7 @@
     <Content Include="images\web-design.jpg" />
     <Content Include="index.html" />
     <Content Include="portfolio.html" />
+    <Content Include="ScoreQuery.aspx" />
     <Content Include="services.html" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -223,6 +224,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreQuery.aspx.cs">
+      <DependentUpon>ScoreQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ScoreQuery.aspx.designer.cs">
+      <DependentUpon>ScoreQuery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
