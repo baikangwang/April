@@ -100,9 +100,17 @@ namespace April.Web
                 values.Add(Student.Birthday.Name,null);
             else
             {
-                string[] date = birthday.Replace("年", "-").Replace("月", "-").Replace("日", "-").Split(
-                    new string[] {"-"}, StringSplitOptions.RemoveEmptyEntries);
-                values.Add(Student.Birthday.Name, new DateTime(int.Parse(date[0]),int.Parse(date[1]),int.Parse(date[2])));
+                try
+                {
+                    string[] date = birthday.Replace("年", "-").Replace("月", "-").Replace("日", "-").Split(
+                        new string[] { "-" }, StringSplitOptions.RemoveEmptyEntries);
+                    values.Add(Student.Birthday.Name, new DateTime(int.Parse(date[0]), int.Parse(date[1]), int.Parse(date[2])));
+                }
+                catch
+                {
+                    
+                    throw new Exception("日期格式错误！");
+                }
             }
 
             values.Add(Student.Address.Name, string.IsNullOrEmpty(address) ? null : address);

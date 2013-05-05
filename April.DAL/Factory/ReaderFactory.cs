@@ -2,6 +2,7 @@
 
 using System;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Reflection;
 using April.Core;
 using April.Entity;
@@ -14,7 +15,7 @@ namespace April.DAL.Factory
 {
     public class ReaderFactory
     {
-        public static IBaseObject Reader(SqlDataReader reader, string entity)
+        public static IBaseObject Reader(SqlCeDataReader reader, string entity)
         {
             Assembly entityImpl = Assembly.GetAssembly(typeof (BaseObject));
 

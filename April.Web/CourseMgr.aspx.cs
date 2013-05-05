@@ -107,7 +107,7 @@ namespace April.Web
             values.Add(Course.MaxCapacity.Name, string.IsNullOrEmpty(max) ? (object)null : Convert.ToInt32(max));
 
             if (string.IsNullOrEmpty(Id))
-                values.Add(Course.Id.Name, Guid.NewGuid());
+                values.Add(Course.Id.Name, Guid.NewGuid().ToString());
             else
                 values.Add("oId", Id);
 

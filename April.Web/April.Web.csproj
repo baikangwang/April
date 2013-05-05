@@ -60,10 +60,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\April.mdf" />
-    <Content Include="App_Data\April_log.ldf">
-      <DependentUpon>April.mdf</DependentUpon>
-    </Content>
+    <Content Include="App_Data\April.sdf" />
     <Content Include="Controls\MenuBar.ascx" />
     <Content Include="css\form.css" />
     <Content Include="css\home.css" />

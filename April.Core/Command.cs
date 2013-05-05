@@ -4,6 +4,7 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 
 #endregion
 
@@ -11,18 +12,18 @@ namespace April.Core
 {
     public class Command : IDisposable
     {
-        private readonly SqlCommand _command;
+        private readonly SqlCeCommand _command;
         private readonly string _commandName;
         private bool _commit = true;
 
         public Command(string name = null)
         {
-            _command = new SqlCommand
+            _command = new SqlCeCommand
                            {
                                Connection =
-                                   new SqlConnection(ConfigurationManager.ConnectionStrings["April"].ConnectionString),
-                               CommandType = CommandType.Text,
-                               CommandTimeout = 90
+                                   new SqlCeConnection(ConfigurationManager.ConnectionStrings["April"].ConnectionString),
+                               CommandType = CommandType.Text//,
+                               //CommandTimeout = 90
                            };
             _commandName = name;
         }
@@ -45,10 +46,11 @@ namespace April.Core
                     _command.Transaction.Commit();
                 else
                 {
-                    if (string.IsNullOrEmpty(_commandName))
+                    /*if (string.IsNullOrEmpty(_commandName))*/
                         _command.Transaction.Rollback();
-                    else
+                    /*else
                         _command.Transaction.Rollback(_commandName);
+                    */
                 }
                 //_command.Transaction.Dispose();
             }
@@ -64,7 +66,7 @@ namespace April.Core
 
         #endregion
 
-        public SqlDataReader ExecuteReader()
+        public SqlCeDataReader ExecuteReader()
         {
             _command.Connection.Open();
             
@@ -75,9 +77,11 @@ namespace April.Core
         {
             _command.Connection.Open();
 
-            _command.Transaction = string.IsNullOrEmpty(_commandName)
+            _command.Transaction = _command.Connection.BeginTransaction();
+                /*string.IsNullOrEmpty(_commandName)
                                        ? _command.Connection.BeginTransaction()
                                        : _command.Connection.BeginTransaction(_commandName);
+                */
             
             return _command.ExecuteNonQuery();
         }
@@ -89,7 +93,7 @@ namespace April.Core
             return _command.ExecuteScalar();
         }
 
-        public SqlParameter AddParameter(string name, object value)
+        public SqlCeParameter AddParameter(string name, object value)
         {
             return _command.Parameters.AddWithValue(name, value ?? DBNull.Value);
         }

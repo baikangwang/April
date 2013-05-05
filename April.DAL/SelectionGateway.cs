@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Data.SqlServerCe;
 using System.Linq;
 using System.Text;
 using April.Core;
@@ -19,7 +20,7 @@ namespace April.DAL
             string sql = string.Format(@"select {0} from {1} where lower(Id)=lower(@Id)", columns, table);
             cmd.CommandText = sql;
             cmd.AddParameter("@Id", id);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
             {
@@ -39,7 +40,7 @@ namespace April.DAL
             cmd.CommandText = sql;
             cmd.AddParameter("@Course_Id", courseId);
             cmd.AddParameter("@Student_Id", studentId);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
             {
@@ -69,7 +70,7 @@ namespace April.DAL
             string sql = string.Format(@"select {0} from {1} where lower(Course_Id)=lower(@Course_Id)", columns, table);
             cmd.CommandText = sql;
             cmd.AddParameter("@Course_Id", courseId);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             IList<IStudent> students=new List<IStudent>();
             while (reader.Read())
@@ -90,7 +91,7 @@ namespace April.DAL
             string sql = string.Format(@"select {0} from {1} where lower(Course_Id)=lower(@Course_Id)", columns, table);
             cmd.CommandText = sql;
             cmd.AddParameter("@Course_Id", courseId);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             IList<ISelection> selections = new List<ISelection>();
             while (reader.Read())
@@ -111,7 +112,7 @@ namespace April.DAL
             string sql = string.Format(@"select {0} from {1} where lower(Student_Id)=lower(@Student_Id)", columns, table);
             cmd.CommandText = sql;
             cmd.AddParameter("@Student_Id", studentId);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             IList<ISelection> selections = new List<ISelection>();
             while (reader.Read())
@@ -132,7 +133,7 @@ namespace April.DAL
             string sql = string.Format(@"select {0} from {1} where lower(Student_Id)=lower(@Student_Id)", columns, table);
             cmd.CommandText = sql;
             cmd.AddParameter("@Student_Id", studentId);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             IList<ICourse> students = new List<ICourse>();
             while (reader.Read())

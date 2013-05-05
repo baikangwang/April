@@ -8,6 +8,7 @@ using April.Core.Definition;
 using April.DAL.Factory;
 using April.Entity;
 using April.Entity.Base;
+using System.Data.SqlServerCe;
 
 #endregion
 
@@ -37,7 +38,7 @@ namespace April.DAL
             string sql = string.Format(@"select {0} from {1} where lower(Id)=lower(@Id)", columns, table);
             cmd.CommandText = sql;
             cmd.AddParameter("@Id", id);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
             {
@@ -70,7 +71,7 @@ namespace April.DAL
             }
             string sql = string.Format(@"select {0} from {1}", columns, table);
             cmd.CommandText = sql;
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             IList<IUser> users = new List<IUser>();
             while (reader.Read())
@@ -182,7 +183,7 @@ namespace April.DAL
             cmd.CommandText = sql;
             cmd.AddParameter("@Id", id);
             cmd.AddParameter("@pwd", pwd);
-            SqlDataReader reader = cmd.ExecuteReader();
+            SqlCeDataReader reader = cmd.ExecuteReader();
 
             if (reader.Read())
             {
