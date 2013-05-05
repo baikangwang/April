@@ -51,7 +51,7 @@ namespace April.Web
                     txtPeriod.Text = Convert.ToString(course.Period);
                     txtLocation.Text = course.Location;
                     txtMax.Text = Convert.ToString(course.MaxCapacity);
-                    cmbTeacher.SelectedValue = course.Teacher.Id;
+                    cmbTeacher.SelectedValue = course.Teacher == null ? "" : course.Teacher.Id;
 
                     btnReset.Visible = true;
                     btnReset.NavigateUrl = string.Format("~/CourseMgr.aspx?Id={0}&Mode=Edit", Id);
@@ -140,6 +140,11 @@ namespace April.Web
             if (e.CommandName == "Delete")
             {
                 string id = Convert.ToString(e.CommandArgument);
+                if (id == this.Id)
+                {
+                    editForm.Visible = false;
+                    viewForm.Visible = false;
+                }
                 try
                 {
                     BLL.CourseMgr.Delete(id);

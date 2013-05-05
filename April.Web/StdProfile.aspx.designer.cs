@@ -382,6 +382,15 @@ namespace April.Web {
         protected global::AjaxControlToolkit.ValidatorCalloutExtender ReqNameEx;
         
         /// <summary>
+        /// txtBirthdayEx control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.MaskedEditExtender txtBirthdayEx;
+        
+        /// <summary>
         /// txtBirthdayCalEx control.
         /// </summary>
         /// <remarks>

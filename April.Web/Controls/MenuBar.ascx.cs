@@ -72,6 +72,8 @@ namespace April.Web.Controls
                 link.Style["display"] = "none";
             }
 
+            itemHome.Visible = true;
+
             if (role == null)
             {
                 if (!(this.Page is Login))
@@ -79,7 +81,6 @@ namespace April.Web.Controls
             }
             else
             {
-                itemHome.Visible = true;
                 itemLogout.Visible = true;
                 switch (role)
                 {
@@ -116,7 +117,10 @@ namespace April.Web.Controls
             switch (linkId)
             {
                 case "btnHome":
-                    Response.Redirect("~/Home.aspx");
+                    if (HttpContext.Current.User == null || HttpContext.Current.User as IUser == null)
+                        Response.Redirect("~/Default.aspx");
+                    else
+                        Response.Redirect("~/Home.aspx");
                     break;
                 case "btnStudentMgr":
                     Response.Redirect("~/StudentMgr.aspx");

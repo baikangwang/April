@@ -118,6 +118,7 @@ namespace April.Web
             values.Add(Student.Grade.Name, string.IsNullOrEmpty(grade) ? null : grade);
             values.Add(Student.Gender.Name, gender);
             values.Add(Student.ContactNo.Name, string.IsNullOrEmpty(contactNo) ? null : contactNo);
+            values.Add(Student.Address.Name, string.IsNullOrEmpty(address) ? null : address);
             
             if (string.IsNullOrEmpty(birthday))
                 values.Add(Student.Birthday.Name, null);
@@ -127,7 +128,7 @@ namespace April.Web
                     new string[] { "-" }, StringSplitOptions.RemoveEmptyEntries);
                 values.Add(Student.Birthday.Name, new DateTime(int.Parse(date[0]), int.Parse(date[1]), int.Parse(date[2])));
             }
-            
+
             if (string.IsNullOrEmpty(Id))
                 values.Add(Student.Password.Name, txtPwd.Text.Trim());
             else
@@ -162,6 +163,13 @@ namespace April.Web
             if(e.CommandName=="Delete")
             {
                 string id = Convert.ToString(e.CommandArgument);
+                
+                if(id==this.Id)
+                {
+                    editForm.Visible = false;
+                    viewForm.Visible = false;
+                }
+
                 try
                 {
                     UserMgr.Delete(Role, id);

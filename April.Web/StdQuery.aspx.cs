@@ -53,6 +53,11 @@ namespace April.Web
             {
                 string id = Convert.ToString(e.CommandArgument);
 
+                if (id == this.Id)
+                {
+                    viewForm.Visible = false;
+                }
+
                 try
                 {
                     ISelection select = SelectionMgr.Get(id, LoginUser.Id);

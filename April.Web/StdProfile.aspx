@@ -98,7 +98,7 @@
                     <asp:Label ID="lblBirthday" CssClass="label" runat="server" Text="出生年月" AssociatedControlID="txtBirthday"/>
                 </td>
                 <td class="field">
-                    <asp:TextBox ID="txtBirthday" runat="server" Width="130px" MaxLength="1" style="text-align:justify" /><asp:ImageButton ID="ImgBntCalc" runat="server" ImageUrl="~/images/Calendar_scheduleHS.png" CausesValidation="False" />
+                    <asp:TextBox ID="txtBirthday" runat="server" Width="130px" MaxLength="1" style="text-align:justify" /><asp:ImageButton ID="ImgBntCalc" runat="server" ImageUrl="~/images/calendar.png" CausesValidation="False" />
 
                 </td>
             </tr>
@@ -142,6 +142,8 @@
         <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqNameEx"
                                                 TargetControlID="ReqName"
                                                 HighlightCssClass="validatorCalloutHighlight" />
+        <ajaxToolkit:MaskedEditExtender ID="txtBirthdayEx" runat="server"
+         TargetControlID="txtBirthday" MaskType="None" Mask="9999年99月99日" ClearMaskOnLostFocus="False"/>
         <ajaxToolkit:CalendarExtender ID="txtBirthdayCalEx" runat="server" 
                                         TargetControlID="txtBirthday"
                                         Format="yyyy年MM月dd日"

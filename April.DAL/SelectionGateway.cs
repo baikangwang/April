@@ -155,7 +155,7 @@ namespace April.DAL
             cmd.CommandText = sql;
             foreach (string field in values.Keys)
             {
-                if(field!="Id")
+                if (field != "Id" && field != "Score")
                     cmd.AddParameter("@" + field+"_Id", values[field]);
                 else
                     cmd.AddParameter("@" + field, values[field]);

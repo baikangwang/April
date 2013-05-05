@@ -83,9 +83,9 @@
                         <asp:Label ID="Label5" runat="server" OnDataBinding="Score_DataBinding"></asp:Label>
                     </ItemTemplate>
                     <EditItemTemplate>
-                        <asp:TextBox ID="txtScore" runat="server" Text='<%# Bind("Score") %>'/>
+                        <asp:TextBox ID="txtScore" runat="server" CssClass="double" Text='<%# Bind("Score") %>'/>
                         <ajaxToolkit:MaskedEditExtender ID="txtScoreEx" runat="server" TargetControlID="txtScore" 
-                                                        Mask="99"
+                                                        Mask="999"
                                                         OnFocusCssClass="MaskedEditFocus"
                                                         MaskType="Number"
                                                         InputDirection="RightToLeft"

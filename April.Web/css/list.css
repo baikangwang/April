@@ -121,16 +121,18 @@
 
 .body .list .records .save 
 {
-    float: left;
     background: url("../images/icons/save.png") no-repeat center transparent;
 }
 
 .body .list .records .cancel 
 {
-    float: left;
 	background: url("../images/icons/delete.png") no-repeat center transparent;
 }
 
+.body .list .records .double
+{
+    width: 20px;
+}
 .MaskedEditFocus
 {
     background-color: #ffffcc;

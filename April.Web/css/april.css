@@ -86,14 +86,18 @@ a img {
 	color:#6b6b6b;
 }
 
-.sidebar .btnlogin {
+.sidebar .btnlogin 
+{
+    right: 0px;
     width: 32px;
     height: 32px;
     display: block;
     border: none;
 	background: url("../images/icons/login.png") no-repeat center transparent;
 }
-.sidebar .btnlogout {
+.sidebar .btnlogout 
+{
+    right: 0px;
     width: 32px;
     height: 32px;
     display: block;

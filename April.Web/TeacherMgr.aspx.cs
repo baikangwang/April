@@ -144,6 +144,13 @@ namespace April.Web
             if (e.CommandName == "Delete")
             {
                 string id = Convert.ToString(e.CommandArgument);
+                
+                if (id == this.Id)
+                {
+                    editForm.Visible = false;
+                    viewForm.Visible = false;
+                }
+
                 try
                 {
                     UserMgr.Delete(Role, id);

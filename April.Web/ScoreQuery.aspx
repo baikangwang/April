@@ -5,7 +5,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div id="ListCourse" class="list">
-    <div class="title"><span>已选修课程</span></div>
+    <div class="title"><span>选修课成绩</span></div>
         <div class="listcommand"><asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" ToolTip="刷新" CssClass="refresh"/></div>   
         <asp:GridView ID="gvCourses" runat="server" AutoGenerateColumns="False" 
             OnDataBinding="gvCourses_DataBinding">
