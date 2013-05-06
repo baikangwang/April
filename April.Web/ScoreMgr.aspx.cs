@@ -135,5 +135,16 @@ namespace April.Web
             gvStudent.EditIndex = -1;
             gvStudent.DataBind();
         }
+
+        protected void Credit_DataBinding(object sender, EventArgs e)
+        {
+            Label lbl = sender as Label;
+            if (lbl == null) return;
+            GridViewRow row = lbl.NamingContainer as GridViewRow;
+            if (row == null) return;
+            ISelection selection = row.DataItem as ISelection;
+            if (selection == null) return;
+            lbl.Text = selection.Course == null || selection.Course.Credit == null ? "无" : Convert.ToString(selection.Course.Credit.Value);
+        }
     }
 }

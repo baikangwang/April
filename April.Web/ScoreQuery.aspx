@@ -25,7 +25,7 @@
                         <asp:Label ID="Label3" runat="server" OnDataBinding="Credit_DataBinding"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="开课学院">
+                <asp:TemplateField HeaderText="上课地点">
                     <ItemTemplate>
                         <asp:Label ID="Label4" runat="server" OnDataBinding="Location_DataBinding"></asp:Label>
                     </ItemTemplate>
@@ -43,7 +43,7 @@
                             <th>课程名</th>
                             <th>教师名</th>
                             <th>学分</th>
-                            <th>开课学院</th>
+                            <th>上课地点</th>
                             <th>分数</th>
                         </tr>
                     </thead>
@@ -110,7 +110,7 @@
             </tr>
             <tr>
                 <td class="field">
-                    <asp:Label CssClass="label" ID="Label5" runat="server" Text="开课学院" AssociatedControlID="lblvLocation"/>
+                    <asp:Label CssClass="label" ID="Label5" runat="server" Text="上课地点" AssociatedControlID="lblvLocation"/>
                 </td>
                 <td class="field">
                     <asp:Label ID="lblvLocation" runat="server"/>

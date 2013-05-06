@@ -25,7 +25,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Credit" HeaderText="学分" />
-                <asp:BoundField DataField="Location" HeaderText="开课学院" />
+                <asp:BoundField DataField="Location" HeaderText="上课地点" />
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:HyperLink ID="HyperLink1" runat="server" 
@@ -46,7 +46,7 @@
                             <th>课程名</th>
                             <th>教师名</th>
                             <th>学分</th>
-                            <th>开课学院</th>
+                            <th>上课地点</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,6 +69,14 @@
                 </td>
                 <td class="field">
                     <asp:Label ID="lblvName" runat="server"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="field" colspan="2">
+                    <asp:Label CssClass="label" ID="Label9" runat="server" Text="课程介绍" AssociatedControlID="lblvName"/>
+                    <br/>
+                    <br/>
+                    <asp:Label ID="lblvDescription" CssClass="description" runat="server"/>
                 </td>
             </tr>
             <tr>
@@ -113,7 +121,7 @@
             </tr>
             <tr>
                 <td class="field">
-                    <asp:Label CssClass="label" ID="Label5" runat="server" Text="开课学院" AssociatedControlID="lblvLocation"/>
+                    <asp:Label CssClass="label" ID="Label5" runat="server" Text="上课地点" AssociatedControlID="lblvLocation"/>
                 </td>
                 <td class="field">
                     <asp:Label ID="lblvLocation" runat="server"/>
@@ -136,6 +144,14 @@
                 </td>
                 <td class="field">
                     <asp:TextBox ID="txtName" runat="server"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="field" colspan="2">
+                    <asp:Label CssClass="label" ID="lblDescription" runat="server" Text="课程介绍" AssociatedControlID="txtName"/>
+                    <br/>
+                    <br/>
+                    <asp:TextBox CssClass="description" TextMode="MultiLine" Height="150" Width="400" ID="txtDescription" runat="server"/>
                 </td>
             </tr>
             <tr>
@@ -180,7 +196,7 @@
             </tr>
             <tr>
                 <td class="field">
-                    <asp:Label CssClass="label" ID="lblLocation" runat="server" Text="开课学院" AssociatedControlID="txtLocation"/>
+                    <asp:Label CssClass="label" ID="lblLocation" runat="server" Text="上课地点" AssociatedControlID="txtLocation"/>
                 </td>
                 <td class="field">
                     <asp:TextBox ID="txtLocation" runat="server"/>

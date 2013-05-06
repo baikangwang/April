@@ -18,7 +18,7 @@
                 </p>
                 <p>
                     <asp:Image ID="imgPwd" runat="server" ImageUrl="images/icons/lock.png" AlternateText="密码" />  
-                    <input type="text" id="txtPwd" runat="server" />
+                    <input type="password" id="txtPwd" runat="server" />
                 </p>
                 <p>
                     <asp:Image ID="imgRole" runat="server" ImageUrl="images/icons/role.png" AlternateText="身份" />  

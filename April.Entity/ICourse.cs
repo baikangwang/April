@@ -14,5 +14,6 @@ namespace April.Entity
         int? Period { get; set; }
         string Location { get; set; }
         int? MaxCapacity { get; set; }
+        string Description { get; set; }
     }
 }

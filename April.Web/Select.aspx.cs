@@ -31,6 +31,7 @@ namespace April.Web
                 lblvPeriod.Text = course.Period == null ? "无" : Convert.ToString(course.Period);
                 lblvMax.Text = course.MaxCapacity == null ? "无" : Convert.ToString(course.MaxCapacity);
                 lblvLocation.Text = string.IsNullOrEmpty(course.Location) ? "无" : course.Location;
+                lblvDescription.Text = string.IsNullOrEmpty(course.Description) ? "无" : course.Description;
             }
         }
 

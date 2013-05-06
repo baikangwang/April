@@ -17,7 +17,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Credit" HeaderText="学分" />
-                <asp:BoundField DataField="Location" HeaderText="开课学院" />
+                <asp:BoundField DataField="Location" HeaderText="上课地点" />
             </Columns>
             <EmptyDataTemplate>
                 <table class="empty">
@@ -26,7 +26,7 @@
                             <th>课程名</th>
                             <th>教师名</th>
                             <th>学分</th>
-                            <th>开课学院</th>
+                            <th>上课地点</th>
                         </tr>
                     </thead>
                     <tbody>

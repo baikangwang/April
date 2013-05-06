@@ -35,6 +35,7 @@ namespace April.Web
                     txtLocation.Text = string.Empty;
                     txtMax.Text = string.Empty;
                     cmbTeacher.SelectedIndex = 0;
+                    txtDescription.Text = string.Empty;
 
                     btnReset.Visible = false;
                 }
@@ -50,6 +51,7 @@ namespace April.Web
                     txtPeriod.Text = Convert.ToString(course.Period);
                     txtLocation.Text = course.Location;
                     txtMax.Text = Convert.ToString(course.MaxCapacity);
+                    txtDescription.Text = Convert.ToString(course.Description);
                     cmbTeacher.SelectedValue = course.Teacher == null ? "" : course.Teacher.Id;
 
                     btnReset.Visible = true;
@@ -70,6 +72,7 @@ namespace April.Web
                     lblvPeriod.Text = course.Period == null ? "无" : Convert.ToString(course.Period);
                     lblvMax.Text = course.MaxCapacity == null ? "无" : Convert.ToString(course.MaxCapacity);
                     lblvLocation.Text = string.IsNullOrEmpty(course.Location) ? "无" : course.Location;
+                    lblvDescription.Text = string.IsNullOrEmpty(course.Description) ? "无" : course.Description;
                 }
                 btnEdit.NavigateUrl = string.Format("~/CourseMgr.aspx?Id={0}&Mode=Edit", Id);
             }
@@ -96,6 +99,7 @@ namespace April.Web
             string teacher = cmbTeacher.SelectedValue;
             string location = txtLocation.Text.Trim();
             string max = txtMax.Text.Trim();
+            string description = txtDescription.Text.Trim();
 
             values.Add(Course.Name.Name, string.IsNullOrEmpty(name) ? null : name);
             values.Add(Course.Credit.Name, string.IsNullOrEmpty(credit) ? (object)null : Convert.ToInt32(credit));
@@ -104,6 +108,7 @@ namespace April.Web
             values.Add(Course.Teacher.Name, string.IsNullOrEmpty(teacher) ? (object)null : teacher);
             values.Add(Course.Location.Name, string.IsNullOrEmpty(location) ? null : location);
             values.Add(Course.MaxCapacity.Name, string.IsNullOrEmpty(max) ? (object)null : Convert.ToInt32(max));
+            values.Add(Course.Description.Name, string.IsNullOrEmpty(description) ? (object) null : description);
 
             if (string.IsNullOrEmpty(Id))
                 values.Add(Course.Id.Name, Guid.NewGuid().ToString());

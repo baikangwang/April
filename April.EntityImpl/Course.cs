@@ -17,6 +17,7 @@ namespace April.EntityImpl
         public virtual int? Period { get; set; }
         public virtual string Location { get; set; }
         public virtual int? MaxCapacity { get; set; }
+        public virtual string Description { get; set; }
 
         #endregion
     }

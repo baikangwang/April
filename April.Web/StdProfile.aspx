@@ -74,7 +74,7 @@
                     <asp:Label ID="lblId" CssClass="identity" runat="server" ToolTip="学号" Text=" " AssociatedControlID="txtId"/>
                 </td>
                 <td class="field">
-                    <asp:TextBox ID="txtId" runat="server"/><asp:CheckBox ID="ckbGender" Checked="true" CssClass="gender" runat="server"/>
+                    <asp:TextBox ID="txtId" runat="server" Enabled="False"/><asp:CheckBox ID="ckbGender" Checked="true" CssClass="gender" runat="server"/>
                 </td>
             </tr>
             <tr>

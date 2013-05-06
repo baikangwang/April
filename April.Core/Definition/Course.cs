@@ -16,8 +16,9 @@ namespace April.Core.Definition
         public static IProperty Hours = new Property("Hours", "课内学时", typeof (int), 3);
         public static IProperty Credit = new Property("Credit", "学分", typeof (int), 4);
         public static IProperty Period = new Property("Period", "总学时", typeof (int), 5);
-        public static IProperty Location = new Property("Location", "开课学院", typeof (string), 6);
+        public static IProperty Location = new Property("Location", "上课地点", typeof (string), 6);
         public static IProperty MaxCapacity = new Property("MaxCapacity", "最大人数", typeof (int), 7);
+        public static IProperty Description = new Property("Description", "课程介绍", typeof(string), 8);
         public static string Table = "Course";
         public static string Entity = "Course";
         public static string Label = "课程";
@@ -31,7 +32,8 @@ namespace April.Core.Definition
                                                             Credit,
                                                             Period,
                                                             Location,
-                                                            MaxCapacity
+                                                            MaxCapacity,
+                                                            Description
                                                         };
     }
 }

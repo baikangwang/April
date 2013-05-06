@@ -18,7 +18,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Credit" HeaderText="学分" />
-                <asp:BoundField DataField="Location" HeaderText="开课学院" />
+                <asp:BoundField DataField="Location" HeaderText="上课地点" />
             </Columns>
             <EmptyDataTemplate>
                 <table class="empty">
@@ -27,7 +27,7 @@
                             <th>课程名</th>
                             <th>教师名</th>
                             <th>学分</th>
-                            <th>开课学院</th>
+                            <th>上课地点</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,10 +78,12 @@
                         <asp:Label ID="Label8" runat="server" OnDataBinding="Grade_DataBinding"></asp:Label>
                     </EditItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="分数">
+                <asp:TemplateField HeaderText="学分">
                     <ItemTemplate>
-                        <asp:Label ID="Label5" runat="server" OnDataBinding="Score_DataBinding"></asp:Label>
+                        <asp:Label ID="Label6" runat="server" OnDataBinding="Credit_DataBinding"></asp:Label>
                     </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="分数">
                     <EditItemTemplate>
                         <asp:TextBox ID="txtScore" runat="server" CssClass="double" Text='<%# Bind("Score") %>'/>
                         <ajaxToolkit:MaskedEditExtender ID="txtScoreEx" runat="server" TargetControlID="txtScore" 
@@ -94,8 +96,11 @@
                 </asp:TemplateField>
                 <asp:TemplateField ShowHeader="False">
                     <ItemTemplate>
+                        <asp:Label ID="Label5" runat="server" OnDataBinding="Score_DataBinding"></asp:Label>
+                    </ItemTemplate>
+                    <ItemTemplate>
                         <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
-                                        CommandName="Edit" CssClass="edit" ToolTip="修改分数"/>
+                            CommandName="Edit" CssClass="edit" ToolTip="修改分数" />
                     </ItemTemplate>
                     <EditItemTemplate>
                         <asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="True" 
