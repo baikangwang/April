@@ -4,9 +4,10 @@
     <link href="css/form.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div id="err"><asp:Label ID="lblMessage" runat="server" Text=""></asp:Label></div>
+    <ajaxToolkit:ToolkitScriptManager runat="server" ID="ScriptManager1" EnableScriptGlobalization="true" EnableScriptLocalization="true" />
     <div id="ListCourse" class="list">
-    <div class="title"><span>已选修课程</span></div>
+        <div class="title"><span>已选修课程</span></div>
+        <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
         <div class="listcommand"><asp:Button ID="btnRefresh" runat="server" OnClick="Refresh_Click" ToolTip="刷新" CssClass="refresh"/></div>   
         <asp:GridView ID="gvCourses" runat="server" AutoGenerateColumns="False" 
             OnDataBinding="gvCourses_DataBinding" 
@@ -27,6 +28,18 @@
                     <ItemTemplate>
                         <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
                             CommandArgument=<%#Eval("Id")%> CommandName="Delete" ToolTip="删除" CssClass="delete" />
+                        <ajaxToolkit:ConfirmButtonExtender ID="confirmBtnExt" runat="server"
+                                                           TargetControlID="LinkButton1"
+                                                           DisplayModalPopupID="modalPopupExt1"/>
+                        <ajaxToolkit:ModalPopupExtender ID="modalPopupExt1" runat="server" TargetControlID="LinkButton1" PopupControlID="pnlContent" OkControlID="btnOK" CancelControlID="btnCancel" BackgroundCssClass="windowBg" />
+                        <asp:Panel ID="pnlContent" runat="server" CssClass="confirmpanel">
+                            确定删除已选修课程吗？
+                            <br /><br />
+                            <div class="confirmcommand">
+                                <asp:Button ID="btnOK" runat="server" Text="确定" />
+                                <asp:Button ID="btnCancel" runat="server" Text="取消" />
+                            </div>
+                        </asp:Panel>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

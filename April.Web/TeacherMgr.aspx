@@ -36,6 +36,18 @@
                     <ItemTemplate>
                         <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
                             CommandArgument=<%#Eval("Id")%> CommandName="Delete" ToolTip="删除" CssClass="delete" />
+                        <ajaxToolkit:ConfirmButtonExtender ID="confirmBtnExt" runat="server"
+                                                           TargetControlID="LinkButton1"
+                                                           DisplayModalPopupID="modalPopupExt1"/>
+                        <ajaxToolkit:ModalPopupExtender ID="modalPopupExt1" runat="server" TargetControlID="LinkButton1" PopupControlID="pnlContent" OkControlID="btnOK" CancelControlID="btnCancel" BackgroundCssClass="windowBg" />
+                        <asp:Panel ID="pnlContent" runat="server" CssClass="confirmpanel">
+                            确定删除该教师吗？
+                            <br /><br />
+                            <div class="confirmcommand">
+                                <asp:Button ID="btnOK" runat="server" Text="确定" />
+                                <asp:Button ID="btnCancel" runat="server" Text="取消" />
+                            </div>
+                        </asp:Panel>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -106,10 +118,51 @@
             </tr>
         </table>
     </div>
+    <asp:Panel ID="pnlResetPwd" runat="server" CssClass="form" Visible="False">
+        <div class="title"><span>重置密码</span></div>
+        <div class="message"><asp:Label ID="lblRestPwdMessage" runat="server" Text=""/></div>
+        <div class="resetPwdCommand">
+            <asp:LinkButton ID="btnRestPwdSave" runat="server" CssClass="save" ToolTip="保存" ValidationGroup="resetPwd" OnClick="btnRestPwdSave_Click" />
+            <asp:LinkButton ID="btnRestPwdCancel" runat="server" CssClass="cancel" ToolTip="取消" OnClick="btnRestPwdCancel_Click" />
+        </div>
+        <table class="fields">
+            <tr>
+                <td class="field">
+                    <asp:Label ID="Label13" CssClass="label" runat="server" Text="新密码" AssociatedControlID="txtNewPwd"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtNewPwd" runat="server" ValidationGroup="resetPwd"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="field">
+                    <asp:Label ID="Label23" CssClass="label" runat="server" Text="确认新密码" AssociatedControlID="txtcfmNewPwd"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtcfmNewPwd" runat="server" ValidationGroup="resetPwd"/>
+                </td>
+            </tr>
+        </table>
+        <asp:RequiredFieldValidator runat="server" ID="ReqNewPwd"
+                                    ControlToValidate="txtNewPwd"
+                                    Display="None"
+                                    ErrorMessage="<b>必填项</b><br />请填新密码" ValidationGroup="resetPwd" />
+        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqNewPwdExt"
+                                              TargetControlID="ReqNewPwd"
+                                              HighlightCssClass="validatorCalloutHighlight" />
+        <asp:CompareValidator ID="cmpPwd" ControlToValidate="txtcfmNewPwd"
+                              runat="server" ErrorMessage="与新密码不一致"
+                              Display="None" ValidationGroup="resetPwd"
+                              ControlToCompare="txtNewPwd" Type="String"/>
+        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="cmpPwdExt"
+                                              TargetControlID="cmpPwd"
+                                              HighlightCssClass="validatorCalloutHighlight" />
+    </asp:Panel>
     <div id="editForm" runat="server" class="form">
         <div class="title"><span runat="server" id="lblSubject"></span></div>
         <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
         <div id="editCommand" runat="server" class="editcommand">
+            <asp:LinkButton ID="btnResetPwd" runat="server" CssClass="resetPwd" ToolTip="重置密码" OnClick="btnRestPwd_Click" />
             <asp:Button ID="btnSave" runat="server" ValidationGroup="save" ToolTip="保存" OnClick="btnSave_Click" CssClass="save" />
             <asp:HyperLink ID="btnReset" runat="server" ToolTip="重置" CssClass="reset"/>
             <asp:HyperLink ID="btnCancel" runat="server" NavigateUrl="~/TeacherMgr.aspx" ToolTip="取消" CssClass="cancel"/>

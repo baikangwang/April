@@ -85,6 +85,51 @@ namespace April.Web {
         protected global::System.Web.UI.WebControls.Button btnCancel;
         
         /// <summary>
+        /// confirmBtnExt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ConfirmButtonExtender confirmBtnExt;
+        
+        /// <summary>
+        /// modalPopupExt1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.ModalPopupExtender modalPopupExt1;
+        
+        /// <summary>
+        /// pnlContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlContent;
+        
+        /// <summary>
+        /// btnOK control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOK;
+        
+        /// <summary>
+        /// buttonCancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonCancel;
+        
+        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>

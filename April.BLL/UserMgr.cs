@@ -145,6 +145,37 @@ namespace April.BLL
             }
         }
 
+        public static bool ResetPwd(Role role,string id, string pwd)
+        {
+            using (Command cmd = new Command("resetPwd_" + role.ToEntity()))
+            {
+                try
+                {
+                    IDictionary<string,object> values=new Dictionary<string, object>()
+                                                          {
+                                                              {"Password",pwd},
+                                                              {"oId",id}
+                                                          };
+                    
+                    if (UserGateway.Update(cmd, role, values))
+                    {
+                        cmd.Commint();
+                        return true;
+                    }
+                    else
+                    {
+                        cmd.RollBack();
+                        return false;
+                    }
+                }
+                catch
+                {
+                    cmd.RollBack();
+                    return false;
+                }
+            }
+        }
+
         public static bool Delete(Role role, string id)
         {
             using (Command cmd = new Command("delete_" + role.ToEntity()))

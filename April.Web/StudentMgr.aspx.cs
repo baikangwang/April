@@ -66,9 +66,6 @@ namespace April.Web
                 viewForm.Visible = !string.IsNullOrEmpty(Id) && Item as IStudent != null;
                 if (!string.IsNullOrEmpty(Id) && Item as IStudent != null)
                 {
-                    lblvPwd.Visible = false;
-                    Label8.Visible = false;
-
                     IStudent student = Item as IStudent;
                     lblvId.Text = string.IsNullOrEmpty(student.Id) ? "无" : student.Id;
                     lblvName.Text = string.IsNullOrEmpty(student.Name) ? "无" : student.Name;
@@ -218,6 +215,42 @@ namespace April.Web
         {
             gvStudents.PageIndex = e.NewPageIndex;
             gvStudents.DataBind();
+        }
+
+        protected void btnRestPwd_Click(object sender, EventArgs e)
+        {
+            //resetPwdForm.Show();
+            pnlResetPwd.Visible = true;
+        }
+
+        protected void btnRestPwdSave_Click(object sender, EventArgs e)
+        {
+            string id = this.Id;
+            string pwd = txtNewPwd.Text.Trim();
+
+            if (string.IsNullOrEmpty(pwd))
+            {
+                lblRestPwdMessage.Text = "密码不能为空，重置密码失败";
+            }
+            else
+            {
+                if (UserMgr.ResetPwd(this.Role, id, pwd))
+                {
+                    lblMessage.Text = "重置密码成功";
+                    pnlResetPwd.Visible = false;
+                    txtNewPwd.Text = string.Empty;
+                    txtcfmNewPwd.Text = string.Empty;
+                }
+                else
+                {
+                    lblRestPwdMessage.Text= "重置密码失败";
+                }
+            }
+        }
+
+        protected void btnRestPwdCancel_Click(object sender, EventArgs e)
+        {
+            pnlResetPwd.Visible = false;
         }
     }
 }

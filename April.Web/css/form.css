@@ -72,7 +72,7 @@
     font-weight: bold;
     font-size: 20px;
 }
-.body .form .viewcommand, .editcommand {
+.body .form .viewcommand, .editcommand, .resetPwdCommand {
     float: right;
 	margin:0 21px;
 }
@@ -92,7 +92,7 @@
 	background: url("../images/icons/edit.png") no-repeat center transparent;
 }
 
-.body .form .editcommand .save , .reset, .cancel, .select{
+.body .form .editcommand .save , .reset, .cancel, .select, .resetPwd{
     width: 32px;
     height: 32px;
     border: none;
@@ -127,6 +127,34 @@
 	background: url("../images/icons/delete.png") no-repeat center transparent;
 }
 
+.body .form .editcommand .resetPwd{
+	background: url("../images/icons/lock.png") no-repeat center transparent;
+}
+
+
+.body .form .editcommand .hidden {
+    display: none;
+}
+
+.body .form .resetPwdCommand .save , .cancel {
+    width: 32px;
+    height: 32px;
+    border: none;
+	padding:5px;
+	margin:0px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.body .form .resetPwdCommand .save
+{
+    background: url("../images/icons/save.png") no-repeat center transparent;
+}
+
+.body .form .resetPwdCommand .cancel{
+	background: url("../images/icons/delete.png") no-repeat center transparent;
+}
+
 .validatorCalloutHighlight
 {
     background-color: lemonchiffon;
@@ -140,5 +168,21 @@
 .MaskedEditError
 {
     background-color: #ffcccc;
+}
+.confirmpanel {
+    width:200px; 
+    background-color:White; 
+    border-width:2px; 
+    border-color:Black; 
+    border-style:solid; 
+    padding:20px;
+}
+.windowBg {
+   	background-color:Gray;
+	filter:alpha(opacity=70);
+	opacity:0.7; 
+}
+.confirmcommand {
+    text-align: right;
 }
 

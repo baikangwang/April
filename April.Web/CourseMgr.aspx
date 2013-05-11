@@ -36,6 +36,18 @@
                     <ItemTemplate>
                         <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="False" 
                             CommandArgument=<%#Eval("Id")%> CommandName="Delete" ToolTip="删除" CssClass="delete" />
+                        <ajaxToolkit:ConfirmButtonExtender ID="confirmBtnExt" runat="server"
+                                                           TargetControlID="LinkButton1"
+                                                           DisplayModalPopupID="modalPopupExt1"/>
+                        <ajaxToolkit:ModalPopupExtender ID="modalPopupExt1" runat="server" TargetControlID="LinkButton1" PopupControlID="pnlContent" OkControlID="btnOK" CancelControlID="btnCancel" BackgroundCssClass="windowBg" />
+                        <asp:Panel ID="pnlContent" runat="server" CssClass="confirmpanel">
+                            确定删除该课程吗？
+                            <br /><br />
+                            <div class="confirmcommand">
+                                <asp:Button ID="btnOK" runat="server" Text="确定" />
+                                <asp:Button ID="btnCancel" runat="server" Text="取消" />
+                            </div>
+                        </asp:Panel>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>

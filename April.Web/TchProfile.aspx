@@ -45,10 +45,51 @@
             </tr>
         </table>
     </div>
+    <asp:Panel ID="pnlResetPwd" runat="server" CssClass="form" Visible="False">
+        <div class="title"><span>重置密码</span></div>
+        <div class="message"><asp:Label ID="lblRestPwdMessage" runat="server" Text=""/></div>
+        <div class="resetPwdCommand">
+            <asp:LinkButton ID="btnRestPwdSave" runat="server" CssClass="save" ToolTip="保存" ValidationGroup="resetPwd" OnClick="btnRestPwdSave_Click" />
+            <asp:LinkButton ID="btnRestPwdCancel" runat="server" CssClass="cancel" ToolTip="取消" OnClick="btnRestPwdCancel_Click" />
+        </div>
+        <table class="fields">
+            <tr>
+                <td class="field">
+                    <asp:Label ID="Label3" CssClass="label" runat="server" Text="新密码" AssociatedControlID="txtNewPwd"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtNewPwd" runat="server" ValidationGroup="resetPwd"/>
+                </td>
+            </tr>
+            <tr>
+                <td class="field">
+                    <asp:Label ID="Label8" CssClass="label" runat="server" Text="确认新密码" AssociatedControlID="txtcfmNewPwd"/>
+                </td>
+                <td class="field">
+                    <asp:TextBox ID="txtcfmNewPwd" runat="server" ValidationGroup="resetPwd"/>
+                </td>
+            </tr>
+        </table>
+        <asp:RequiredFieldValidator runat="server" ID="ReqNewPwd"
+                                    ControlToValidate="txtNewPwd"
+                                    Display="None"
+                                    ErrorMessage="<b>必填项</b><br />请填新密码" ValidationGroup="resetPwd" />
+        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="ReqNewPwdExt"
+                                              TargetControlID="ReqNewPwd"
+                                              HighlightCssClass="validatorCalloutHighlight" />
+        <asp:CompareValidator ID="cmpPwd" ControlToValidate="txtcfmNewPwd"
+                              runat="server" ErrorMessage="与新密码不一致"
+                              Display="None" ValidationGroup="resetPwd"
+                              ControlToCompare="txtNewPwd" Type="String"/>
+        <ajaxToolkit:ValidatorCalloutExtender runat="Server" ID="cmpPwdExt"
+                                              TargetControlID="cmpPwd"
+                                              HighlightCssClass="validatorCalloutHighlight" />
+    </asp:Panel>
     <div id="editForm" runat="server" class="form">
         <div class="title"><span>修改个人信息</span></div>
         <div class="message"><asp:Label ID="lblMessage" runat="server" Text=""/></div>
         <div id="editCommand" runat="server" class="editcommand">
+            <asp:LinkButton ID="btnResetPwd" runat="server" CssClass="resetPwd" ToolTip="重置密码" OnClick="btnRestPwd_Click" />
             <asp:Button ID="btnSave" runat="server" ValidationGroup="save" CssClass="save" ToolTip="保存" OnClick="btnSave_Click" />
             <asp:HyperLink ID="btnReset" runat="server" CssClass="reset" ToolTip="重置"/>
             <asp:HyperLink ID="btnCancel" runat="server" NavigateUrl="~/TchProfile.aspx" CssClass="cancel" ToolTip="取消"/>

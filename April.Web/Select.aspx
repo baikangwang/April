@@ -24,7 +24,7 @@
                 <asp:TemplateField>
                     <ItemTemplate>
                         <asp:HyperLink ID="HyperLink1" runat="server" 
-                            NavigateUrl='<%# Eval("Id", "~/Select.aspx?Id={0}") %>' ToolTip="选择" CssClass="select"></asp:HyperLink>
+                                       NavigateUrl='<%# Eval("Id", "~/Select.aspx?Id={0}") %>' ToolTip="选择" CssClass="select"/>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -51,6 +51,18 @@
         <div id="editCommand" runat="server" class="editcommand">
             <asp:Button ID="btnSave" runat="server" CssClass="select" ToolTip="选择" OnClick="btnSave_Click" />
             <asp:Button ID="btnCancel" runat="server" CssClass="cancel" ToolTip="取消" OnClick="btnCancel_Click" />
+            <ajaxToolkit:ConfirmButtonExtender ID="confirmBtnExt" runat="server"
+                                                TargetControlID="btnSave"
+                                                DisplayModalPopupID="modalPopupExt1"/>
+            <ajaxToolkit:ModalPopupExtender ID="modalPopupExt1" runat="server" TargetControlID="btnSave" PopupControlID="pnlContent" OkControlID="btnOK" CancelControlID="buttonCancel" BackgroundCssClass="windowBg" />
+            <asp:Panel ID="pnlContent" runat="server" CssClass="confirmpanel">
+                确定选修该课程吗？
+                <br /><br />
+                <div class="confirmcommand">
+                    <asp:Button ID="btnOK" runat="server" Text="确定" />
+                    <asp:Button ID="buttonCancel" runat="server" Text="取消" />
+                </div>
+            </asp:Panel>
         </div>
         <table class="fields">
             <tr>
