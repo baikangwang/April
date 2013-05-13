@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="74b27e77-b7bf-4ea3-b182-2b299b2763da" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="882dae66-170a-4607-bb99-5edf00e2bb2b" name="April.BLL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="9548fc67-aa67-4c39-8876-1ade483594ac" direction="Forward">
+          <layerMoniker Id="94242e21-5081-48d6-8f69-ea19c3617192" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="9215a480-5245-42a3-8aa6-872318f3d8d0" direction="Forward">
+          <layerMoniker Id="8a015f51-7837-46cc-b63a-490c978cb35f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="59bf0c12-46a6-4fc1-ae43-17387543f5ef" direction="Forward">
+          <layerMoniker Id="1f8de060-59d6-4686-9ae1-4b4762b0a0eb" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="61150fbb-4fa7-4aa0-b06f-2d2c92c3c543" name="April.Web">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="df290818-5b94-468c-9122-e01b4f9eaac2" direction="Forward">
+          <layerMoniker Id="882dae66-170a-4607-bb99-5edf00e2bb2b" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="bb46e96c-9f0a-478b-8dd2-15e6c44ce103" direction="Forward">
+          <layerMoniker Id="1f8de060-59d6-4686-9ae1-4b4762b0a0eb" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="94242e21-5081-48d6-8f69-ea19c3617192" name="April.DAL">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a1f2f1a9-e7b2-42bb-acda-f220b40f74b9" direction="Forward">
+          <layerMoniker Id="8a015f51-7837-46cc-b63a-490c978cb35f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="ecd4c9e5-9eec-4294-9f36-ba8b9b11c996" direction="Forward">
+          <layerMoniker Id="1f8de060-59d6-4686-9ae1-4b4762b0a0eb" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="094cd579-8959-4949-816e-c108ce7fcf77" direction="Forward">
+          <layerMoniker Id="0f9af57c-32c2-4339-9134-c96cd6416515" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+    <layer Id="1f8de060-59d6-4686-9ae1-4b4762b0a0eb" name="April.Entity" />
+    <layer Id="8a015f51-7837-46cc-b63a-490c978cb35f" name="April.Core" />
+    <layer Id="0f9af57c-32c2-4339-9134-c96cd6416515" name="April.EntityImpl">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="ef5426f7-90e0-4777-a9bc-30030d6f7e27" direction="Forward">
+          <layerMoniker Id="1f8de060-59d6-4686-9ae1-4b4762b0a0eb" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+    </layer>
+  </layers>
+</layerModel>

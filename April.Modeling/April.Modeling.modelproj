@@ -17,7 +17,61 @@
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v10.0\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" />
   <ItemGroup>
+    <Content Include="April.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="April.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>April.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Image\EntityImpl.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Image\学生管理（保存记录）活动图.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Image\学生管理（显示界面）活动图.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Image\用例图.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Image\登录功能时序图.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Image\选课系统架构图.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StudentMgr.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StudentMgr.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>StudentMgr.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="StudentMgr2.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="StudentMgr2.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>StudentMgr2.activitydiagram</DependentUpon>
+    </Content>
+    <Folder Include="Image\" />
     <Folder Include="ModelDefinition\" />
+    <Content Include="April.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="April.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>April.activitydiagram</DependentUpon>
+    </Content>
+    <Content Include="April.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="April.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>April.classdiagram</DependentUpon>
+    </Content>
     <Content Include="ClassSelection.usecasediagram">
       <SubType>Content</SubType>
     </Content>
@@ -28,5 +82,18 @@
     <Content Include="ModelDefinition\April.Modeling.uml">
       <SubType>Content</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="April.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="April.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>April.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="April.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>April.layerdiagram</DependentUpon>
+    </Validate>
   </ItemGroup>
 </Project>

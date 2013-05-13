@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm11="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="112a9213-aaf9-4b10-8927-4aa3aabae06c" name="StudentMgr2" linkedPackageId="18c7fca2-0df5-452e-8dcf-6d9d16dec5b4" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="65ae6d9b-de83-438f-af51-b4df3398f82b">
+      <elementDefinition Id="3a4006be-e203-49ce-a334-bf0a0ffee696" />
+      <body>Id!=Empty</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="f4a2dfc4-ec6c-48f3-b660-01a501a3c1bb" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <profileInstances>
+    <packageHasProfileInstances Id="30f5c334-d2d0-44b1-aff6-4ecfe82c5b30">
+      <profileInstance Id="f9207b88-5bcd-4018-9352-053a7457adba" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="08df4977-a68f-480d-9d83-64835adb38f7">
+      <profileInstance Id="ad2fd3d0-dd3b-4a44-b9a4-914853bd2628" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="c3f69f2d-5809-49d5-aa65-99602cff6cce" name="StudentMgr2" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="77a127d1-54dd-45ca-9015-ab94e8fb39be" />
+        <nodes>
+          <initialNode Id="a0da25a4-9226-4001-a4f8-fffa5cd44cea" name="Initial1" isLeaf="false">
+            <elementDefinition Id="d8519b3f-eb65-4f86-a92e-a7f87a3346e7" />
+            <flowNodeTargets>
+              <controlFlow Id="5c149360-e2f3-42bd-8e62-5749bd3de9ed" isLeaf="false">
+                <opaqueActionMoniker Id="29c7c9b4-f367-458e-ba70-1bad811c0f04" LastKnownName="从表单中取值" />
+                <elementDefinition Id="d12820a2-b6e0-417a-984f-506546bd078b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction Id="29c7c9b4-f367-458e-ba70-1bad811c0f04" name="从表单中取值" isLeaf="false">
+            <elementDefinition Id="bc3de167-565d-49ca-991d-6963477d1ad0" />
+            <flowNodeTargets>
+              <controlFlow Id="5d3343e0-0e2c-46af-8a9a-b64d57e64f5a" isLeaf="false">
+                <opaqueActionMoniker Id="7cd3bc9f-81e6-46eb-a014-c29530527837" LastKnownName="验证值" />
+                <elementDefinition Id="3fb29f5f-23c2-47e7-ae9e-c0003bb66c4f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="7cd3bc9f-81e6-46eb-a014-c29530527837" name="验证值" isLeaf="false">
+            <elementDefinition Id="136da6dc-e613-47f1-9a1f-1010c3bcecf2" />
+            <flowNodeTargets>
+              <controlFlow Id="73f4451b-deb7-44fb-ac0f-4d117939ae73" isLeaf="false">
+                <decisionNodeMoniker Id="f4a2dfc4-ec6c-48f3-b660-01a501a3c1bb" LastKnownName="Decision1" />
+                <elementDefinition Id="03f15709-16d9-4a1d-a8a6-bd0e31517e4c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="f4a2dfc4-ec6c-48f3-b660-01a501a3c1bb" name="Decision1" isLeaf="false">
+            <elementDefinition Id="6d2964c8-437f-470f-84ed-ae0138a474d9" />
+            <flowNodeTargets>
+              <controlFlow Id="21eddb70-930c-4e03-bc1c-92dc66bb0727" guard="Y" isLeaf="false">
+                <opaqueActionMoniker Id="f87c058d-40d3-4ae0-83da-14d65cf6e675" LastKnownName="修改学生记录" />
+                <elementDefinition Id="d19060d8-9fa6-464d-b050-8bd37bb33831" />
+              </controlFlow>
+              <controlFlow Id="eb931144-6ef5-4fda-b8b5-647f5649a3be" guard="N" isLeaf="false">
+                <opaqueActionMoniker Id="b13d9da8-a343-4d0d-8e5a-d791f51abe90" LastKnownName="添加学生记录" />
+                <elementDefinition Id="db488190-e88a-493a-95c4-2d5de84697ce" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="b13d9da8-a343-4d0d-8e5a-d791f51abe90" name="添加学生记录" isLeaf="false">
+            <elementDefinition Id="32df9cbe-fe80-492c-9ed4-43d230d10705" />
+            <flowNodeTargets>
+              <controlFlow Id="32c3aeab-47fa-4e8d-806e-b8701d668229" isLeaf="false">
+                <opaqueActionMoniker Id="6b942142-f2ee-4fd6-a506-fded6c5f824d" LastKnownName="刷新学生列表" />
+                <elementDefinition Id="9f276f6c-c921-49dd-b189-73878018f9ec" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f87c058d-40d3-4ae0-83da-14d65cf6e675" name="修改学生记录" isLeaf="false">
+            <elementDefinition Id="48a9fd9e-3bce-46e3-9940-1659b3259134" />
+            <flowNodeTargets>
+              <controlFlow Id="087d7bf0-f1c2-4301-a16f-3d03ce6f375e" isLeaf="false">
+                <opaqueActionMoniker Id="6b942142-f2ee-4fd6-a506-fded6c5f824d" LastKnownName="刷新学生列表" />
+                <elementDefinition Id="3392d7dc-b344-4626-8ae3-19ea1a981945" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="6b942142-f2ee-4fd6-a506-fded6c5f824d" name="刷新学生列表" isLeaf="false">
+            <elementDefinition Id="f753b2c7-d8b9-419b-bff1-9b54cad98eaf" />
+            <flowNodeTargets>
+              <controlFlow Id="82def2b5-3a6d-47ac-8627-4ecaae61727e" isLeaf="false">
+                <activityFinalNodeMoniker Id="0f506b35-54b1-436b-8574-475ab7266f25" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="68a128d0-8789-4126-af71-801e21af8198" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="0f506b35-54b1-436b-8574-475ab7266f25" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="72b417d2-3f4b-4505-89fc-60b60a17888d" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="18c7fca2-0df5-452e-8dcf-6d9d16dec5b4" name="April.Modeling">
+    <elementDefinition Id="c15009f9-3b34-470d-a1a7-2812739fea85" />
+  </package>
+</activityRootModel>

@@ -1,8 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="c15009f9-3b34-470d-a1a7-2812739fea85"
   name="April.Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="af1e5f3b-e2c8-4be5-ac38-18abb06a6669">
+      <body>Mode=Edit</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="a1baa33a-df12-4e21-b1ce-e2c671eb2500"
+          LastKnownName="Decision1"
+          LastKnownLocation="April.Modeling.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="8f43dc89-df3f-485d-87e3-4a1167c639d8">
+      <body>Id != empty</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="4ea5f57b-2a89-4cab-b576-79d0f4864e1a"
+          LastKnownName="Decision2"
+          LastKnownLocation="April.Modeling.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="4b2cc3b4-d503-4ac4-8acc-3f3e701d6472">
+      <body>Id != empty</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="4309541e-e34f-4266-b684-b7117c322bdc"
+          LastKnownName="Decision3"
+          LastKnownLocation="April.Modeling.uml" />
+      </annotatedElements>
+    </comment>
+    <comment
+      Id="3a4006be-e203-49ce-a334-bf0a0ffee696">
+      <body>Id!=Empty</body>
+      <annotatedElements>
+        <decisionNodeMoniker
+          Id="6d2964c8-437f-470f-84ed-ae0138a474d9"
+          LastKnownName="Decision1"
+          LastKnownLocation="April.Modeling.uml" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -457,6 +499,1427 @@
             LastKnownLocation="April.Modeling.uml" />
         </subjects>
       </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="284bb2c1-8488-4ef8-8dca-3c35386fa360"
+        name="April"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="81845ad9-c936-40a6-ad72-2a111ffe5a54"
+        name="StudentMgr"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="9ca4d8fa-6c93-4660-a5ef-93793d656c06"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7d5e8cbc-b721-41d4-a88a-e8e5fb6af404"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="a1baa33a-df12-4e21-b1ce-e2c671eb2500"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <decisionNode
+            Id="a1baa33a-df12-4e21-b1ce-e2c671eb2500"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4ca3a676-c063-41cf-b2c5-a814438a7fa0"
+                guard="Y"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="4ea5f57b-2a89-4cab-b576-79d0f4864e1a"
+                  LastKnownName="Decision2"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="865b22c5-0b3d-4835-99f3-ce9d89080268"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="4309541e-e34f-4266-b684-b7117c322bdc"
+                  LastKnownName="Decision3"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <decisionNode
+            Id="4ea5f57b-2a89-4cab-b576-79d0f4864e1a"
+            name="Decision2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="81076e79-7519-46a1-8ceb-19494d821812"
+                guard="N"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="969bad2f-8344-426e-8ca2-5f7b3e7d7eb1"
+                  LastKnownName="呈现添加学生记录界面"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="8e6a8f4c-9af0-4ba4-b320-943ae62d0e42"
+                guard="Y"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="15777fa7-0f86-482e-8df6-5d7e8dc2f0dc"
+                  LastKnownName="呈现修改学生记录界面"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="8c96da68-a7ea-485e-93aa-41ef569a9613"
+            name="呈现浏览学生记录界面"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ceaa9a60-1643-4224-9bf5-c1b7d2a70a14"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d666346d-e984-44fa-8181-2acee5b59c8f"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="15777fa7-0f86-482e-8df6-5d7e8dc2f0dc"
+            name="呈现修改学生记录界面"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="35d14788-a783-4339-94bd-8183c3418e77"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="4d69210e-8a11-4220-b5c9-718d4b7b25b4"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="969bad2f-8344-426e-8ca2-5f7b3e7d7eb1"
+            name="呈现添加学生记录界面"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4537fe9c-a2e1-4562-8a78-21e4c2395b1c"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="4d69210e-8a11-4220-b5c9-718d4b7b25b4"
+                  LastKnownName="Merge1"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="42034143-cb65-4f88-b257-fd406494fad9"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <mergeNode
+            Id="4d69210e-8a11-4220-b5c9-718d4b7b25b4"
+            name="Merge1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="4c4c0fb4-75f3-4926-871b-e74e34083b72"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d666346d-e984-44fa-8181-2acee5b59c8f"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <mergeNode
+            Id="d666346d-e984-44fa-8181-2acee5b59c8f"
+            name="Merge2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="19eca0ee-f3ac-4aff-8b8c-be0e2d7fe74b"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="42034143-cb65-4f88-b257-fd406494fad9"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <opaqueAction
+            Id="b3fc0828-9b00-444f-a936-efe2516d470b"
+            name="只呈现学生列表"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="65409c08-b4e6-47fb-bac6-dfd2518a8ae3"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="b77ec8a6-630d-495c-bf26-5b904b267cc4"
+                  LastKnownName="Merge3"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="4309541e-e34f-4266-b684-b7117c322bdc"
+            name="Decision3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="8796cf72-1c5e-471e-af24-d670979bd7c6"
+                guard="Y"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="8c96da68-a7ea-485e-93aa-41ef569a9613"
+                  LastKnownName="呈现浏览学生记录界面"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="1031adb7-d836-47f3-b684-6d35d8d0d031"
+                guard="N"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b3fc0828-9b00-444f-a936-efe2516d470b"
+                  LastKnownName="只呈现学生列表"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <mergeNode
+            Id="b77ec8a6-630d-495c-bf26-5b904b267cc4"
+            name="Merge3"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="03d70d3b-fe87-4301-adcc-d09b5e12aaf9"
+                isLeaf="false">
+                <mergeNodeMoniker
+                  Id="d666346d-e984-44fa-8181-2acee5b59c8f"
+                  LastKnownName="Merge2"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="77a127d1-54dd-45ca-9015-ab94e8fb39be"
+        name="StudentMgr2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <initialNode
+            Id="d8519b3f-eb65-4f86-a92e-a7f87a3346e7"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d12820a2-b6e0-417a-984f-506546bd078b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="bc3de167-565d-49ca-991d-6963477d1ad0"
+                  LastKnownName="从表单中取值"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="bc3de167-565d-49ca-991d-6963477d1ad0"
+            name="从表单中取值"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3fb29f5f-23c2-47e7-ae9e-c0003bb66c4f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="136da6dc-e613-47f1-9a1f-1010c3bcecf2"
+                  LastKnownName="验证值"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="136da6dc-e613-47f1-9a1f-1010c3bcecf2"
+            name="验证值"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="03f15709-16d9-4a1d-a8a6-bd0e31517e4c"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="6d2964c8-437f-470f-84ed-ae0138a474d9"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="6d2964c8-437f-470f-84ed-ae0138a474d9"
+            name="Decision1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d19060d8-9fa6-464d-b050-8bd37bb33831"
+                guard="Y"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="48a9fd9e-3bce-46e3-9940-1659b3259134"
+                  LastKnownName="修改学生记录"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="db488190-e88a-493a-95c4-2d5de84697ce"
+                guard="N"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="32df9cbe-fe80-492c-9ed4-43d230d10705"
+                  LastKnownName="添加学生记录"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="32df9cbe-fe80-492c-9ed4-43d230d10705"
+            name="添加学生记录"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="9f276f6c-c921-49dd-b189-73878018f9ec"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f753b2c7-d8b9-419b-bff1-9b54cad98eaf"
+                  LastKnownName="刷新学生列表"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="48a9fd9e-3bce-46e3-9940-1659b3259134"
+            name="修改学生记录"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="3392d7dc-b344-4626-8ae3-19ea1a981945"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="f753b2c7-d8b9-419b-bff1-9b54cad98eaf"
+                  LastKnownName="刷新学生列表"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="f753b2c7-d8b9-419b-bff1-9b54cad98eaf"
+            name="刷新学生列表"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="68a128d0-8789-4126-af71-801e21af8198"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="72b417d2-3f4b-4505-89fc-60b60a17888d"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="April.Modeling.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="72b417d2-3f4b-4505-89fc-60b60a17888d"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="95fbcbf8-30f8-4f82-9737-91e2f1af475e"
+        name="April"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="8e1a2f7a-99ee-44e1-8f2d-38decc2079c0"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="98f2452b-5f0a-423d-a781-3abae021de8a"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="April.Modeling.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="d1919751-20dc-41d1-9263-1222905d272e"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="April.Modeling.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="7938be3b-ca43-4673-847d-0e72011be78d"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="036d90ee-e68b-4cf4-892e-5d3c7c4999f8"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="0cfd2d19-2017-45cd-ba0c-cb58e73eaf36"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3df5cc28-e60b-4db9-a654-ebad262e6c85"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="87e42b5e-6929-47ef-9957-0f6441fe29f4"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1fb83ad3-14b7-49ef-909b-d1e05ee933bf"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="April.Modeling.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="26bc6aea-6fc8-4dfc-981c-a164a7fa4c8b"
+                LastKnownName="OperandOccurrenceSpecification1"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="940479d6-ada1-494c-91ec-ca955bc1e65f"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="4944820c-107b-4f51-a46b-0773ddd256ef"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="990c7165-aaec-4bfd-84b5-0bda865246a7"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1cb91649-4699-4279-8a3d-45ec092a5125"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="April.Modeling.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="859b29fb-a7d7-4bb9-9dca-d42fd5f0a7be"
+                LastKnownName="OperandOccurrenceSpecification2"
+                LastKnownLocation="April.Modeling.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="74eb9934-8ec9-426b-be8e-d87da82bd0aa"
+                LastKnownName="OperandOccurrenceSpecification3"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="ae129144-e2f5-4273-a2da-c48bb0389a47"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="87e30b72-5bd1-45ab-9564-725a56db2a49"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="3a7af4c3-8060-41a6-ace9-e7fad3f234f5"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="6ea1832b-12f2-4c09-ac40-5f3fc21d9e0b"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="April.Modeling.uml" />
+              <operandOccurrenceSpecificationMoniker
+                Id="36930f13-1dfd-4598-87a3-5ac1993a135b"
+                LastKnownName="OperandOccurrenceSpecification4"
+                LastKnownLocation="April.Modeling.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="d1919751-20dc-41d1-9263-1222905d272e"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="8310b5a5-d0ac-4719-8aea-f6c441abc610"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="7938be3b-ca43-4673-847d-0e72011be78d"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <lostFoundTarget
+            Id="db8a5fb9-a18f-481b-83fa-a23f8a7ff522"
+            name="LostFoundTarget1" />
+          <messageOccurrenceSpecification
+            Id="036d90ee-e68b-4cf4-892e-5d3c7c4999f8"
+            name="MessageOccurrenceSpecification6">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="1483b5de-7d5c-436d-94bb-5e91a938a8e6"
+            name="BehaviorExecutionSpecification3">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3df5cc28-e60b-4db9-a654-ebad262e6c85"
+                LastKnownName="ExecutionOccurrenceSpecification6"
+                LastKnownLocation="April.Modeling.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="0cfd2d19-2017-45cd-ba0c-cb58e73eaf36"
+                LastKnownName="ExecutionOccurrenceSpecification5"
+                LastKnownLocation="April.Modeling.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="e9d978b4-7fb7-4751-83f7-4a9cda4dd0e5"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="April.Modeling.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="0cfd2d19-2017-45cd-ba0c-cb58e73eaf36"
+            name="ExecutionOccurrenceSpecification5">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="83eceb9e-5d77-4dd3-9401-3922b6807cb1"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e9d978b4-7fb7-4751-83f7-4a9cda4dd0e5"
+            name="MessageOccurrenceSpecification7">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3df5cc28-e60b-4db9-a654-ebad262e6c85"
+            name="ExecutionOccurrenceSpecification6">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="cdfda9eb-f3e9-45df-956f-aee56f3c3632"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="b4bc2078-47ed-404d-987d-995d99d9542a"
+            name="BehaviorExecutionSpecification4">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="4b84550e-1857-443f-b98d-8dd8819ac745"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="April.Modeling.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="1bf35096-35b5-4a00-97d9-71c86d101245"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="April.Modeling.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="79eff3f5-f911-46bb-b9a2-5cf1e1e5ccb1"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="1b47f5a8-463c-4cc7-8202-840aabf01070"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="50d915ef-e232-4491-aece-530fa2ff56ac"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="82b9f824-2eba-41d8-b87f-d7638f483531"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="April.Modeling.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="1bf35096-35b5-4a00-97d9-71c86d101245"
+            name="ExecutionOccurrenceSpecification7">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="98bbf96f-4678-47af-9c7a-63da46d62834"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="87e42b5e-6929-47ef-9957-0f6441fe29f4"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="79eff3f5-f911-46bb-b9a2-5cf1e1e5ccb1"
+            name="MessageOccurrenceSpecification9">
+            <covered>
+              <lifelineMoniker
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="7627f3d4-3fb3-4877-bdbd-7b819eed93ec"
+            name="BehaviorExecutionSpecification5">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="5f77f375-71ad-41de-b794-7deff3673d21"
+                LastKnownName="DAL"
+                LastKnownLocation="April.Modeling.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="dde0b88b-c1fe-4e24-a1a8-f21ab3c9a24c"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="April.Modeling.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="4a7357bf-58fb-4310-a1ef-545fc62d9a1e"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="April.Modeling.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="5b9ca1fb-3a55-4d04-b318-e18e9c008d3a"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="April.Modeling.uml" />
+              <messageOccurrenceSpecificationMoniker
+                Id="3bdab3f9-c6cd-4434-a1ff-4a7618c86627"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="April.Modeling.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="4a7357bf-58fb-4310-a1ef-545fc62d9a1e"
+            name="ExecutionOccurrenceSpecification9">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="6d667870-c2c6-4f40-a1cd-2b51ef87a61e"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5f77f375-71ad-41de-b794-7deff3673d21"
+                LastKnownName="DAL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1b47f5a8-463c-4cc7-8202-840aabf01070"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="5b9ca1fb-3a55-4d04-b318-e18e9c008d3a"
+            name="MessageOccurrenceSpecification13">
+            <covered>
+              <lifelineMoniker
+                Id="5f77f375-71ad-41de-b794-7deff3673d21"
+                LastKnownName="DAL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3bdab3f9-c6cd-4434-a1ff-4a7618c86627"
+            name="MessageOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="5f77f375-71ad-41de-b794-7deff3673d21"
+                LastKnownName="DAL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="50d915ef-e232-4491-aece-530fa2ff56ac"
+            name="MessageOccurrenceSpecification15">
+            <covered>
+              <lifelineMoniker
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="dde0b88b-c1fe-4e24-a1a8-f21ab3c9a24c"
+            name="ExecutionOccurrenceSpecification10">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="c61f086f-af3b-497f-a90d-4a8372ca6213"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="5f77f375-71ad-41de-b794-7deff3673d21"
+                LastKnownName="DAL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="82b9f824-2eba-41d8-b87f-d7638f483531"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1fb83ad3-14b7-49ef-909b-d1e05ee933bf"
+            name="MessageOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="4b84550e-1857-443f-b98d-8dd8819ac745"
+            name="ExecutionOccurrenceSpecification8">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="81dea963-2743-4929-9768-b0f74e0b2d81"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <combinedFragment
+            Id="8a9ab372-ac19-4d83-8f72-eed7a15c45b1"
+            name="CombinedFragment1"
+            interactionOperator="Alt">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </coveredLifelines>
+            <operands>
+              <interactionOperand
+                Id="0fd35370-f0e6-4855-a8dc-7a0796735fec"
+                name="InteractionOperand1">
+                <coveredLifelines>
+                  <lifelineMoniker
+                    Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                    LastKnownName="登录页面(Web)"
+                    LastKnownLocation="April.Modeling.uml" />
+                </coveredLifelines>
+                <guard>
+                  <interactionConstraint
+                    Id="9cdec372-8c0e-4a56-b6dd-3b378bbc0e10"
+                    guardText="用户存在" />
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker
+                    Id="26bc6aea-6fc8-4dfc-981c-a164a7fa4c8b"
+                    LastKnownName="OperandOccurrenceSpecification1"
+                    LastKnownLocation="April.Modeling.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="859b29fb-a7d7-4bb9-9dca-d42fd5f0a7be"
+                    LastKnownName="OperandOccurrenceSpecification2"
+                    LastKnownLocation="April.Modeling.uml" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+              <interactionOperand
+                Id="ad71e5e4-e558-4e24-913c-6dd7f6ecd40e"
+                name="InteractionOperand2">
+                <coveredLifelines>
+                  <lifelineMoniker
+                    Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                    LastKnownName="登录页面(Web)"
+                    LastKnownLocation="April.Modeling.uml" />
+                </coveredLifelines>
+                <guard>
+                  <interactionConstraint
+                    Id="83511410-01b1-4078-8a69-c0282a483b90"
+                    guardText="否则" />
+                </guard>
+                <operandOccurrenceSpecifications>
+                  <operandOccurrenceSpecificationMoniker
+                    Id="74eb9934-8ec9-426b-be8e-d87da82bd0aa"
+                    LastKnownName="OperandOccurrenceSpecification3"
+                    LastKnownLocation="April.Modeling.uml" />
+                  <operandOccurrenceSpecificationMoniker
+                    Id="36930f13-1dfd-4598-87a3-5ac1993a135b"
+                    LastKnownName="OperandOccurrenceSpecification4"
+                    LastKnownLocation="April.Modeling.uml" />
+                </operandOccurrenceSpecifications>
+              </interactionOperand>
+            </operands>
+          </combinedFragment>
+          <operandOccurrenceSpecification
+            Id="26bc6aea-6fc8-4dfc-981c-a164a7fa4c8b"
+            name="OperandOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="940479d6-ada1-494c-91ec-ca955bc1e65f"
+            name="MessageOccurrenceSpecification16">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="131a42d3-2348-4e23-b580-71e3f335e51f"
+            name="BehaviorExecutionSpecification6">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="990c7165-aaec-4bfd-84b5-0bda865246a7"
+                LastKnownName="ExecutionOccurrenceSpecification12"
+                LastKnownLocation="April.Modeling.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="4944820c-107b-4f51-a46b-0773ddd256ef"
+                LastKnownName="ExecutionOccurrenceSpecification11"
+                LastKnownLocation="April.Modeling.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="247fa210-8c1f-4423-a7e1-796c3aa98bf0"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="April.Modeling.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="4944820c-107b-4f51-a46b-0773ddd256ef"
+            name="ExecutionOccurrenceSpecification11">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="08c9267d-61f3-44b6-a36f-018e6c7cb975"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="247fa210-8c1f-4423-a7e1-796c3aa98bf0"
+            name="MessageOccurrenceSpecification17">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="990c7165-aaec-4bfd-84b5-0bda865246a7"
+            name="ExecutionOccurrenceSpecification12">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="52bd0687-a0ef-4f9b-b7f7-cad9408fc788"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1cb91649-4699-4279-8a3d-45ec092a5125"
+            name="MessageOccurrenceSpecification25">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <lostFoundTarget
+            Id="b6bd5d28-59c2-45ba-ad47-e3450374c556"
+            name="LostFoundTarget3" />
+          <operandOccurrenceSpecification
+            Id="859b29fb-a7d7-4bb9-9dca-d42fd5f0a7be"
+            name="OperandOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="74eb9934-8ec9-426b-be8e-d87da82bd0aa"
+            name="OperandOccurrenceSpecification3">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ae129144-e2f5-4273-a2da-c48bb0389a47"
+            name="MessageOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <behaviorExecutionSpecification
+            Id="253c0c46-a215-43e8-ada6-e908bf262e6f"
+            name="BehaviorExecutionSpecification7">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="3a7af4c3-8060-41a6-ace9-e7fad3f234f5"
+                LastKnownName="ExecutionOccurrenceSpecification14"
+                LastKnownLocation="April.Modeling.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="87e30b72-5bd1-45ab-9564-725a56db2a49"
+                LastKnownName="ExecutionOccurrenceSpecification13"
+                LastKnownLocation="April.Modeling.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="59fc3a6e-074d-4def-916c-d31fe3adb07b"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="April.Modeling.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="87e30b72-5bd1-45ab-9564-725a56db2a49"
+            name="ExecutionOccurrenceSpecification13">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="37c0e25d-5f07-4945-b598-3184448e59f4"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="59fc3a6e-074d-4def-916c-d31fe3adb07b"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="3a7af4c3-8060-41a6-ace9-e7fad3f234f5"
+            name="ExecutionOccurrenceSpecification14">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="ef64e699-a773-411f-8fab-cc7db4430327"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <lostFoundTarget
+            Id="79dc554d-2dd0-49f5-bd0a-b9ce519fc88b"
+            name="LostFoundTarget4" />
+          <messageOccurrenceSpecification
+            Id="6ea1832b-12f2-4c09-ac40-5f3fc21d9e0b"
+            name="MessageOccurrenceSpecification26">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="36930f13-1dfd-4598-87a3-5ac1993a135b"
+            name="OperandOccurrenceSpecification4">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="98f2452b-5f0a-423d-a781-3abae021de8a"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="4dce0140-42af-419e-9fea-88e34b5202fd"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="April.Modeling.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+            name="登录页面(Web)"
+            isActor="false"
+            lifelineDisplayName="‎登录页面(Web)‎">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="d1919751-20dc-41d1-9263-1222905d272e"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="98f2452b-5f0a-423d-a781-3abae021de8a"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="April.Modeling.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+            name="BLL"
+            isActor="false"
+            lifelineDisplayName="BLL">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="1bf35096-35b5-4a00-97d9-71c86d101245"
+                LastKnownName="ExecutionOccurrenceSpecification7"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="4b84550e-1857-443f-b98d-8dd8819ac745"
+                LastKnownName="ExecutionOccurrenceSpecification8"
+                LastKnownLocation="April.Modeling.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="5f77f375-71ad-41de-b794-7deff3673d21"
+            name="DAL"
+            isActor="false"
+            lifelineDisplayName="DAL">
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="4a7357bf-58fb-4310-a1ef-545fc62d9a1e"
+                LastKnownName="ExecutionOccurrenceSpecification9"
+                LastKnownLocation="April.Modeling.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="dde0b88b-c1fe-4e24-a1a8-f21ab3c9a24c"
+                LastKnownName="ExecutionOccurrenceSpecification10"
+                LastKnownLocation="April.Modeling.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="0f7182dc-bd4f-44d6-9058-3be4b52aa09a"
+            name="请求登录"
+            messageKind="Found"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <lostFoundTargetMoniker
+                Id="db8a5fb9-a18f-481b-83fa-a23f8a7ff522"
+                LastKnownName="LostFoundTarget1"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="7938be3b-ca43-4673-847d-0e72011be78d"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="ab610099-5dd0-42ba-af2f-4937819f60a5"
+            name="获取登录Id和密码"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="036d90ee-e68b-4cf4-892e-5d3c7c4999f8"
+                LastKnownName="MessageOccurrenceSpecification6"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="e9d978b4-7fb7-4751-83f7-4a9cda4dd0e5"
+                LastKnownName="MessageOccurrenceSpecification7"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="331ce5df-38e4-4832-b5a7-161a0ffb0a98"
+            name="查询用户"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="87e42b5e-6929-47ef-9957-0f6441fe29f4"
+                LastKnownName="MessageOccurrenceSpecification8"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="79eff3f5-f911-46bb-b9a2-5cf1e1e5ccb1"
+                LastKnownName="MessageOccurrenceSpecification9"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b6f300b1-ebbb-486f-bb41-a4ede624c073"
+            name="查询用户"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1b47f5a8-463c-4cc7-8202-840aabf01070"
+                LastKnownName="MessageOccurrenceSpecification12"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="5b9ca1fb-3a55-4d04-b318-e18e9c008d3a"
+                LastKnownName="MessageOccurrenceSpecification13"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="a126ba63-e329-4131-8651-81e6efdc6c68"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="3bdab3f9-c6cd-4434-a1ff-4a7618c86627"
+                LastKnownName="MessageOccurrenceSpecification14"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="50d915ef-e232-4491-aece-530fa2ff56ac"
+                LastKnownName="MessageOccurrenceSpecification15"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="bcfa0c79-7805-4685-b8eb-51d9e4eabebf"
+            name="&lt;&lt;return&gt;&gt;"
+            messageKind="Complete"
+            messageSort="Reply"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="82b9f824-2eba-41d8-b87f-d7638f483531"
+                LastKnownName="MessageOccurrenceSpecification10"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1fb83ad3-14b7-49ef-909b-d1e05ee933bf"
+                LastKnownName="MessageOccurrenceSpecification11"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="c3f1cda9-ed99-456a-aedd-3adfa7f32c07"
+            name="登录信息保存到Cookie"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="940479d6-ada1-494c-91ec-ca955bc1e65f"
+                LastKnownName="MessageOccurrenceSpecification16"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="247fa210-8c1f-4423-a7e1-796c3aa98bf0"
+                LastKnownName="MessageOccurrenceSpecification17"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="be369c9f-8900-42c8-90d0-4041e6a6dc5e"
+            name="跳转至首页"
+            messageKind="Lost"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="1cb91649-4699-4279-8a3d-45ec092a5125"
+                LastKnownName="MessageOccurrenceSpecification25"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <lostFoundTargetMoniker
+                Id="b6bd5d28-59c2-45ba-ad47-e3450374c556"
+                LastKnownName="LostFoundTarget3"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="ac563168-30ca-40ec-80f1-9c983ab99030"
+            name="显示错误消息"
+            messageKind="Complete"
+            messageSort="SynchCall"
+            createSelfMessage="true">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ae129144-e2f5-4273-a2da-c48bb0389a47"
+                LastKnownName="MessageOccurrenceSpecification18"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="59fc3a6e-074d-4def-916c-d31fe3adb07b"
+                LastKnownName="MessageOccurrenceSpecification19"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+          <message
+            Id="b2bd84a0-98f6-4ddf-9cd2-acd59bbe330d"
+            name="返回登录页"
+            messageKind="Lost"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="6ea1832b-12f2-4c09-ac40-5f3fc21d9e0b"
+                LastKnownName="MessageOccurrenceSpecification26"
+                LastKnownLocation="April.Modeling.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <lostFoundTargetMoniker
+                Id="79dc554d-2dd0-49f5-bd0a-b9ce519fc88b"
+                LastKnownName="LostFoundTarget4"
+                LastKnownLocation="April.Modeling.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="8310b5a5-d0ac-4719-8aea-f6c441abc610"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="4dce0140-42af-419e-9fea-88e34b5202fd"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="83eceb9e-5d77-4dd3-9401-3922b6807cb1"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="cdfda9eb-f3e9-45df-956f-aee56f3c3632"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="98bbf96f-4678-47af-9c7a-63da46d62834"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="81dea963-2743-4929-9768-b0f74e0b2d81"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="6d667870-c2c6-4f40-a1cd-2b51ef87a61e"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="c61f086f-af3b-497f-a90d-4a8372ca6213"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="08c9267d-61f3-44b6-a36f-018e6c7cb975"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="52bd0687-a0ef-4f9b-b7f7-cad9408fc788"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="37c0e25d-5f07-4945-b598-3184448e59f4"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="ef64e699-a773-411f-8fab-cc7db4430327"
+        name="ExecutionEvent" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
