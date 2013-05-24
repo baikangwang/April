@@ -24,9 +24,6 @@
       <SubType>Content</SubType>
       <DependentUpon>April.sequencediagram</DependentUpon>
     </Content>
-    <Content Include="Image\EntityImpl.png">
-      <SubType>Content</SubType>
-    </Content>
     <Content Include="Image\学生管理（保存记录）活动图.png">
       <SubType>Content</SubType>
     </Content>

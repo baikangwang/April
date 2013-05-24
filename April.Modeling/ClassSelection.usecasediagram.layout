@@ -3,47 +3,55 @@
   <useCaseModelRootMoniker Id="ab8160ba-5f73-41fc-b8a6-8016cd328273" />
   <nestedChildShapes>
     <actorShape Id="0010e553-8be6-482a-82ca-546cb7feedb6" absoluteBounds="4.125, 1.875, 0.5, 0.5" isReference="false" heightOffset="0">
-      <actorMoniker Id="059d8275-d3de-4b1f-8bb9-ad668e5c1fa1" LastKnownName="Administrator" />
+      <actorMoniker Id="059d8275-d3de-4b1f-8bb9-ad668e5c1fa1" LastKnownName="管理员" />
       <relativeChildShapes />
     </actorShape>
     <actorShape Id="7ae2def9-0d18-476a-be0c-12942279a324" absoluteBounds="0.5, 5.25, 0.5, 0.5" isReference="false" heightOffset="0">
-      <actorMoniker Id="fca4dad6-ba41-4c7b-9fb5-7fe4b3cd8700" LastKnownName="Student" />
+      <actorMoniker Id="fca4dad6-ba41-4c7b-9fb5-7fe4b3cd8700" LastKnownName="学生" />
       <relativeChildShapes />
     </actorShape>
     <actorShape Id="96405723-fdbd-420a-b801-d3ec2db4fa12" absoluteBounds="7.5, 5.375, 0.5, 0.5" isReference="false" heightOffset="0">
-      <actorMoniker Id="82be9d97-f16a-4732-9145-fb62fbe5710e" LastKnownName="Teacher" />
+      <actorMoniker Id="82be9d97-f16a-4732-9145-fb62fbe5710e" LastKnownName="教师" />
       <relativeChildShapes />
     </actorShape>
-    <SubsystemShape Id="c88d2f1c-8b37-4466-8eb0-49dc744028c9" absoluteBounds="1.5, 3, 5.5, 4.125" customColor="White">
-      <subsystemMoniker Id="880b0a0c-4007-4608-929a-c3ae2c3fc832" LastKnownName="ClassSelection" />
+    <SubsystemShape Id="c88d2f1c-8b37-4466-8eb0-49dc744028c9" absoluteBounds="1.5, 3, 5.5, 4.25" customColor="White">
+      <subsystemMoniker Id="880b0a0c-4007-4608-929a-c3ae2c3fc832" LastKnownName="选课系统" />
       <nestedChildShapes>
-        <useCaseShape Id="5a5e74df-1d63-45d6-b034-9bcd42de7ef8" absoluteBounds="2.125, 3.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
-          <useCaseMoniker Id="57b5ce19-dd97-4c6d-bf86-f621784554c5" LastKnownName="Student Management" />
+        <useCaseShape Id="5a5e74df-1d63-45d6-b034-9bcd42de7ef8" absoluteBounds="2, 3.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="57b5ce19-dd97-4c6d-bf86-f621784554c5" LastKnownName="学生管理" />
           <relativeChildShapes />
         </useCaseShape>
-        <useCaseShape Id="480cc191-d94b-4ee6-a89f-2a2269be7d0c" absoluteBounds="3.75, 3.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
-          <useCaseMoniker Id="94ad7e8b-c390-4fc6-85e1-8ae327155452" LastKnownName="Teacher Management" />
+        <useCaseShape Id="480cc191-d94b-4ee6-a89f-2a2269be7d0c" absoluteBounds="3.125, 3.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="94ad7e8b-c390-4fc6-85e1-8ae327155452" LastKnownName="教师管理" />
           <relativeChildShapes />
         </useCaseShape>
-        <useCaseShape Id="0e0392d7-a745-4623-99a8-2966d0f4e8ec" absoluteBounds="5.5, 3.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
-          <useCaseMoniker Id="0cf9b88e-c269-40f7-8178-efe863c260d3" LastKnownName="Course Management" />
+        <useCaseShape Id="0e0392d7-a745-4623-99a8-2966d0f4e8ec" absoluteBounds="4.375, 3.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="0cf9b88e-c269-40f7-8178-efe863c260d3" LastKnownName="课程管理" />
           <relativeChildShapes />
         </useCaseShape>
         <useCaseShape Id="2634393d-c52f-4080-99c9-ec9c69127482" absoluteBounds="3.375, 4.5, 1.625, 0.5" customColor="238, 237, 131" heightOffset="0">
-          <useCaseMoniker Id="05220698-9de5-47c9-80fb-0a818e3651a5" LastKnownName="Management Profile" />
+          <useCaseMoniker Id="05220698-9de5-47c9-80fb-0a818e3651a5" LastKnownName="个人信息管理" />
           <relativeChildShapes />
         </useCaseShape>
         <useCaseShape Id="c9dd773a-7017-4124-bf28-6a87fb01ed36" absoluteBounds="3.25, 5.25, 2, 0.5" customColor="238, 237, 131" heightOffset="0">
-          <useCaseMoniker Id="d87c6ced-3f28-41d7-b822-2d567ea70a4a" LastKnownName="Query ClassSelection Info" />
+          <useCaseMoniker Id="d87c6ced-3f28-41d7-b822-2d567ea70a4a" LastKnownName="选课信息查询" />
           <relativeChildShapes />
         </useCaseShape>
         <useCaseShape Id="54df0366-e9c5-4978-8c1c-4d91dcdd0ee1" absoluteBounds="3.625, 6, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
-          <useCaseMoniker Id="54a155b4-a239-419e-a216-6d3b394cc4a7" LastKnownName="Select Class" />
+          <useCaseMoniker Id="54a155b4-a239-419e-a216-6d3b394cc4a7" LastKnownName="选课" />
+          <relativeChildShapes />
+        </useCaseShape>
+        <useCaseShape Id="ac1cb9d7-389b-4465-adda-8a70eaab4d8f" absoluteBounds="3.625, 6.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="1685787b-25b1-4189-9377-b38499b63100" LastKnownName="成绩查询" />
+          <relativeChildShapes />
+        </useCaseShape>
+        <useCaseShape Id="a24e0a2b-edf7-4f85-a75e-f2c2704ccc9f" absoluteBounds="5.625, 3.625, 1, 0.5" customColor="238, 237, 131" heightOffset="0">
+          <useCaseMoniker Id="6814aa4f-8567-4723-978b-acbb210d6ee0" LastKnownName="成绩管理" />
           <relativeChildShapes />
         </useCaseShape>
       </nestedChildShapes>
     </SubsystemShape>
-    <useCaseAssociationConnector edgePoints="[(4.125 : 2.375); (2.84860679774998 : 3.65139320225002)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(4.125 : 2.35833333333333); (2.73611070625771 : 3.6546300074928)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="84941fd7-57d2-4a8f-a9a3-4bac6f92cbf5" />
       <relativeChildShapes />
       <nodes>
@@ -51,7 +59,7 @@
         <useCaseShapeMoniker Id="5a5e74df-1d63-45d6-b034-9bcd42de7ef8" />
       </nodes>
     </useCaseAssociationConnector>
-    <useCaseAssociationConnector edgePoints="[(4.35714285714286 : 2.375); (4.26784576525621 : 3.62515928641311)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(4.26785714285714 : 2.375); (3.72976454436544 : 3.63054939648065)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="c528424d-7256-4d57-9b94-13fbbdacdeed" />
       <relativeChildShapes />
       <nodes>
@@ -59,7 +67,7 @@
         <useCaseShapeMoniker Id="480cc191-d94b-4ee6-a89f-2a2269be7d0c" />
       </nodes>
     </useCaseAssociationConnector>
-    <useCaseAssociationConnector edgePoints="[(4.60714285714286 : 2.375); (5.78944434677269 : 3.64824775806289)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+    <useCaseAssociationConnector edgePoints="[(4.44642857142857 : 2.375); (4.80428932188135 : 3.62751262658471)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
       <associationMoniker Id="a1480821-a158-4d75-b0a1-46b4c68e7cd5" />
       <relativeChildShapes />
       <nodes>
@@ -105,6 +113,22 @@
       <nodes>
         <actorShapeMoniker Id="7ae2def9-0d18-476a-be0c-12942279a324" />
         <useCaseShapeMoniker Id="54df0366-e9c5-4978-8c1c-4d91dcdd0ee1" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(4.625 : 2.375); (5.90139320225002 : 3.65139320225002)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="999f68d3-a0d5-4666-b896-0eabf86407ab" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="0010e553-8be6-482a-82ca-546cb7feedb6" />
+        <useCaseShapeMoniker Id="a24e0a2b-edf7-4f85-a75e-f2c2704ccc9f" />
+      </nodes>
+    </useCaseAssociationConnector>
+    <useCaseAssociationConnector edgePoints="[(1 : 5.60185185185185); (3.73738250724136 : 6.71708176220944)]" fixedFrom="Algorithm" fixedTo="Algorithm" customColor="113, 111, 110" sourceMultiplicity="" targetMultiplicity="">
+      <associationMoniker Id="88f20a06-2663-41a0-88bf-d6f0d51e3350" />
+      <relativeChildShapes />
+      <nodes>
+        <actorShapeMoniker Id="7ae2def9-0d18-476a-be0c-12942279a324" />
+        <useCaseShapeMoniker Id="ac1cb9d7-389b-4465-adda-8a70eaab4d8f" />
       </nodes>
     </useCaseAssociationConnector>
   </nestedChildShapes>

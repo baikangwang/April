@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm10="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner" xmlns:dm12="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="c15009f9-3b34-470d-a1a7-2812739fea85"
   name="April.Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -63,7 +63,7 @@
     <packageHasNamedElement>
       <subsystem
         Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
-        name="ClassSelection"
+        name="选课系统"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false" />
@@ -71,13 +71,13 @@
     <packageHasNamedElement>
       <useCase
         Id="08deaf7e-730c-47f8-b373-3dc12c284b7e"
-        name="Student Management"
+        name="学生管理"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
-            LastKnownName="ClassSelection"
+            LastKnownName="选课系统"
             LastKnownLocation="April.Modeling.uml" />
         </subjects>
       </useCase>
@@ -85,7 +85,7 @@
     <packageHasNamedElement>
       <actor
         Id="70dbc5c0-e3d1-4fa0-b791-227177782ebe"
-        name="Administrator"
+        name="管理员"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -98,7 +98,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="08deaf7e-730c-47f8-b373-3dc12c284b7e"
-              LastKnownName="Student Management"
+              LastKnownName="学生管理"
               LastKnownLocation="April.Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -137,7 +137,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="a5856aaa-dffc-4e70-990e-c1b7e29d9c38"
-              LastKnownName="Teacher Management"
+              LastKnownName="教师管理"
               LastKnownLocation="April.Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -176,7 +176,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="9caa0609-62a9-40e3-8acc-0a1279e0ec7b"
-              LastKnownName="Course Management"
+              LastKnownName="课程管理"
               LastKnownLocation="April.Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -206,13 +206,52 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="bb5ce74f-ef51-45c3-b722-36bd4a01a3be"
+            isDerived="false"
+            sourceEndRoleName="管理员"
+            targetEndRoleName="成绩管理"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="558e081d-ca66-44e5-bf0e-98596e806921"
+              LastKnownName="成绩管理"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="546f8f43-4a25-4cba-a555-cb317867a2ce"
+                  name="管理员"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="aeda675b-3532-4436-b6e5-366a914959c0"
+                  name="成绩管理"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <actor
         Id="b20d9da4-47a7-43c7-b7f8-2f3e0e0dcae1"
-        name="Student"
+        name="学生"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -225,7 +264,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="ba725bdd-9912-4eaa-9036-62b1e67ca469"
-              LastKnownName="Management Profile"
+              LastKnownName="个人信息管理"
               LastKnownLocation="April.Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -264,7 +303,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="238a45a5-7790-4d5a-b244-16b18efdf82e"
-              LastKnownName="Query ClassSelection Info"
+              LastKnownName="选课信息查询"
               LastKnownLocation="April.Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -303,7 +342,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="d8b73d01-fa1f-4818-b849-64f12a4d3229"
-              LastKnownName="Select Class"
+              LastKnownName="选课"
               LastKnownLocation="April.Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -333,13 +372,52 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="63994b50-7b22-4752-89fb-fef22bca3c5c"
+            isDerived="false"
+            sourceEndRoleName="学生"
+            targetEndRoleName="成绩查询"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="9a85192f-44bf-4fc7-8388-2e33084e6d8b"
+              LastKnownName="成绩查询"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="b3c21d91-fbc8-4357-a833-2abe0ad4281f"
+                  name="学生"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d6603463-a982-4866-a713-10ba6e4c053d"
+                  name="成绩查询"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <actor
         Id="aa4117ea-2c11-4902-8005-2c43477cc6d8"
-        name="Teacher"
+        name="教师"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -352,7 +430,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="ba725bdd-9912-4eaa-9036-62b1e67ca469"
-              LastKnownName="Management Profile"
+              LastKnownName="个人信息管理"
               LastKnownLocation="April.Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -391,7 +469,7 @@
             isAbstract="false">
             <useCaseMoniker
               Id="238a45a5-7790-4d5a-b244-16b18efdf82e"
-              LastKnownName="Query ClassSelection Info"
+              LastKnownName="选课信息查询"
               LastKnownLocation="April.Modeling.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
@@ -427,13 +505,13 @@
     <packageHasNamedElement>
       <useCase
         Id="a5856aaa-dffc-4e70-990e-c1b7e29d9c38"
-        name="Teacher Management"
+        name="教师管理"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
-            LastKnownName="ClassSelection"
+            LastKnownName="选课系统"
             LastKnownLocation="April.Modeling.uml" />
         </subjects>
       </useCase>
@@ -441,13 +519,13 @@
     <packageHasNamedElement>
       <useCase
         Id="9caa0609-62a9-40e3-8acc-0a1279e0ec7b"
-        name="Course Management"
+        name="课程管理"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
-            LastKnownName="ClassSelection"
+            LastKnownName="选课系统"
             LastKnownLocation="April.Modeling.uml" />
         </subjects>
       </useCase>
@@ -455,13 +533,13 @@
     <packageHasNamedElement>
       <useCase
         Id="ba725bdd-9912-4eaa-9036-62b1e67ca469"
-        name="Management Profile"
+        name="个人信息管理"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
-            LastKnownName="ClassSelection"
+            LastKnownName="选课系统"
             LastKnownLocation="April.Modeling.uml" />
         </subjects>
       </useCase>
@@ -475,13 +553,13 @@
     <packageHasNamedElement>
       <useCase
         Id="238a45a5-7790-4d5a-b244-16b18efdf82e"
-        name="Query ClassSelection Info"
+        name="选课信息查询"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
-            LastKnownName="ClassSelection"
+            LastKnownName="选课系统"
             LastKnownLocation="April.Modeling.uml" />
         </subjects>
       </useCase>
@@ -489,13 +567,13 @@
     <packageHasNamedElement>
       <useCase
         Id="d8b73d01-fa1f-4818-b849-64f12a4d3229"
-        name="Select Class"
+        name="选课"
         isAbstract="false"
         isLeaf="false">
         <subjects>
           <subsystemMoniker
             Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
-            LastKnownName="ClassSelection"
+            LastKnownName="选课系统"
             LastKnownLocation="April.Modeling.uml" />
         </subjects>
       </useCase>
@@ -980,6 +1058,9 @@
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </executionOccurrenceSpecification>
+          <lostFoundTarget
+            Id="db8a5fb9-a18f-481b-83fa-a23f8a7ff522"
+            name="LostFoundTarget1" />
           <messageOccurrenceSpecification
             Id="7938be3b-ca43-4673-847d-0e72011be78d"
             name="MessageOccurrenceSpecification1">
@@ -990,9 +1071,6 @@
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
-          <lostFoundTarget
-            Id="db8a5fb9-a18f-481b-83fa-a23f8a7ff522"
-            name="LostFoundTarget1" />
           <messageOccurrenceSpecification
             Id="036d90ee-e68b-4cf4-892e-5d3c7c4999f8"
             name="MessageOccurrenceSpecification6">
@@ -1136,22 +1214,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="87e42b5e-6929-47ef-9957-0f6441fe29f4"
-            name="MessageOccurrenceSpecification8">
-            <covered>
-              <lifelineMoniker
-                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
-                LastKnownName="登录页面(Web)"
-                LastKnownLocation="April.Modeling.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="79eff3f5-f911-46bb-b9a2-5cf1e1e5ccb1"
             name="MessageOccurrenceSpecification9">
             <covered>
               <lifelineMoniker
                 Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
                 LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="87e42b5e-6929-47ef-9957-0f6441fe29f4"
+            name="MessageOccurrenceSpecification8">
+            <covered>
+              <lifelineMoniker
+                Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
+                LastKnownName="登录页面(Web)"
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1206,16 +1284,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="1b47f5a8-463c-4cc7-8202-840aabf01070"
-            name="MessageOccurrenceSpecification12">
-            <covered>
-              <lifelineMoniker
-                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
-                LastKnownName="BLL"
-                LastKnownLocation="April.Modeling.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="5b9ca1fb-3a55-4d04-b318-e18e9c008d3a"
             name="MessageOccurrenceSpecification13">
             <covered>
@@ -1226,12 +1294,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="3bdab3f9-c6cd-4434-a1ff-4a7618c86627"
-            name="MessageOccurrenceSpecification14">
+            Id="1b47f5a8-463c-4cc7-8202-840aabf01070"
+            name="MessageOccurrenceSpecification12">
             <covered>
               <lifelineMoniker
-                Id="5f77f375-71ad-41de-b794-7deff3673d21"
-                LastKnownName="DAL"
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1242,6 +1310,16 @@
               <lifelineMoniker
                 Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
                 LastKnownName="BLL"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="3bdab3f9-c6cd-4434-a1ff-4a7618c86627"
+            name="MessageOccurrenceSpecification14">
+            <covered>
+              <lifelineMoniker
+                Id="5f77f375-71ad-41de-b794-7deff3673d21"
+                LastKnownName="DAL"
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1264,22 +1342,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="82b9f824-2eba-41d8-b87f-d7638f483531"
-            name="MessageOccurrenceSpecification10">
-            <covered>
-              <lifelineMoniker
-                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
-                LastKnownName="BLL"
-                LastKnownLocation="April.Modeling.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="1fb83ad3-14b7-49ef-909b-d1e05ee933bf"
             name="MessageOccurrenceSpecification11">
             <covered>
               <lifelineMoniker
                 Id="3d64f6b3-a384-4a31-afea-de856fc7f6e8"
                 LastKnownName="登录页面(Web)"
+                LastKnownLocation="April.Modeling.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="82b9f824-2eba-41d8-b87f-d7638f483531"
+            name="MessageOccurrenceSpecification10">
+            <covered>
+              <lifelineMoniker
+                Id="f01177d4-d7bc-499b-85cf-eb0d550b0eb1"
+                LastKnownName="BLL"
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1458,6 +1536,9 @@
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </executionOccurrenceSpecification>
+          <lostFoundTarget
+            Id="b6bd5d28-59c2-45ba-ad47-e3450374c556"
+            name="LostFoundTarget3" />
           <messageOccurrenceSpecification
             Id="1cb91649-4699-4279-8a3d-45ec092a5125"
             name="MessageOccurrenceSpecification25">
@@ -1468,9 +1549,6 @@
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
-          <lostFoundTarget
-            Id="b6bd5d28-59c2-45ba-ad47-e3450374c556"
-            name="LostFoundTarget3" />
           <operandOccurrenceSpecification
             Id="859b29fb-a7d7-4bb9-9dca-d42fd5f0a7be"
             name="OperandOccurrenceSpecification2">
@@ -1575,9 +1653,6 @@
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </executionOccurrenceSpecification>
-          <lostFoundTarget
-            Id="79dc554d-2dd0-49f5-bd0a-b9ce519fc88b"
-            name="LostFoundTarget4" />
           <messageOccurrenceSpecification
             Id="6ea1832b-12f2-4c09-ac40-5f3fc21d9e0b"
             name="MessageOccurrenceSpecification26">
@@ -1588,6 +1663,9 @@
                 LastKnownLocation="April.Modeling.uml" />
             </covered>
           </messageOccurrenceSpecification>
+          <lostFoundTarget
+            Id="79dc554d-2dd0-49f5-bd0a-b9ce519fc88b"
+            name="LostFoundTarget4" />
           <operandOccurrenceSpecification
             Id="36930f13-1dfd-4598-87a3-5ac1993a135b"
             name="OperandOccurrenceSpecification4">
@@ -1920,6 +1998,34 @@
       <executionEvent
         Id="ef64e699-a773-411f-8fab-cc7db4430327"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="9a85192f-44bf-4fc7-8388-2e33084e6d8b"
+        name="成绩查询"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+            LastKnownName="选课系统"
+            LastKnownLocation="April.Modeling.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="558e081d-ca66-44e5-bf0e-98596e806921"
+        name="成绩管理"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="a481d2b6-e006-488a-aed6-0b85a361f8d2"
+            LastKnownName="选课系统"
+            LastKnownLocation="April.Modeling.uml" />
+        </subjects>
+      </useCase>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
