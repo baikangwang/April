@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/UseCaseModel"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel" xmlns:dm10="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm11="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm12="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="c15009f9-3b34-470d-a1a7-2812739fea85"
   name="April.Modeling" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -85,7 +85,6 @@
     <packageHasNamedElement>
       <actor
         Id="70dbc5c0-e3d1-4fa0-b791-227177782ebe"
-        name="管理员"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -118,45 +117,6 @@
                 <memberEnd
                   Id="89b0d83b-8920-4a9c-a92d-671c80c11b05"
                   name="Student Management"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-          <association
-            Id="0fef704f-6859-45cf-9dd4-eac93969ef07"
-            isDerived="false"
-            sourceEndRoleName="Administrator"
-            targetEndRoleName="Teacher Management"
-            isLeaf="false"
-            isAbstract="false">
-            <useCaseMoniker
-              Id="a5856aaa-dffc-4e70-990e-c1b7e29d9c38"
-              LastKnownName="教师管理"
-              LastKnownLocation="April.Modeling.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="b0693708-588a-4376-b3d3-8e2223d856f2"
-                  name="Administrator"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e0468fc9-2e5f-4e23-8659-d445caf20834"
-                  name="Teacher Management"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -245,13 +205,50 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="7f34e49b-4ffc-49d5-b536-aacbbe5af536"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName="教师管理"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="a5856aaa-dffc-4e70-990e-c1b7e29d9c38"
+              LastKnownName="教师管理"
+              LastKnownLocation="April.Modeling.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="78634d4b-7cfd-42e6-8311-c0ad4cc4bf81"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c566d81d-98e0-431a-8fe7-ea9336bf33bc"
+                  name="教师管理"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
       </actor>
     </packageHasNamedElement>
     <packageHasNamedElement>
       <actor
         Id="b20d9da4-47a7-43c7-b7f8-2f3e0e0dcae1"
-        name="学生"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
@@ -417,7 +414,6 @@
     <packageHasNamedElement>
       <actor
         Id="aa4117ea-2c11-4902-8005-2c43477cc6d8"
-        name="教师"
         isAbstract="false"
         isLeaf="false">
         <targetEnds>
